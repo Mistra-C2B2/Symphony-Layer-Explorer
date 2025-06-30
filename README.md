@@ -1,1 +1,1 @@
-# Symphony-Layers-Interactive-Explorer
+# Symphony Layers Interactive Explorer
