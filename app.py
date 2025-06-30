@@ -94,11 +94,18 @@ fig.add_trace(go.Pie(
     labels=outer_labels,
     values=outer_values,
     textinfo='label',
+    textfont=dict(color='white', size=8.5), 
+    marker=dict(
+        colors=outer_colors,
+        line=dict(
+            color='white', 
+            width=1
+        )),
     insidetextorientation='radial',
     hole=0.6,
     showlegend=False,
-    marker=dict(colors=outer_colors),
-    textfont=dict(size=8.5),
+    hoverinfo='none',
+    domain={'x': [0, 0.8], 'y': [0, 1]}  # Full domain for outer pie (takes up the whole space)
 ))
 
 # Inner pie
@@ -106,24 +113,31 @@ fig.add_trace(go.Pie(
     labels=inner_labels,
     values=inner_values,
     textinfo='label',
+        textfont=dict(color='white', size=10),  
+    marker=dict(
+        colors=inner_colors,
+        line=dict(
+            color='white',  
+            width=1
+        )),
     insidetextorientation='radial',
     hole=0.4,
     showlegend=False,
-    domain={'x': [0.2, 0.8], 'y': [0.2, 0.8]},
-    marker=dict(colors=inner_colors),
+    domain={'x': [0.15, 0.65], 'y': [0.25, 0.75]},  # Adjust the range to center the inner pie
     sort=False,
     rotation=-20.5,
-    textfont=dict(size=10)
+    hoverinfo='none'
 ))
 
 ########
 # Plot #
 ########
 
+
 st.title('Symphony Layers Interactive Explorer')
 st.write('Welcome to the Symphony Layer Interactive Explorer! Simply **click on the layers of the Symphony wheel** below to learn more.')
 
-selected_outer = plotly_events(fig, click_event=True, select_event=False, override_height=780, override_width=780)
+selected_outer = plotly_events(fig, click_event=True, select_event=False, override_height=900, override_width=900)
 
 
 if selected_outer:
@@ -159,5 +173,16 @@ if selected_outer:
             unsafe_allow_html=True
         )
         st.dataframe(df_parameters.reset_index(drop=True))
+
+        # Add interactivity for the user to click on a parameter row
+        selected_parameter = st.selectbox("Select a Parameter to explore:", df_parameters['Detailled_parameters_Full_name'])
+        
+        if selected_parameter:
+            # Filter the selected parameter's related data
+            parameter_details = df_recommendation_related_parameters[df_recommendation_related_parameters['Detailled_parameters_Full_name'] == selected_parameter]
+            
+            # Display the second dataframe below the first
+            st.markdown(f"### Details for {selected_parameter}")
+            st.dataframe(parameter_details) ######### I have to change this dataframe next time !!!
     else:
-        st.warning(f"Clicked data: {selected_outer[0]}\nNo label found for the clicked slice.")
+        st.warning(f"Click on the Symphony layers to explore and discover their details!")
