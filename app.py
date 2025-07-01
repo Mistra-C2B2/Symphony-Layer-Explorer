@@ -65,7 +65,7 @@ color_map = {
     'Defence': '#ffc000',
     'Energy': '#4472c4',
     'Eutrophication': '#70ad47',
-    'Fishing': '#70ad47',
+    'Fishing': '#255e91',
     'General Pollution': '#9e480e',
     'Industry': '#636363',
     'Mineral Mining': '#997300',
@@ -217,7 +217,6 @@ if selected_outer:
             <p style='text-align: justify;'>{row['Recommendation']}</p>
 
             #### Related parameter list :
-            <p style='text-align: justify;'>Click on a parameter row to explore the related datasets.</p>
 
             """,
             unsafe_allow_html=True
