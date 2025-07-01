@@ -11,12 +11,15 @@ from streamlit_plotly_events import plotly_events
 doc_path = r"C:\Users\PC\Documents\Ecole\2A\Stage_2A\RISE\Gap_Analysis"
 df_SYMPHONY_LAYERS = "df_SYMPHONY_LAYERS.xlsx"
 df_recommendation_related_parameters = "df_recommendation_related_parameters.xlsx"
+df_filtred_catalogue = "df_filtred_catalogue.xlsx"
 SYMPHONY_LAYERS_path = f"{doc_path}/{df_SYMPHONY_LAYERS}"
 recommendation_related_parameters_path = f"{doc_path}/{df_recommendation_related_parameters}"
+filtred_catalogue_path = f"{doc_path}/{df_filtred_catalogue}"
 
 # Load data
 df_SYMPHONY_LAYERS = pd.read_excel(SYMPHONY_LAYERS_path)
 df_recommendation_related_parameters = pd.read_excel(recommendation_related_parameters_path)
+df_catalogue = pd.read_excel(filtred_catalogue_path)
 
 valuability_smiley = []
 data_availability_smiley = []
@@ -40,12 +43,13 @@ df_SYMPHONY_LAYERS["Data availability smiley"] = data_availability_smiley
 
 # Filter and sort data
 category = "Ecosystem"
-df_filtered = df_SYMPHONY_LAYERS[df_SYMPHONY_LAYERS["Symphony_category"] == category].sort_values(by=["Symphony_theme", "Title"])
+def filtering_SYMPHONY_LAYERS(category):
+    df_filtered = df_SYMPHONY_LAYERS[df_SYMPHONY_LAYERS["Symphony_category"] == category].sort_values(by=["Symphony_theme", "Title"])
+    return df_filtered
 
-
-###############
-# Description #
-###############
+########
+# DATA #
+########
 
 # Color map for inner pie chart categories
 color_map = {
@@ -55,8 +59,28 @@ color_map = {
     'Habitat': '#ffc000',
     'Marine Mammals': '#4472c4',
     'Plants': '#70ad47',
+    'Aquaculture' : '#5b9bd5',
+    'Climate Change': '#ed7d31',
+    'Coastal Development': '#a5a5a5',
+    'Defence': '#ffc000',
+    'Energy': '#4472c4',
+    'Eutrophication': '#70ad47',
+    'Fishing': '#70ad47',
+    'General Pollution': '#9e480e',
+    'Industry': '#636363',
+    'Mineral Mining': '#997300',
+    'Recreation': '#264478',
+    'Shipping': '#43682b'
 }
 
+# Create a dictionary to map parameter IDs to their full names
+dict_id_to_fullname = dict(zip(
+    df_recommendation_related_parameters["Detailled_parameters_Full_name"],
+    df_recommendation_related_parameters["ID_Parameters"]
+))
+
+ecosystem_rotation = -20.5
+pressure_rotation = -17.5
 
 #############
 # Functions #
@@ -81,53 +105,67 @@ def get_outer_labels_and_colors(df, inner_labels):
 #############
 
 # Prepare data for charts
-inner_labels, inner_values = get_inner_labels_and_values(df_filtered)
-outer_labels, outer_colors = get_outer_labels_and_colors(df_filtered, inner_labels)
-outer_values = [1] * len(outer_labels)  # Equal weight for each outer slice
-inner_colors = [color_map[label] for label in inner_labels]
+def define_pie_chart_values(df_filtered):
+    inner_labels, inner_values = get_inner_labels_and_values(df_filtered)
+    outer_labels, outer_colors = get_outer_labels_and_colors(df_filtered, inner_labels)
+    outer_values = [1] * len(outer_labels)  # Equal weight for each outer slice
+    inner_colors = [color_map[label] for label in inner_labels]
+    return inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors
 
 # Plotly donut chart
-fig = go.Figure()
+def create_pie_chart(inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors, angle_rotation):
+    fig = go.Figure()
 
-# Outer pie
-fig.add_trace(go.Pie(
-    labels=outer_labels,
-    values=outer_values,
-    textinfo='label',
-    textfont=dict(color='white', size=8.5), 
-    marker=dict(
-        colors=outer_colors,
-        line=dict(
-            color='white', 
-            width=1
-        )),
-    insidetextorientation='radial',
-    hole=0.6,
-    showlegend=False,
-    hoverinfo='none',
-    domain={'x': [0, 0.8], 'y': [0, 1]}  # Full domain for outer pie (takes up the whole space)
-))
+    # Outer pie
+    # To display two lines in pie labels, insert a line break '\n' in the label text.
+    # For example, split long labels into two lines.
+    formatted_outer_labels = [
+        label if len(label) <= 20 else label[:label.rfind(' ', 0, 20)].replace(' ', '<br>', 1) + label[label.rfind(' ', 0, 20):] if ' ' in label[:20] else label[:20] + '<br>' + label[20:]
+        for label in outer_labels
+    ]
+    fig.add_trace(go.Pie(
+        labels=formatted_outer_labels,
+        values=outer_values,
+        textinfo='label',
+        textfont=dict(color='white', size=9), 
+        marker=dict(
+            colors=outer_colors,
+            line=dict(
+                color='white', 
+                width=1
+            )),
+        insidetextorientation='radial',
+        hole=0.6,
+        showlegend=False,
+        hoverinfo='none',
+        domain={'x': [0, 0.8], 'y': [0, 1]}  # Full domain for outer pie (takes up the whole space)
+    ))
 
-# Inner pie
-fig.add_trace(go.Pie(
-    labels=inner_labels,
-    values=inner_values,
-    textinfo='label',
-        textfont=dict(color='white', size=10),  
-    marker=dict(
-        colors=inner_colors,
-        line=dict(
-            color='white',  
-            width=1
-        )),
-    insidetextorientation='radial',
-    hole=0.4,
-    showlegend=False,
-    domain={'x': [0.15, 0.65], 'y': [0.25, 0.75]},  # Adjust the range to center the inner pie
-    sort=False,
-    rotation=-20.5,
-    hoverinfo='none'
-))
+    # Inner pie
+    formatted_inner_labels = [
+        label if len(label) <= 20 else label[:label.rfind(' ', 0, 20)].replace(' ', '<br>', 1) + label[label.rfind(' ', 0, 20):] if ' ' in label[:20] else label[:20] + '<br>' + label[20:]
+        for label in inner_labels
+    ]
+    fig.add_trace(go.Pie(
+        labels=formatted_inner_labels,
+        values=inner_values,
+        textinfo='label',
+            textfont=dict(color='white', size=9),  
+        marker=dict(
+            colors=inner_colors,
+            line=dict(
+                color='white',  
+                width=1
+            )),
+        insidetextorientation='radial',
+        hole=0.4,
+        showlegend=False,
+        domain={'x': [0.15, 0.65], 'y': [0.25, 0.75]},  # Adjust the range to center the inner pie
+        sort=False,
+        rotation=angle_rotation,
+        hoverinfo='none'
+    ))
+    return fig
 
 ########
 # Plot #
@@ -137,7 +175,19 @@ fig.add_trace(go.Pie(
 st.title('Symphony Layers Interactive Explorer')
 st.write('Welcome to the Symphony Layer Interactive Explorer! Simply **click on the layers of the Symphony wheel** below to learn more.')
 
-selected_outer = plotly_events(fig, click_event=True, select_event=False, override_height=900, override_width=900)
+selected_category = st.selectbox("Select a category to explore:", df_SYMPHONY_LAYERS['Symphony_category'].unique())
+
+if selected_category == 'Ecosystem' :
+    df_filtered = filtering_SYMPHONY_LAYERS(selected_category)
+    inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors = define_pie_chart_values(df_filtered)
+    ecosystem = create_pie_chart(inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors, ecosystem_rotation)
+    selected_outer = plotly_events(ecosystem, click_event=True, select_event=False, override_height=900, override_width=900)
+
+elif selected_category == 'Pressure' :
+     df_filtered = filtering_SYMPHONY_LAYERS(selected_category)
+     inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors = define_pie_chart_values(df_filtered)
+     pressure = create_pie_chart(inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors, pressure_rotation)
+     selected_outer = plotly_events(pressure, click_event=True, select_event=False, override_height=900, override_width=900)
 
 
 if selected_outer:
@@ -182,7 +232,11 @@ if selected_outer:
             parameter_details = df_recommendation_related_parameters[df_recommendation_related_parameters['Detailled_parameters_Full_name'] == selected_parameter]
             
             # Display the second dataframe below the first
-            st.markdown(f"### Details for {selected_parameter}")
-            st.dataframe(parameter_details) ######### I have to change this dataframe next time !!!
+            st.markdown(f"#### Datasets available related to {selected_parameter} :")
+            df_filtred_catalogue = df_catalogue.loc[
+                df_catalogue["ID_Parameters"] == dict_id_to_fullname[selected_parameter],
+                ["ID_Dataset", "Source", "Name", "Start_year", "End_year", "Spatial_representation", "Horizontal_resolution", "Vertical_resolution", "Temporal_resolution"]
+            ]
+            st.dataframe(df_filtred_catalogue)
     else:
         st.warning(f"Click on the Symphony layers to explore and discover their details!")
