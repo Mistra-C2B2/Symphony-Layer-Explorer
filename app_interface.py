@@ -218,21 +218,26 @@ if selected_outer:
             <p style='text-align: justify;'>{row['Recommendation']}</p>
 
             #### Related parameter list :
-            <p style='text-align: justify;'>The following table lists the parameters possibly related to the selected Symphony layer. Please check the REFERENCE_PARAMETERS table if you are looking to a specific parameter.
-            Each parameter is associeted with a data availability index.
+            <p style='text-align: justify;'>The following table lists the parameters possibly related to {row['Title']}. Please check the REFERENCE_PARAMETERS table if you are looking to a specific parameter.
+            Each parameter is associeted with a parameter availability index. The data availability index is the mean of the parameter availability idexes of the following parameters:
             </p>
-
-            <p style='text-align: justify;'> 🤔 <b>How is the data availability index calculated?</b> The data availability index is a mean of 4 other index : the Horizontal resolution index, the Spatial coverage index, the Time coverage index and the Recent index:</p> 
-
-             <ul>
-                <li><b>Horizontal resolution index: The best Horizontal resolution is </b></li>
-                <li><b>Spatial coverage index:</b></li>
-                <li><b>Time coverage index:</b></li>
-                <li><b>Recent index:</b></li>
-            </ul> 
             """,
             unsafe_allow_html=True
         )
+
+        with st.expander("🤔 How is the parameter availability index calculated?"):
+            st.markdown(
+            """
+            The data availability index is a mean of 4 other indices: the Horizontal resolution index, the Spatial coverage index, the Time coverage index, and the Recent index:
+            <ul>
+                <li><b>Horizontal resolution index:</b> The best horizontal resolution (1x1m) is equivalent to a 100% index. A 0% index means the horizontal resolution isn't specified. It is usually the case of series datasets. </li>
+                <li><b>Spatial coverage index:</b> Datasets spatial coverage has been described by dividing the Swedish marine areas in 11 basins : Skagerrak, Kattegat, The Sound, Arkona Basin, Bornholm Basin, Western Gotland Basin, Northern Gotland Basin, Åland Sea, Sea of Bothnia, Bay of Bothnia and The Quark. To calculate the Spatial coverage index, all basin datasets related to the parameter are aggreed. The index is calculated by dividing the number of basins covered by the parameter by the total number of basins (11). A 100% index means that the parameter can be available in all basins. </li>
+                <li><b>Time coverage index:</b></li>
+                <li><b>Recent index:</b></li>
+            </ul>
+            """,
+            unsafe_allow_html=True
+            )
         st.dataframe(df_parameters.reset_index(drop=True))
 
         # Add interactivity for the user to click on a parameter row
