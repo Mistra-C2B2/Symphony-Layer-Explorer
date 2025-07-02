@@ -21,6 +21,18 @@ df_SYMPHONY_LAYERS = pd.read_excel(SYMPHONY_LAYERS_path)
 df_recommendation_related_parameters = pd.read_excel(recommendation_related_parameters_path)
 df_catalogue = pd.read_excel(filtred_catalogue_path)
 
+
+
+
+# Filter and sort data
+def filtering_SYMPHONY_LAYERS(category):
+    df_filtered = df_SYMPHONY_LAYERS[df_SYMPHONY_LAYERS["Symphony_category"] == category].sort_values(by=["Symphony_theme", "Title"])
+    return df_filtered
+
+########
+# DATA #
+########
+
 valuability_smiley = []
 data_availability_smiley = []
 for _, row in df_SYMPHONY_LAYERS.iterrows():
@@ -39,17 +51,6 @@ for _, row in df_SYMPHONY_LAYERS.iterrows():
         valuability_smiley += [':grey_exclamation:']
 df_SYMPHONY_LAYERS["Valuability smiley"] = valuability_smiley
 df_SYMPHONY_LAYERS["Data availability smiley"] = data_availability_smiley
-
-
-# Filter and sort data
-category = "Ecosystem"
-def filtering_SYMPHONY_LAYERS(category):
-    df_filtered = df_SYMPHONY_LAYERS[df_SYMPHONY_LAYERS["Symphony_category"] == category].sort_values(by=["Symphony_theme", "Title"])
-    return df_filtered
-
-########
-# DATA #
-########
 
 # Color map for inner pie chart categories
 color_map = {
@@ -209,7 +210,7 @@ if selected_outer:
         st.markdown(
             f"""
             ### {row['Title']}
-            {row['Valuability smiley']} {row['Valuability']} {row['Data availability smiley']} **Data availability index (%) :** {row['Data availability index']}
+            {row['Valuability smiley']} {row['Valuability']} {row['Data availability smiley']} Data availability index (%) : {row['Data availability index']}
             #### Summary:
             <p style='text-align: justify;'>{row['Summary']}</p>
 
@@ -217,7 +218,18 @@ if selected_outer:
             <p style='text-align: justify;'>{row['Recommendation']}</p>
 
             #### Related parameter list :
+            <p style='text-align: justify;'>The following table lists the parameters possibly related to the selected Symphony layer. Please check the REFERENCE_PARAMETERS table if you are looking to a specific parameter.
+            Each parameter is associeted with a data availability index.
+            </p>
 
+            <p style='text-align: justify;'> 🤔 <b>How is the data availability index calculated?</b> The data availability index is a mean of 4 other index : the Horizontal resolution index, the Spatial coverage index, the Time coverage index and the Recent index:</p> 
+
+             <ul>
+                <li><b>Horizontal resolution index: The best Horizontal resolution is </b></li>
+                <li><b>Spatial coverage index:</b></li>
+                <li><b>Time coverage index:</b></li>
+                <li><b>Recent index:</b></li>
+            </ul> 
             """,
             unsafe_allow_html=True
         )
