@@ -8,13 +8,13 @@ from streamlit_plotly_events import plotly_events
 #############
 
 # File paths
-doc_path = r""
+
 df_SYMPHONY_LAYERS = "df_SYMPHONY_LAYERS.xlsx"
 df_recommendation_related_parameters = "df_recommendation_related_parameters.xlsx"
 df_filtred_catalogue = "df_filtred_catalogue.xlsx"
-SYMPHONY_LAYERS_path = f"{doc_path}/{df_SYMPHONY_LAYERS}"
-recommendation_related_parameters_path = f"{doc_path}/{df_recommendation_related_parameters}"
-filtred_catalogue_path = f"{doc_path}/{df_filtred_catalogue}"
+SYMPHONY_LAYERS_path = f"{df_SYMPHONY_LAYERS}"
+recommendation_related_parameters_path = f"{df_recommendation_related_parameters}"
+filtred_catalogue_path = f"{df_filtred_catalogue}"
 
 # Load data
 df_SYMPHONY_LAYERS = pd.read_excel(SYMPHONY_LAYERS_path)
