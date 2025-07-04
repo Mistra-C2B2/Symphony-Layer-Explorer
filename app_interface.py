@@ -194,12 +194,12 @@ def symphony_layer_text(row, symphony_tool_text) :
         f"""
         ### {row['Title']}
         {row['Valuability smiley']} {row['Valuability']} {row['Data availability smiley']} Data availability index (%) : {row['Data availability index']}
-        #### Summary:
+        ##### Summary:
         <p style='text-align: justify;'>{row['Summary']}</p>
         """,
         unsafe_allow_html=True
     )
-    if symphony_layer_text == True:
+    if symphony_tool_text == True:
         st.markdown(
             f"""
             <p style='text-align: justify; color: grey;'> These data were created as a data input layer for 'Symphony' tool developed by the marine planning unit at the Swedish Agency for Marine and Water Management (SwAM). Symphony is used by SwAM to assess the cumulative environmental impact of human activity in Swedish waters and this informs the formulation of policy at plan area scales. Re-use of these data for other purposes is only advisable with the guidance and advice of the data sources.</p>
@@ -209,7 +209,7 @@ def symphony_layer_text(row, symphony_tool_text) :
 
     st.markdown(
         f"""
-        #### Recommendation for data improvement :
+        ##### Recommendation for data improvement :
         <p style='text-align: justify;'>{row['Recommendation']}</p>
         """,
         unsafe_allow_html=True
@@ -225,8 +225,17 @@ def wheel_plot(selected_outer):
         if point_number is not None and curve_number == 0:
             clicked_label = outer_labels[point_number]
 
-            df_parameters, row = df_parameter_creation(clicked_label)            
-            symphony_layer_text(row, symphony_tool_text=True)
+            df_parameters, row = df_parameter_creation(clicked_label)   
+            grey_text = True         
+            symphony_layer_text(row, grey_text)
+
+            # Add a verticale line 
+            st.markdown(
+                """
+                <hr style="border: 1px solid #D3D3D3; margin-top: 20px; margin-bottom: 20px;">
+                """,
+                unsafe_allow_html=True
+            )
 
 
             # Add interactivity for the user to click on a parameter row
@@ -235,11 +244,18 @@ def wheel_plot(selected_outer):
                 ("Explore the related parameters list", "Explore your own parameters")
             )
 
+            st.markdown(
+                """
+                <hr style="border: 1px solid #D3D3D3; margin-top: 20px; margin-bottom: 20px;">
+                """,
+                unsafe_allow_html=True
+            )
+
             if view_mode == "Explore the related parameters list":
 
                 st.markdown(
                     f"""
-                    #### Related parameter list :
+                    ### Explore the related parameters list
                     <p style='text-align: justify;'>The following table lists the parameters possibly related to {row['Title']}. If you are looking to a specific parameter, you can explore your own parameters.
                     Each parameter is associeted with a parameter availability index.
                     </p>
@@ -270,7 +286,7 @@ def wheel_plot(selected_outer):
                     parameter_details = df_recommendation_related_parameters[df_recommendation_related_parameters['Detailled_parameters_Full_name'] == selected_parameter]
                     
                     # Display the second dataframe below the first
-                    st.markdown(f"#### Datasets available related to {selected_parameter} :")
+                    st.markdown(f"##### Datasets available related to {selected_parameter} :")
                     # Get available columns for selection
                     available_columns = [
                         "ID_Dataset", "Source", "Name", "Start_year", "End_year",
@@ -295,13 +311,19 @@ def wheel_plot(selected_outer):
                     st.markdown(f"📚 All the datasets metadata are available by downloading this excel **[Catalogue]({catalogue_link})**.")
 
             else :
+                st.markdown(
+                    f"""
+                    ### Explore your own parameters
+                    """,
+                    unsafe_allow_html=True
+                )
                 selected_parameters = st.multiselect(
                     "Explore all the parameters (you can select multiple):",
                     df_REFERENCE_PARAMETERS['Detailled_parameters_Full_name']
                 )
 
                 if selected_parameters:
-                    st.markdown("#### Selected parameters:")
+                    st.markdown("##### Selected parameters :")
                     # You can also filter and display details for the selected parameters
                     selected_df = df_REFERENCE_PARAMETERS[
                         df_REFERENCE_PARAMETERS['Detailled_parameters_Full_name'].isin(selected_parameters)
@@ -330,7 +352,7 @@ def wheel_plot(selected_outer):
                         )
 
                     # Display the second dataframe below the first
-                    st.markdown("#### Datasets available related to the selected parameters :")
+                    st.markdown("##### Datasets available related to the selected parameters :")
                     # Get available columns for selection
                     available_columns = [
                         "ID_Dataset", "Source", "Name", "Start_year", "End_year",
@@ -372,8 +394,33 @@ def wheel_plot(selected_outer):
 ########
 
 
-st.title('Symphony Layers Interactive Explorer')
-st.write('Welcome to the Symphony Layer Interactive Explorer! Simply **click on the layers of the Symphony wheel** below to learn more.')
+st.title("Symphony Layers Interactive Explorer 🔍")
+
+st.markdown("""
+Welcome to the **Symphony Layers Interactive Explorer**.
+
+This web application is designed to support the understanding of the **Symphony tool**, developed by the [Swedish Marine and Water Authority](https://github.com/Mistra-C2B2/MSP-Symphony). Symphony is used to assess human pressures and their impacts on marine ecosystems, supporting data-driven marine spatial planning.
+
+For further details, refer to the official project repository:  
+👉 [Symphony GitHub Repository](https://github.com/Mistra-C2B2/MSP-Symphony)
+
+---
+
+### Purpose of this Application
+
+This interactive tool has been developed as part of a **gap analysis** based on the [Symphony Metadata Report (March 2019)](https://github.com/Mistra-C2B2/Symphony-Layers-Interactive-Explorer/blob/main/Symphony%20Metadata%20March%202019.pdf).
+
+The application allows users to explore the two **Symphony Wheels** — *Ecosystem* and *Pressure*. Each layer provides a short summary and a data improvement recommendation, based on the 2019 report.
+
+In addition, a catalogue of relevant datasets has been compiled, along with defined **reference parameters** to describe both datasets and raster layers. These parameters facilitate the association of datasets with the corresponding Symphony layers.
+
+The full list of reference parameters is available here:  
+👉 [REFERENCE_PARAMETERS File](https://github.com/Mistra-C2B2/Symphony-Layers-Interactive-Explorer/blob/main/df_REFERENCE_PARAMETERS.xlsx)
+
+---
+
+**Click on the layers within the Symphony wheel below to access detailed information.**
+""")
 
 selected_category = st.selectbox("Select a category to explore:", df_SYMPHONY_LAYERS['Symphony_category'].unique())
 
@@ -394,7 +441,8 @@ elif selected_category == 'Pressure' :
 elif selected_category == 'Source Data' :
     df_filtered = filtering_SYMPHONY_LAYERS(selected_category)    
     selected_parameter = st.selectbox("Select a raster of the Source Data category:", df_SYMPHONY_LAYERS[df_SYMPHONY_LAYERS["Symphony_category"] == selected_category]['Title'])
-    df_parameters, row = df_parameter_creation(selected_parameter)            
-    symphony_layer_text(row)
+    df_parameters, row = df_parameter_creation(selected_parameter)    
+    grey_text = False        
+    symphony_layer_text(row, grey_text)
 
 
