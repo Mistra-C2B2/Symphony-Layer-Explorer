@@ -186,19 +186,44 @@ def df_parameter_creation(clicked_label):
         ]]
     return(df_parameters, row)
 
+# Text functions #
 
 def symphony_layer_text(row, symphony_tool_text) :
+    """ Display the symphony text (summary + recommendation for data improvement) of the raster
+        row : the row of the df_SYMPHONY_LAYERS dataframe corresponding to the raster
+        symphony_tool_text : True/False if you need to display the grey text (only on the Ecosystems and Pressures rasters)"""
     
+    st.markdown("""
+        ### 2. Identify Opportunities for Data Improvement 
+            """)
 
     st.markdown(
         f"""
-        ### {row['Title']}
+        ##### {row['Title']}
         {row['Valuability smiley']} {row['Valuability']} {row['Data availability smiley']} Data availability index (%) : {row['Data availability index']}
-        ##### Summary:
-        <p style='text-align: justify;'>{row['Summary']}</p>
         """,
         unsafe_allow_html=True
     )
+
+    with st.expander("🤔 How is the **data availability index** calculated?"):
+                        st.markdown(
+                        """
+                        The data availability index is a mean of the data parameter indexes of the related parameters list. This list is displayed in the third part **"Support Dataset Discovery"**.
+                        """,
+                        unsafe_allow_html=True
+                        )
+    
+    st.markdown(f"""
+        **Summary**:
+
+        <p style='text-align: justify;'>
+                {row['Summary']}
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
+
+
     if symphony_tool_text == True:
         st.markdown(
             f"""
@@ -209,7 +234,7 @@ def symphony_layer_text(row, symphony_tool_text) :
 
     st.markdown(
         f"""
-        ##### Recommendation for data improvement :
+        **Recommendation for data improvement** :
         <p style='text-align: justify;'>{row['Recommendation']}</p>
         """,
         unsafe_allow_html=True
@@ -227,35 +252,41 @@ def wheel_plot(selected_outer):
 
             df_parameters, row = df_parameter_creation(clicked_label)   
             grey_text = True         
+
             symphony_layer_text(row, grey_text)
 
-            # Add a verticale line 
-            st.markdown(
-                """
-                <hr style="border: 1px solid #D3D3D3; margin-top: 20px; margin-bottom: 20px;">
-                """,
-                unsafe_allow_html=True
-            )
+            
 
+            st.markdown("""
+            ### 3. Support Dataset Discovery 
+            You can discover datasets in two ways:
+                        
+            - **Explore the related parameters list:** View a curated list of parameters specifically recommended to improve the selected Symphony layer, based on recommendations for data improvement.
+            - **Explore your own parameters:** Explore the complete list of reference parameters to find datasets that may better fit your specific needs or interests.
+            
+            These options help you quickly access recommended data or explore the full range of available parameters for more tailored dataset discovery.
+                       
+            """)
+            # Use two buttons instead of st.radio, with no selection by default
+            col1, col2 = st.columns(2)
+            with col1:
+                explore_related = st.button("Explore the related parameters list")
+            with col2:
+                explore_own = st.button("Explore your own parameters")
 
-            # Add interactivity for the user to click on a parameter row
-            view_mode = st.radio(
-                "**What do you want to do?**",
-                ("Explore the related parameters list", "Explore your own parameters")
-            )
+            # Only show content after a button is clicked
+            if explore_related:
+                st.session_state['view_mode'] = "related"
+            elif explore_own:
+                st.session_state['view_mode'] = "own"
 
-            st.markdown(
-                """
-                <hr style="border: 1px solid #D3D3D3; margin-top: 20px; margin-bottom: 20px;">
-                """,
-                unsafe_allow_html=True
-            )
-
-            if view_mode == "Explore the related parameters list":
+            if 'view_mode' not in st.session_state:
+                st.info("Please select an option above to continue.")
+            elif st.session_state['view_mode'] == "related":
 
                 st.markdown(
                     f"""
-                    ### Explore the related parameters list
+                    **Explore the related parameters list**
                     <p style='text-align: justify;'>The following table lists the parameters possibly related to {row['Title']}. If you are looking to a specific parameter, you can explore your own parameters.
                     Each parameter is associeted with a parameter availability index.
                     </p>
@@ -263,10 +294,10 @@ def wheel_plot(selected_outer):
                     unsafe_allow_html=True
                 )
 
-                with st.expander("🤔 How is the parameter availability index calculated?"):
+                with st.expander("🤔 How is the **parameter availability index** calculated?"):
                     st.markdown(
                     """
-                    The data availability index is a mean of 4 other indexes: the Horizontal resolution index, the Spatial coverage index, the Time coverage index, and the Recent index:
+                    The parameter availability index is a mean of 4 other indexes: the Horizontal resolution index, the Spatial coverage index, the Time coverage index, and the Recent index:
                     <ul>
                         <li><b>Horizontal resolution index:</b> This index represents the best horizontal resolution available for a specific parameter, based on comparisons of all related datasets. The best resolution across the datasets is used to determine the index value. A 100% index corresponds to the highest resolution (1x1 meter), while a 0% index indicates that the resolution is not specified for the datasets related to this parameter (common in series datasets). This index reflects the highest resolution across multiple datasets, even if not all datasets provide the same resolution. </li>
                         <li><b>Spatial coverage index:</b> The spatial coverage index measures how much of the Swedish marine areas a parameter covers, based on available datasets. The Swedish marine areas are divided into 11 basins (Skagerrak, Kattegat, The Sound, Arkona Basin, Bornholm Basin, Western Gotland Basin, Northern Gotland Basin, Åland Sea, Sea of Bothnia, Bay of Bothnia, and The Quark). After evaluating all datasets for the parameter, the index is calculated by dividing the number of basins covered by the parameter by the total number of basins (11). The best coverage across all datasets is used, so a 100% index means the parameter is covered in all basins, possibly across several datasets. </li>
@@ -310,10 +341,10 @@ def wheel_plot(selected_outer):
                     st.markdown(f"🔗 Use the **Source link** column to go to the dataset webpage !")
                     st.markdown(f"📚 All the datasets metadata are available by downloading this excel **[Catalogue]({catalogue_link})**.")
 
-            else :
+            elif st.session_state['view_mode'] == "own":
                 st.markdown(
                     f"""
-                    ### Explore your own parameters
+                    **Explore your own parameters**
                     """,
                     unsafe_allow_html=True
                 )
@@ -323,7 +354,7 @@ def wheel_plot(selected_outer):
                 )
 
                 if selected_parameters:
-                    st.markdown("##### Selected parameters :")
+                    st.markdown("Selected parameters :")
                     # You can also filter and display details for the selected parameters
                     selected_df = df_REFERENCE_PARAMETERS[
                         df_REFERENCE_PARAMETERS['Detailled_parameters_Full_name'].isin(selected_parameters)
@@ -352,7 +383,7 @@ def wheel_plot(selected_outer):
                         )
 
                     # Display the second dataframe below the first
-                    st.markdown("##### Datasets available related to the selected parameters :")
+                    st.markdown("** Datasets available related to the selected parameters :**")
                     # Get available columns for selection
                     available_columns = [
                         "ID_Dataset", "Source", "Name", "Start_year", "End_year",
@@ -383,7 +414,6 @@ def wheel_plot(selected_outer):
                     st.markdown(f"🔗 Use the **Source link** column to go to the dataset webpage !")
                     st.markdown(f"📚 All the datasets metadata are available by downloading this excel **[Catalogue]({catalogue_link})**.")
             
-            
 
 
         else:
@@ -405,22 +435,56 @@ For further details, refer to the official project repository:
 👉 [Symphony GitHub Repository](https://github.com/Mistra-C2B2/MSP-Symphony)
 
 ---
+""")
 
+
+st.markdown("""
 ### Purpose of this Application
 
-This interactive tool has been developed as part of a **gap analysis** based on the [Symphony Metadata Report (March 2019)](https://github.com/Mistra-C2B2/Symphony-Layers-Interactive-Explorer/blob/main/Symphony%20Metadata%20March%202019.pdf).
+The **Symphony Layers Interactive Explorer** is designed to provide a transparent overview of the data layers used within the **Symphony tool**, supporting marine spatial planning and environmental assessments.
 
-The application allows users to explore the two **Symphony Wheels** — *Ecosystem* and *Pressure*. Each layer provides a short summary and a data improvement recommendation, based on the 2019 report.
+This application serves the following purposes:
+            
 
-In addition, a catalogue of relevant datasets has been compiled, along with defined **reference parameters** to describe both datasets and raster layers. These parameters facilitate the association of datasets with the corresponding Symphony layers.
 
-The full list of reference parameters is available here:  
-👉 [REFERENCE_PARAMETERS File](https://github.com/Mistra-C2B2/Symphony-Layers-Interactive-Explorer/blob/main/df_REFERENCE_PARAMETERS.xlsx)
+
+1. **Explore Symphony Layers**  
+   The tool displays all layers used in Symphony, organized into three categories:  
+   - *Ecosystem Components*  
+   - *Pressures*  
+   - *Source Data*
+
+   The **Ecosystem Components** and **Pressures** categories are displayed as **Symphony Wheels**, allowing users to select a raster by clicking on the wheel. The **Source Data** category includes fundamental geospatial and environmental datasets, where users can select a raster directly.
+
+2. **Identify Opportunities for Data Improvement**  
+   Each raster layer used by Symphony is accompanied by a summary and recommendations for data improvement, based on the [Symphony Metadata Report (March 2019)](https://github.com/Mistra-C2B2/Symphony-Layers-Interactive-Explorer/blob/main/Symphony%20Metadata%20March%202019.pdf).  
+   These recommendations highlight potential weaknesses in existing datasets and suggest concrete ways to enhance data quality or coverage.
+
+3. **Support Dataset Discovery**  
+   The tool provides access to a catalogue of relevant datasets that can be used to improve Symphony layers.  
+   Each dataset and raster layer is described using a set of **reference parameters**, which serve to connect datasets to specific layers.
+
+   To assist users in evaluating data quality and availability, two indicators are provided:
+
+   - **Parameter Availability Index**: Each parameter is assigned an availability index reflecting the current quality and accessibility of datasets related to that parameter.  
+   
+   - **Data Availability Index**: For each raster layer, a related parameter list has been defined. The Data Availability Index is calculated as the mean of the Parameter Availability Index values for all parameters in this list. It provides a general indication of how well data is available to support the specific raster layer.
+
+⚠️ The related parameter lists are based on recommendations and the current understanding of each raster. These lists are not exhaustive or definitive. Users are encouraged to explore the full list of reference parameters to identify additional or alternative datasets that may better suit their specific needs.
+
+The complete reference parameter catalogue, along with the availability indexes, is available here:  
+👉 [REFERENCE_PARAMETERS File](https://github.com/Mistra-C2B2/Symphony-Layers-Interactive-Explorer/blob/main/df_REFERENCE_PARAMETERS.md)
 
 ---
 
-**Click on the layers within the Symphony wheel below to access detailed information.**
+This tool is intended to assist stakeholders, researchers, and decision-makers by clarifying existing data limitations within Symphony, guiding improvement efforts, and facilitating access to alternative or complementary data sources.
+
 """)
+
+st.markdown("""
+### 1. Explore Symphony Layers 
+            """)
+
 
 selected_category = st.selectbox("Select a category to explore:", df_SYMPHONY_LAYERS['Symphony_category'].unique())
 
@@ -428,15 +492,17 @@ if selected_category == 'Ecosystem' :
     df_filtered = filtering_SYMPHONY_LAYERS(selected_category)
     inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors = define_pie_chart_values(df_filtered)
     ecosystem = create_pie_chart(inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors, ecosystem_rotation)
+    st.info("Click on a layer in the wheel below to explore its details.")
     selected_outer = plotly_events(ecosystem, click_event=True, select_event=False, override_height=900, override_width=900)
     wheel_plot(selected_outer)
 
 elif selected_category == 'Pressure' :
-     df_filtered = filtering_SYMPHONY_LAYERS(selected_category)
-     inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors = define_pie_chart_values(df_filtered)
-     pressure = create_pie_chart(inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors, pressure_rotation)
-     selected_outer = plotly_events(pressure, click_event=True, select_event=False, override_height=900, override_width=900)
-     wheel_plot(selected_outer)
+    df_filtered = filtering_SYMPHONY_LAYERS(selected_category)
+    inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors = define_pie_chart_values(df_filtered)
+    pressure = create_pie_chart(inner_labels, inner_values, inner_colors, outer_labels, outer_values, outer_colors, pressure_rotation)
+    st.info("Click on a layer in the wheel below to explore its details.")
+    selected_outer = plotly_events(pressure, click_event=True, select_event=False, override_height=900, override_width=900)
+    wheel_plot(selected_outer)
 
 elif selected_category == 'Source Data' :
     df_filtered = filtering_SYMPHONY_LAYERS(selected_category)    
