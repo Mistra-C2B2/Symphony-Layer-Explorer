@@ -182,7 +182,7 @@ def df_parameter_creation(clicked_label):
             'Horizontal resolution (%)',
             'Spatial coverage (%)',
             'Time coverage (%)',
-            'Recent (%)'
+            'Up-To-Date (%)'
         ]]
     return(df_parameters, row)
 
@@ -240,8 +240,143 @@ def symphony_layer_text(row, symphony_tool_text) :
         unsafe_allow_html=True
     )
 
+def display_related_parameters(df_parameters):
 
-# Plot the text under the pie
+    st.markdown(
+        f"""
+        **Explore the related parameters list**
+        <p style='text-align: justify;'>The following table lists the parameters possibly related to {row['Title']}. If you are looking to a specific parameter, you can explore your own parameters.
+        Each parameter is associeted with a parameter availability index.
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
+
+    with st.expander("🤔 How is the **parameter availability index** calculated?"):
+        st.markdown(
+        """
+        The parameter availability index is a mean of 4 other indexes: the Horizontal resolution index, the Spatial coverage index, the Time coverage index, and the Up-To-Date index:
+        <ul>
+            <li><b>Horizontal resolution index:</b> This index represents the best horizontal resolution available for a specific parameter, based on comparisons of all related datasets. The best resolution across the datasets is used to determine the index value. A 100% index corresponds to the highest resolution (1x1 meter), while a 0% index indicates that the resolution is not specified for the datasets related to this parameter (common in series datasets). This index reflects the highest resolution across multiple datasets, even if not all datasets provide the same resolution. </li>
+            <li><b>Spatial coverage index:</b> The spatial coverage index measures how much of the Swedish marine areas a parameter covers, based on available datasets. The Swedish marine areas are divided into 11 basins (Skagerrak, Kattegat, The Sound, Arkona Basin, Bornholm Basin, Western Gotland Basin, Northern Gotland Basin, Åland Sea, Sea of Bothnia, Bay of Bothnia, and The Quark). After evaluating all datasets for the parameter, the index is calculated by dividing the number of basins covered by the parameter by the total number of basins (11). The best coverage across all datasets is used, so a 100% index means the parameter is covered in all basins, possibly across several datasets. </li>
+            <li><b>Time coverage index:</b> This index measures how much of a parameter's time span is covered across all related datasets. If the datasets span at least 10 years, the index is 100%. For datasets with less than 10 years of coverage, the index is calculated by dividing the number of years covered by 10. The best time span across all datasets for that parameter is used to determine the index.</li>
+            <li><b>Up-To-Date index:</b> The Up-To-Date index measures how current the available datasets are for a parameter. If there is an ongoing dataset, the Up-To-Date index is 100%. If the most recent dataset is from 2015, the index is 0%. For datasets where the most recent data is between 2015 and 2025, the index is calculated by subtracting 2015 from the most recent year and dividing by 10 (e.g., for data from 2020, the index would be (2020 - 2015) / 10 = 50%). The best recent year across all related datasets is used for this calculation.</li>
+        </ul>
+        """,
+        unsafe_allow_html=True
+        )
+    st.dataframe(df_parameters.reset_index(drop=True))
+
+
+    selected_parameter = st.selectbox("Select a parameter of the related list to explore:", df_parameters['Detailled_parameters_Full_name'])
+
+    if selected_parameter:
+    # Filter the selected parameter's related data
+        parameter_details = df_recommendation_related_parameters[df_recommendation_related_parameters['Detailled_parameters_Full_name'] == selected_parameter]
+        
+        # Display the second dataframe below the first
+        st.markdown(f"**Datasets available related to {selected_parameter} :**")
+        # Get available columns for selection
+        available_columns = [
+            "ID_Dataset", "Source", "Name", "Start_year", "End_year",
+            "Spatial_representation", "Horizontal_resolution", "Vertical_resolution",
+            "Temporal_resolution", "Source link"
+        ]
+        # Multiselect widget for columns
+        selected_columns = st.multiselect(
+            "Select columns to display:",
+            options=available_columns,
+            default=available_columns  # Show all by default
+        )
+
+        # Filter the dataframe based on selected columns
+        df_filtred_catalogue = df_catalogue.loc[
+            df_catalogue["ID_Parameters"] == dict_id_to_fullname[selected_parameter],
+            selected_columns
+        ]
+        st.dataframe(df_filtred_catalogue)
+
+
+        st.markdown(f"🔗 Copy the link in the **Source link** column to go to the dataset webpage !")
+        st.markdown(f"📚 All the datasets metadata are available by downloading this excel **[Catalogue]({catalogue_link})**.")
+
+
+
+def display_own_parameters():
+
+    st.markdown(
+        f"""
+        **Explore your own parameters**
+        """,
+        unsafe_allow_html=True
+    )
+    selected_parameters = st.multiselect(
+        "Explore all the parameters (you can select multiple):",
+        df_REFERENCE_PARAMETERS['Detailled_parameters_Full_name']
+    )
+
+    if selected_parameters:
+        st.markdown("Selected parameters :")
+        # You can also filter and display details for the selected parameters
+        selected_df = df_REFERENCE_PARAMETERS[
+            df_REFERENCE_PARAMETERS['Detailled_parameters_Full_name'].isin(selected_parameters)
+        ][[
+            'Detailled_parameters_Full_name',
+            'Parameter availability index (%)',
+            'Horizontal resolution (%)',
+            'Spatial coverage (%)',
+            'Time coverage (%)',
+            'Up-To-Date (%)'
+        ]]
+        st.dataframe(selected_df)
+
+        with st.expander("🤔 How is the parameter availability index calculated?"):
+            st.markdown(
+            """
+            The data availability index is a mean of 4 other indexes: the Horizontal resolution index, the Spatial coverage index, the Time coverage index, and the Up-To-Date index:
+            <ul>
+                <li><b>Horizontal resolution index:</b> This index represents the best horizontal resolution available for a specific parameter, based on comparisons of all related datasets. The best resolution across the datasets is used to determine the index value. A 100% index corresponds to the highest resolution (1x1 meter), while a 0% index indicates that the resolution is not specified for the datasets related to this parameter (common in series datasets). This index reflects the highest resolution across multiple datasets, even if not all datasets provide the same resolution. </li>
+                <li><b>Spatial coverage index:</b> The spatial coverage index measures how much of the Swedish marine areas a parameter covers, based on available datasets. The Swedish marine areas are divided into 11 basins (Skagerrak, Kattegat, The Sound, Arkona Basin, Bornholm Basin, Western Gotland Basin, Northern Gotland Basin, Åland Sea, Sea of Bothnia, Bay of Bothnia, and The Quark). After evaluating all datasets for the parameter, the index is calculated by dividing the number of basins covered by the parameter by the total number of basins (11). The best coverage across all datasets is used, so a 100% index means the parameter is covered in all basins, possibly across several datasets. </li>
+                <li><b>Time coverage index:</b> This index measures how much of a parameter's time span is covered across all related datasets. If the datasets span at least 10 years, the index is 100%. For datasets with less than 10 years of coverage, the index is calculated by dividing the number of years covered by 10. The best time span across all datasets for that parameter is used to determine the index.</li>
+                <li><b>Up-To-Date index:</b> The Up-To-Date index measures how current the available datasets are for a parameter. If there is an ongoing dataset, the Up-To-Date index is 100%. If the most recent dataset is from 2015, the index is 0%. For datasets where the most recent data is between 2015 and 2025, the index is calculated by subtracting 2015 from the most recent year and dividing by 10 (e.g., for data from 2020, the index would be (2020 - 2015) / 10 = 50%). The best recent year across all related datasets is used for this calculation.</li>
+            </ul>
+            """,
+            unsafe_allow_html=True
+            )
+
+        # Display the second dataframe below the first
+        st.markdown("**Datasets available related to the selected parameters :**")
+        # Get available columns for selection
+        available_columns = [
+            "ID_Dataset", "Source", "Name", "Start_year", "End_year",
+            "Spatial_representation", "Horizontal_resolution", "Vertical_resolution",
+            "Temporal_resolution", "Source link"
+        ]
+        # Multiselect widget for columns
+        selected_columns = st.multiselect(
+            "Select columns to display:",
+            options=available_columns,
+            default=available_columns  # Show all by default
+        )
+
+        # Get the list of parameter IDs for the selected parameters
+        selected_ids = [
+            dict_id_to_fullname[param]
+            for param in selected_parameters
+            if param in dict_id_to_fullname
+        ]
+
+        # Filter the dataframe based on selected parameter IDs and selected columns
+        df_filtred_catalogue = df_catalogue.loc[
+            df_catalogue["ID_Parameters"].isin(selected_ids),
+            selected_columns
+        ]
+        st.dataframe(df_filtred_catalogue)
+
+        st.markdown(f"🔗 Copy the link in the **Source link** column to go to the dataset webpage !")
+        st.markdown(f"📚 All the datasets metadata are available by downloading this excel **[Catalogue]({catalogue_link})**.")
+
+    # Plot the text under the pie
 
 def wheel_plot(selected_outer):
     if selected_outer:
@@ -255,8 +390,6 @@ def wheel_plot(selected_outer):
 
             symphony_layer_text(row, grey_text)
 
-            
-
             st.markdown("""
             ### 3. Support Dataset Discovery 
             You can discover datasets in two ways:
@@ -267,7 +400,8 @@ def wheel_plot(selected_outer):
             These options help you quickly access recommended data or explore the full range of available parameters for more tailored dataset discovery.
                        
             """)
-            # Use two buttons instead of st.radio, with no selection by default
+
+
             col1, col2 = st.columns(2)
             with col1:
                 explore_related = st.button("Explore the related parameters list")
@@ -283,137 +417,10 @@ def wheel_plot(selected_outer):
             if 'view_mode' not in st.session_state:
                 st.info("Please select an option above to continue.")
             elif st.session_state['view_mode'] == "related":
-
-                st.markdown(
-                    f"""
-                    **Explore the related parameters list**
-                    <p style='text-align: justify;'>The following table lists the parameters possibly related to {row['Title']}. If you are looking to a specific parameter, you can explore your own parameters.
-                    Each parameter is associeted with a parameter availability index.
-                    </p>
-                    """,
-                    unsafe_allow_html=True
-                )
-
-                with st.expander("🤔 How is the **parameter availability index** calculated?"):
-                    st.markdown(
-                    """
-                    The parameter availability index is a mean of 4 other indexes: the Horizontal resolution index, the Spatial coverage index, the Time coverage index, and the Recent index:
-                    <ul>
-                        <li><b>Horizontal resolution index:</b> This index represents the best horizontal resolution available for a specific parameter, based on comparisons of all related datasets. The best resolution across the datasets is used to determine the index value. A 100% index corresponds to the highest resolution (1x1 meter), while a 0% index indicates that the resolution is not specified for the datasets related to this parameter (common in series datasets). This index reflects the highest resolution across multiple datasets, even if not all datasets provide the same resolution. </li>
-                        <li><b>Spatial coverage index:</b> The spatial coverage index measures how much of the Swedish marine areas a parameter covers, based on available datasets. The Swedish marine areas are divided into 11 basins (Skagerrak, Kattegat, The Sound, Arkona Basin, Bornholm Basin, Western Gotland Basin, Northern Gotland Basin, Åland Sea, Sea of Bothnia, Bay of Bothnia, and The Quark). After evaluating all datasets for the parameter, the index is calculated by dividing the number of basins covered by the parameter by the total number of basins (11). The best coverage across all datasets is used, so a 100% index means the parameter is covered in all basins, possibly across several datasets. </li>
-                        <li><b>Time coverage index:</b> This index measures how much of a parameter's time span is covered across all related datasets. If the datasets span at least 10 years, the index is 100%. For datasets with less than 10 years of coverage, the index is calculated by dividing the number of years covered by 10. The best time span across all datasets for that parameter is used to determine the index.</li>
-                        <li><b>Recent index:</b> The recent index measures how current the available datasets are for a parameter. If there is an ongoing dataset, the recent index is 100%. If the most recent dataset is from 2015, the index is 0%. For datasets where the most recent data is between 2015 and 2025, the index is calculated by subtracting 2015 from the most recent year and dividing by 10 (e.g., for data from 2020, the index would be (2020 - 2015) / 10 = 50%). The best recent year across all related datasets is used for this calculation.</li>
-                    </ul>
-                    """,
-                    unsafe_allow_html=True
-                    )
-                st.dataframe(df_parameters.reset_index(drop=True))
-
-
-                selected_parameter = st.selectbox("Select a parameter of the related list to explore:", df_parameters['Detailled_parameters_Full_name'])
-
-                if selected_parameter:
-                # Filter the selected parameter's related data
-                    parameter_details = df_recommendation_related_parameters[df_recommendation_related_parameters['Detailled_parameters_Full_name'] == selected_parameter]
-                    
-                    # Display the second dataframe below the first
-                    st.markdown(f"##### Datasets available related to {selected_parameter} :")
-                    # Get available columns for selection
-                    available_columns = [
-                        "ID_Dataset", "Source", "Name", "Start_year", "End_year",
-                        "Spatial_representation", "Horizontal_resolution", "Vertical_resolution",
-                        "Temporal_resolution", "Source link"
-                    ]
-                    # Multiselect widget for columns
-                    selected_columns = st.multiselect(
-                        "Select columns to display:",
-                        options=available_columns,
-                        default=available_columns  # Show all by default
-                    )
-
-                    # Filter the dataframe based on selected columns
-                    df_filtred_catalogue = df_catalogue.loc[
-                        df_catalogue["ID_Parameters"] == dict_id_to_fullname[selected_parameter],
-                        selected_columns
-                    ]
-                    st.dataframe(df_filtred_catalogue)
-
-                    st.markdown(f"🔗 Use the **Source link** column to go to the dataset webpage !")
-                    st.markdown(f"📚 All the datasets metadata are available by downloading this excel **[Catalogue]({catalogue_link})**.")
+                display_related_parameters(df_parameters)
 
             elif st.session_state['view_mode'] == "own":
-                st.markdown(
-                    f"""
-                    **Explore your own parameters**
-                    """,
-                    unsafe_allow_html=True
-                )
-                selected_parameters = st.multiselect(
-                    "Explore all the parameters (you can select multiple):",
-                    df_REFERENCE_PARAMETERS['Detailled_parameters_Full_name']
-                )
-
-                if selected_parameters:
-                    st.markdown("Selected parameters :")
-                    # You can also filter and display details for the selected parameters
-                    selected_df = df_REFERENCE_PARAMETERS[
-                        df_REFERENCE_PARAMETERS['Detailled_parameters_Full_name'].isin(selected_parameters)
-                    ][[
-                        'Detailled_parameters_Full_name',
-                        'Parameter availability index (%)',
-                        'Horizontal resolution (%)',
-                        'Spatial coverage (%)',
-                        'Time coverage (%)',
-                        'Recent (%)'
-                    ]]
-                    st.dataframe(selected_df)
-
-                    with st.expander("🤔 How is the parameter availability index calculated?"):
-                        st.markdown(
-                        """
-                        The data availability index is a mean of 4 other indexes: the Horizontal resolution index, the Spatial coverage index, the Time coverage index, and the Recent index:
-                        <ul>
-                            <li><b>Horizontal resolution index:</b> This index represents the best horizontal resolution available for a specific parameter, based on comparisons of all related datasets. The best resolution across the datasets is used to determine the index value. A 100% index corresponds to the highest resolution (1x1 meter), while a 0% index indicates that the resolution is not specified for the datasets related to this parameter (common in series datasets). This index reflects the highest resolution across multiple datasets, even if not all datasets provide the same resolution. </li>
-                            <li><b>Spatial coverage index:</b> The spatial coverage index measures how much of the Swedish marine areas a parameter covers, based on available datasets. The Swedish marine areas are divided into 11 basins (Skagerrak, Kattegat, The Sound, Arkona Basin, Bornholm Basin, Western Gotland Basin, Northern Gotland Basin, Åland Sea, Sea of Bothnia, Bay of Bothnia, and The Quark). After evaluating all datasets for the parameter, the index is calculated by dividing the number of basins covered by the parameter by the total number of basins (11). The best coverage across all datasets is used, so a 100% index means the parameter is covered in all basins, possibly across several datasets. </li>
-                            <li><b>Time coverage index:</b> This index measures how much of a parameter's time span is covered across all related datasets. If the datasets span at least 10 years, the index is 100%. For datasets with less than 10 years of coverage, the index is calculated by dividing the number of years covered by 10. The best time span across all datasets for that parameter is used to determine the index.</li>
-                            <li><b>Recent index:</b> The recent index measures how current the available datasets are for a parameter. If there is an ongoing dataset, the recent index is 100%. If the most recent dataset is from 2015, the index is 0%. For datasets where the most recent data is between 2015 and 2025, the index is calculated by subtracting 2015 from the most recent year and dividing by 10 (e.g., for data from 2020, the index would be (2020 - 2015) / 10 = 50%). The best recent year across all related datasets is used for this calculation.</li>
-                        </ul>
-                        """,
-                        unsafe_allow_html=True
-                        )
-
-                    # Display the second dataframe below the first
-                    st.markdown("** Datasets available related to the selected parameters :**")
-                    # Get available columns for selection
-                    available_columns = [
-                        "ID_Dataset", "Source", "Name", "Start_year", "End_year",
-                        "Spatial_representation", "Horizontal_resolution", "Vertical_resolution",
-                        "Temporal_resolution", "Source link"
-                    ]
-                    # Multiselect widget for columns
-                    selected_columns = st.multiselect(
-                        "Select columns to display:",
-                        options=available_columns,
-                        default=available_columns  # Show all by default
-                    )
-
-                    # Get the list of parameter IDs for the selected parameters
-                    selected_ids = [
-                        dict_id_to_fullname[param]
-                        for param in selected_parameters
-                        if param in dict_id_to_fullname
-                    ]
-
-                    # Filter the dataframe based on selected parameter IDs and selected columns
-                    df_filtred_catalogue = df_catalogue.loc[
-                        df_catalogue["ID_Parameters"].isin(selected_ids),
-                        selected_columns
-                    ]
-                    st.dataframe(df_filtred_catalogue)
-
-                    st.markdown(f"🔗 Use the **Source link** column to go to the dataset webpage !")
-                    st.markdown(f"📚 All the datasets metadata are available by downloading this excel **[Catalogue]({catalogue_link})**.")
-            
+                display_own_parameters()
 
 
         else:
