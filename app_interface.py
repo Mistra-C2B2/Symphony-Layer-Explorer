@@ -464,7 +464,7 @@ This application serves the following purposes:
    - *Pressures*  
    - *Source Data*
 
-   The **Ecosystem Components** and **Pressures** categories are displayed as **Symphony Wheels**, allowing users to select a raster by clicking on the wheel. The **Source Data** category includes fundamental geospatial and environmental datasets, where users can select a raster directly.
+   The **Ecosystem Components** and **Pressures** categories are displayed as **Symphony Wheels**, allowing users to select a raster by clicking on the wheel. The **Source Data** category includes fundamental geospatial and environmental layers, where users can select a raster directly.
 
 2. **Identify Opportunities for Data Improvement**  
    Each raster layer used by Symphony is accompanied by a summary and recommendations for data improvement, based on the [Symphony Metadata Report (March 2019)](https://github.com/Mistra-C2B2/Symphony-Layers-Interactive-Explorer/blob/main/Symphony%20Metadata%20March%202019.pdf).  
