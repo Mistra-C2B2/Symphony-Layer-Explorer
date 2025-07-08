@@ -240,7 +240,7 @@ def symphony_layer_text(row, symphony_tool_text) :
         unsafe_allow_html=True
     )
 
-def display_related_parameters(df_parameters):
+def display_related_parameters(df_parameters, row):
 
     st.markdown(
         f"""
@@ -378,6 +378,39 @@ def display_own_parameters():
 
     # Plot the text under the pie
 
+def display_support_dataset_discovery(df_parameters, row):
+    st.markdown("""
+    ### 3. Support Dataset Discovery 
+    You can discover datasets in two ways:
+                
+    - **Explore the related parameters list:** View a curated list of parameters specifically recommended to improve the selected Symphony layer, based on recommendations for data improvement.
+    - **Explore your own parameters:** Explore the complete list of reference parameters to find datasets that may better fit your specific needs or interests.
+
+    These options help you quickly access recommended data or explore the full range of available parameters for more tailored dataset discovery.
+                
+    """)
+
+
+    col1, col2 = st.columns(2)
+    with col1:
+        explore_related = st.button("Explore the related parameters list")
+    with col2:
+        explore_own = st.button("Explore your own parameters")
+
+    # Only show content after a button is clicked
+    if explore_related:
+        st.session_state['view_mode'] = "related"
+    elif explore_own:
+        st.session_state['view_mode'] = "own"
+
+    if 'view_mode' not in st.session_state:
+        st.info("Please select an option above to continue.")
+    elif st.session_state['view_mode'] == "related":
+        display_related_parameters(df_parameters, row)
+
+    elif st.session_state['view_mode'] == "own":
+        display_own_parameters()
+
 def wheel_plot(selected_outer):
     if selected_outer:
         point_number = selected_outer[0].get("pointNumber")
@@ -390,38 +423,8 @@ def wheel_plot(selected_outer):
 
             symphony_layer_text(row, grey_text)
 
-            st.markdown("""
-            ### 3. Support Dataset Discovery 
-            You can discover datasets in two ways:
-                        
-            - **Explore the related parameters list:** View a curated list of parameters specifically recommended to improve the selected Symphony layer, based on recommendations for data improvement.
-            - **Explore your own parameters:** Explore the complete list of reference parameters to find datasets that may better fit your specific needs or interests.
             
-            These options help you quickly access recommended data or explore the full range of available parameters for more tailored dataset discovery.
-                       
-            """)
-
-
-            col1, col2 = st.columns(2)
-            with col1:
-                explore_related = st.button("Explore the related parameters list")
-            with col2:
-                explore_own = st.button("Explore your own parameters")
-
-            # Only show content after a button is clicked
-            if explore_related:
-                st.session_state['view_mode'] = "related"
-            elif explore_own:
-                st.session_state['view_mode'] = "own"
-
-            if 'view_mode' not in st.session_state:
-                st.info("Please select an option above to continue.")
-            elif st.session_state['view_mode'] == "related":
-                display_related_parameters(df_parameters)
-
-            elif st.session_state['view_mode'] == "own":
-                display_own_parameters()
-
+            display_support_dataset_discovery(df_parameters, row)
 
         else:
             st.warning(f" Click on the Symphony layers to explore and discover their details!")
@@ -517,5 +520,5 @@ elif selected_category == 'Source Data' :
     df_parameters, row = df_parameter_creation(selected_parameter)    
     grey_text = False        
     symphony_layer_text(row, grey_text)
-
+    display_support_dataset_discovery(df_parameters, row)
 
