@@ -1,0 +1,412 @@
+[
+  {
+    "title": "coastal birds",
+    "valuability": "highly_valuable",
+    "data_availability_index": 78.67
+  },
+  {
+    "title": "seabird coastal wintering",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 76.75
+  },
+  {
+    "title": "seabird offshore wintering",
+    "valuability": "highly_valuable",
+    "data_availability_index": 77.12
+  },
+  {
+    "title": "anoxia background",
+    "valuability": "highly_valuable",
+    "data_availability_index": 75.06
+  },
+  {
+    "title": "cod",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 81.11
+  },
+  {
+    "title": "herring",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 81.78
+  },
+  {
+    "title": "rivermouth fish",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 81.9
+  },
+  {
+    "title": "sprat",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 80.97
+  },
+  {
+    "title": "vendace",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 80.97
+  },
+  {
+    "title": "eel migration",
+    "valuability": "low_value",
+    "data_availability_index": null
+  },
+  {
+    "title": "fish spawning",
+    "valuability": "highly_valuable",
+    "data_availability_index": 84.65
+  },
+  {
+    "title": "abrasion bottom trawl",
+    "valuability": "highly_valuable",
+    "data_availability_index": 80.83
+  },
+  {
+    "title": "artificial reef",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 83.38
+  },
+  {
+    "title": "rough bottom aphotic",
+    "valuability": "highly_valuable",
+    "data_availability_index": 84.17
+  },
+  {
+    "title": "rough bottom deep",
+    "valuability": "highly_valuable",
+    "data_availability_index": 84.56
+  },
+  {
+    "title": "rough bottom photic",
+    "valuability": "highly_valuable",
+    "data_availability_index": 76.87
+  },
+  {
+    "title": "deep reef",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 84.74
+  },
+  {
+    "title": "haploops reef",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 84.92
+  },
+  {
+    "title": "hard bottom aphotic",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 83.03
+  },
+  {
+    "title": "hard bottom deep",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 83.81
+  },
+  {
+    "title": "mussel reef",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 81.56
+  },
+  {
+    "title": "plankton pelagic",
+    "valuability": "low_value",
+    "data_availability_index": null
+  },
+  {
+    "title": "shoreline",
+    "valuability": "low_value",
+    "data_availability_index": null
+  },
+  {
+    "title": "soft bottom aphotic",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 80.37
+  },
+  {
+    "title": "soft bottom deep",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 82.72
+  },
+  {
+    "title": "soft bottom photic",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 82.72
+  },
+  {
+    "title": "transport bottom aphotic",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 82.72
+  },
+  {
+    "title": "transport bottom deep",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 82.72
+  },
+  {
+    "title": "transport bottom photic",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 82.72
+  },
+  {
+    "title": "grey seal",
+    "valuability": "low_value",
+    "data_availability_index": null
+  },
+  {
+    "title": "harbour seal",
+    "valuability": "low_value",
+    "data_availability_index": null
+  },
+  {
+    "title": "hard bottom photic",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 82.72
+  },
+  {
+    "title": "porpoise baltic sea",
+    "valuability": "low_value",
+    "data_availability_index": null
+  },
+  {
+    "title": "porpoise belt sea",
+    "valuability": "highly_valuable",
+    "data_availability_index": 83.36
+  },
+  {
+    "title": "porpoise north sea",
+    "valuability": "highly_valuable",
+    "data_availability_index": 81.94
+  },
+  {
+    "title": "ringed seal",
+    "valuability": "low_value",
+    "data_availability_index": null
+  },
+  {
+    "title": "angiosperms",
+    "valuability": "highly_valuable",
+    "data_availability_index": 80.97
+  },
+  {
+    "title": "habitat loss fish farm",
+    "valuability": "highly_valuable",
+    "data_availability_index": 78.99
+  },
+  {
+    "title": "habitat loss mussel farm",
+    "valuability": "highly_valuable",
+    "data_availability_index": 73.25
+  },
+  {
+    "title": "nutrients fish farm",
+    "valuability": "highly_valuable",
+    "data_availability_index": 83.0
+  },
+  {
+    "title": "climate change acidification",
+    "valuability": "highly_valuable",
+    "data_availability_index": 84.72
+  },
+  {
+    "title": "climate change temperature",
+    "valuability": "highly_valuable",
+    "data_availability_index": 83.57
+  },
+  {
+    "title": "habitat loss coastal exploitation",
+    "valuability": "highly_valuable",
+    "data_availability_index": 75.49
+  },
+  {
+    "title": "habitat loss dumping",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 81.19
+  },
+  {
+    "title": "habitat loss infrastructure",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 77.88
+  },
+  {
+    "title": "synthetic toxins treatment plant",
+    "valuability": "highly_valuable",
+    "data_availability_index": 74.89
+  },
+  {
+    "title": "explosions peak",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 73.02
+  },
+  {
+    "title": "explosions sel",
+    "valuability": "highly_valuable",
+    "data_availability_index": 72.66
+  },
+  {
+    "title": "heavy metals military area",
+    "valuability": "highly_valuable",
+    "data_availability_index": 69.78
+  },
+  {
+    "title": "disturbance windpower",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 78.61
+  },
+  {
+    "title": "electromagnetic field",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 70.28
+  },
+  {
+    "title": "noise 125hz wind power",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 73.1
+  },
+  {
+    "title": "nitrogen background",
+    "valuability": "highly_valuable",
+    "data_availability_index": 78.72
+  },
+  {
+    "title": "phosphorus background",
+    "valuability": "highly_valuable",
+    "data_availability_index": 73.54
+  },
+  {
+    "title": "catch bottom trawl",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 63.58
+  },
+  {
+    "title": "catch gillnet",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 77.1
+  },
+  {
+    "title": "catch pelagic trawl",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 63.44
+  },
+  {
+    "title": "turbidity bottom trawl",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 81.98
+  },
+  {
+    "title": "oilspill wreck",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 77.05
+  },
+  {
+    "title": "heavy metals background",
+    "valuability": "highly_valuable",
+    "data_availability_index": 67.36
+  },
+  {
+    "title": "heavy metals fiber bank",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 70.05
+  },
+  {
+    "title": "heavy metals mercury dump",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 79.54
+  },
+  {
+    "title": "heavy metals mine dump",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 61.59
+  },
+  {
+    "title": "toxic munition dump",
+    "valuability": "highly_valuable",
+    "data_availability_index": 65.59
+  },
+  {
+    "title": "synthetic toxins background",
+    "valuability": "highly_valuable",
+    "data_availability_index": 76.44
+  },
+  {
+    "title": "synthetic toxins harbor",
+    "valuability": "highly_valuable",
+    "data_availability_index": 86.94
+  },
+  {
+    "title": "synthetic toxins industry",
+    "valuability": "highly_valuable",
+    "data_availability_index": 77.16
+  },
+  {
+    "title": "habitat loss sand extraction",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 76.14
+  },
+  {
+    "title": "turbidity sand extraction",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 71.37
+  },
+  {
+    "title": "bird hunt",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 75.6
+  },
+  {
+    "title": "pollution boating",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 74.62
+  },
+  {
+    "title": "noise boating",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 78.56
+  },
+  {
+    "title": "turbidity shipping",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 68.36
+  },
+  {
+    "title": "noise 125hz shipping",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 72.27
+  },
+  {
+    "title": "noise 2000hz shipping",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 82.39
+  },
+  {
+    "title": "oilspill shipping",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 71.16
+  },
+  {
+    "title": "depth",
+    "valuability": "highly_valuable",
+    "data_availability_index": 92.73
+  },
+  {
+    "title": "complex bottom uncertainty",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 68.9
+  },
+  {
+    "title": "symphony photic zone",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 89.55
+  },
+  {
+    "title": "symphony standard grid",
+    "valuability": "low_value",
+    "data_availability_index": 72.5
+  },
+  {
+    "title": "symphony geological surface substrate",
+    "valuability": "moderately_valuable",
+    "data_availability_index": 73.51
+  },
+  {
+    "title": "symphony geological surface substrate uncertainty",
+    "valuability": "highly_valuable",
+    "data_availability_index": 67.44
+  }
+]
