@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Symphony App</title>
+    <script>
+        // Simple test to check if data loads correctly
+        async function testDataLoading() {
+            console.log('Testing data loading...');
+            
+            // Load the data-loader script
+            const script1 = document.createElement('script');
+            script1.src = 'js/data-loader.js';
+            document.head.appendChild(script1);
+            
+            script1.onload = async function() {
+                console.log('DataLoader script loaded');
+                
+                try {
+                    // Wait a moment for the script to initialize
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    
+                    // Test data loading
+                    await window.dataLoader.loadAll();
+                    console.log('✓ Data loaded successfully');
+                    
+                    // Test getting layers
+                    const layers = window.dataLoader.getSymphonyLayers();
+                    console.log(`✓ Found ${layers.length} layers`);
+                    
+                    // Test getting a specific layer
+                    if (layers.length > 0) {
+                        const firstLayer = layers[0];
+                        console.log(`✓ First layer: ${firstLayer.Name}`);
+                        console.log('✓ Layer fields:', Object.keys(firstLayer));
+                        
+                        // Test getLayerByTitle
+                        const foundLayer = window.dataLoader.getLayerByTitle(firstLayer.Name);
+                        if (foundLayer) {
+                            console.log('✓ getLayerByTitle works');
+                        } else {
+                            console.log('✗ getLayerByTitle failed');
+                        }
+                    }
+                    
+                } catch (error) {
+                    console.error('✗ Error during testing:', error);
+                }
+            };
+        }
+        
+        window.onload = testDataLoading;
+    </script>
+</head>
+<body>
+    <h1>Testing Symphony Data Loading</h1>
+    <p>Check the browser console for test results.</p>
+</body>
+</html>

@@ -1,0 +1,6951 @@
+{
+  "Coastal birds": [
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "BRDA",
+      "label": "Bird counts"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "MLES",
+      "label": "Marine environment leisure usage"
+    },
+    {
+      "code": "FABD",
+      "label": "Fauna abundance per unit area of the bed"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    },
+    {
+      "code": "GP088",
+      "label": "Bird behaviour"
+    },
+    {
+      "code": "GP004",
+      "label": "Bird reproduction"
+    },
+    {
+      "code": "ACYC",
+      "label": "Reference numbers"
+    },
+    {
+      "code": "ACFL",
+      "label": "Quality control flags"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "BLIT",
+      "label": "Beach litter abundance"
+    }
+  ],
+  "Seabird coastal wintering": [
+    {
+      "code": "BRDA",
+      "label": "Bird counts"
+    },
+    {
+      "code": "SABB",
+      "label": "Shellfish abundance and biomass in water bodies"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "ZADX",
+      "label": "Zoobenthos dry weight biomass"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SATM",
+      "label": "Shellfish morphology, age and physiology"
+    },
+    {
+      "code": "ZWTX",
+      "label": "Zoobenthos taxonomy-related wet weight biomass per unit area of the bed"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "GP088",
+      "label": "Bird behaviour"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "MFAB",
+      "label": "Zoobenthos generic abundance"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "D001",
+      "label": "Microphytobenthos biomass"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    }
+  ],
+  "Seabird offshore wintering": [
+    {
+      "code": "BRDA",
+      "label": "Bird counts"
+    },
+    {
+      "code": "GP088",
+      "label": "Bird behaviour"
+    },
+    {
+      "code": "SABB",
+      "label": "Shellfish abundance and biomass in water bodies"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "ZWTX",
+      "label": "Zoobenthos taxonomy-related wet weight biomass per unit area of the bed"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "ZADX",
+      "label": "Zoobenthos dry weight biomass"
+    },
+    {
+      "code": "MFAB",
+      "label": "Zoobenthos generic abundance"
+    },
+    {
+      "code": "GP004",
+      "label": "Bird reproduction"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    }
+  ],
+  "Anoxia background": [
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "NTPW",
+      "label": "Nutrient concentrations in sediment pore waters"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "RPOT",
+      "label": "Redox potential in sediment"
+    },
+    {
+      "code": "MSFX",
+      "label": "Sedimentation flux quantification in the water column"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "SHTA",
+      "label": "Hydrolytic activity in sediment"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "SSTB",
+      "label": "Stable isotopes in sediment"
+    },
+    {
+      "code": "OXYC",
+      "label": "Raw oxygen sensor output"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    }
+  ],
+  "Cod": [
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "ZWTX",
+      "label": "Zoobenthos taxonomy-related wet weight biomass per unit area of the bed"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "GP079",
+      "label": "Zooplankton wet weight biomass"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "GP005",
+      "label": "Fish disease and parasites"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "ZADX",
+      "label": "Zoobenthos dry weight biomass"
+    },
+    {
+      "code": "MSBD",
+      "label": "Zooplankton dry weight biomass per unit volume of the water column"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "OXYC",
+      "label": "Raw oxygen sensor output"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    }
+  ],
+  "Herring": [
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "PNTX",
+      "label": "Phytoplankton generic abundance in water bodies"
+    },
+    {
+      "code": "ZCTN",
+      "label": "Zooplankton taxonomy-related biomass expressed as nitrogen per unit volume of the water column"
+    },
+    {
+      "code": "MSBD",
+      "label": "Zooplankton dry weight biomass per unit volume of the water column"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    },
+    {
+      "code": "GP079",
+      "label": "Zooplankton wet weight biomass"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "SEBH",
+      "label": "Seal behaviour"
+    },
+    {
+      "code": "CEBH",
+      "label": "Cetacean behaviour"
+    }
+  ],
+  "Rivermouth fish": [
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "GP005",
+      "label": "Fish disease and parasites"
+    },
+    {
+      "code": "INVD",
+      "label": "Invasive species monitoring parameters"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "LRWL",
+      "label": "Lake and river water level parameters"
+    },
+    {
+      "code": "CFTM",
+      "label": "Contaminant fluxes between the terrestrial and marine environment"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    }
+  ],
+  "Sprat": [
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "MSBD",
+      "label": "Zooplankton dry weight biomass per unit volume of the water column"
+    },
+    {
+      "code": "MSBO",
+      "label": "Zooplankton ash-free dry weight biomass per unit volume of the water column"
+    },
+    {
+      "code": "GP079",
+      "label": "Zooplankton wet weight biomass"
+    },
+    {
+      "code": "FVLT",
+      "label": "Raw fluorometer output"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "OXYC",
+      "label": "Raw oxygen sensor output"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "NUTV",
+      "label": "Raw in-situ nutrient analyser output"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    },
+    {
+      "code": "PYTT",
+      "label": "Plankton abundance per unit volume of the water column"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "BLEN",
+      "label": "Zooplankton and zoobenthos morphological parameters"
+    },
+    {
+      "code": "GRZO",
+      "label": "Zooplankton growth rates"
+    },
+    {
+      "code": "ZCTN",
+      "label": "Zooplankton taxonomy-related biomass expressed as nitrogen per unit volume of the water column"
+    }
+  ],
+  "Vendace": [
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "OXYC",
+      "label": "Raw oxygen sensor output"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "MSBO",
+      "label": "Zooplankton ash-free dry weight biomass per unit volume of the water column"
+    },
+    {
+      "code": "ZCTN",
+      "label": "Zooplankton taxonomy-related biomass expressed as nitrogen per unit volume of the water column"
+    },
+    {
+      "code": "GP079",
+      "label": "Zooplankton wet weight biomass"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "DVLP",
+      "label": "Zooplankton and zoobenthos development stage parameters"
+    },
+    {
+      "code": "BLEN",
+      "label": "Zooplankton and zoobenthos morphological parameters"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "PYTT",
+      "label": "Plankton abundance per unit volume of the water column"
+    },
+    {
+      "code": "WSTB",
+      "label": "Stable isotopes in water bodies"
+    },
+    {
+      "code": "GP005",
+      "label": "Fish disease and parasites"
+    }
+  ],
+  "Eel migration": [
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "GP005",
+      "label": "Fish disease and parasites"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    }
+  ],
+  "Fish spawning": [
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "ACNT",
+      "label": "Macroalgae and seagrass taxonomy-related counts"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    }
+  ],
+  "Abrasion bottom trawl": [
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "ZADX",
+      "label": "Zoobenthos dry weight biomass"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "MSFX",
+      "label": "Sedimentation flux quantification in the water column"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "D001",
+      "label": "Microphytobenthos biomass"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "SICO",
+      "label": "Other fluxes between the bed and the water column"
+    },
+    {
+      "code": "MFAB",
+      "label": "Zoobenthos generic abundance"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    }
+  ],
+  "Artificial reef": [
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "MARC",
+      "label": "Marine archaeology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "FABD",
+      "label": "Fauna abundance per unit area of the bed"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "INVD",
+      "label": "Invasive species monitoring parameters"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "ZADX",
+      "label": "Zoobenthos dry weight biomass"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "UMLS",
+      "label": "Micro-litter in sediments"
+    },
+    {
+      "code": "GP005",
+      "label": "Fish disease and parasites"
+    },
+    {
+      "code": "GP012",
+      "label": "Macroalgae and seagrass infection and damage"
+    },
+    {
+      "code": "D001",
+      "label": "Microphytobenthos biomass"
+    },
+    {
+      "code": "LITT",
+      "label": "Litter abundance and type"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "D000",
+      "label": "Microphytobenthos abundance"
+    }
+  ],
+  "Rough bottom aphotic": [
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "KRTS",
+      "label": "Other wave statistics"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    }
+  ],
+  "Rough bottom deep": [
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "KRTS",
+      "label": "Other wave statistics"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "ACNT",
+      "label": "Macroalgae and seagrass taxonomy-related counts"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "MFAB",
+      "label": "Zoobenthos generic abundance"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    }
+  ],
+  "Rough bottom photic": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "KRTS",
+      "label": "Other wave statistics"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "ACNT",
+      "label": "Macroalgae and seagrass taxonomy-related counts"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    }
+  ],
+  "Deep reef": [
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "OXYC",
+      "label": "Raw oxygen sensor output"
+    },
+    {
+      "code": "PHLT",
+      "label": "Raw pH sensor output"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "OPCN",
+      "label": "Concentration of silicon species in suspended particulate material"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "WSTB",
+      "label": "Stable isotopes in water bodies"
+    },
+    {
+      "code": "NTSP",
+      "label": "Nitrogen concentrations in suspended particulate material"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "GP013",
+      "label": "Coral infection and damage"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    }
+  ],
+  "Haploops reef": [
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "FPFX",
+      "label": "Sedimentation flux of biological detritus in the water column"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "ZADX",
+      "label": "Zoobenthos dry weight biomass"
+    },
+    {
+      "code": "ZWTX",
+      "label": "Zoobenthos taxonomy-related wet weight biomass per unit area of the bed"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "SPGS",
+      "label": "Suspended particulate material grain size parameters"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    }
+  ],
+  "Hard bottom aphotic": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "RAGE",
+      "label": "Rock age"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "RALT",
+      "label": "Rock alteration"
+    }
+  ],
+  "Hard bottom deep": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "SICN",
+      "label": "Concentration of silicon species in sediment"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "RMAJ",
+      "label": "Geological sample major element chemistry"
+    },
+    {
+      "code": "RAGE",
+      "label": "Rock age"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    }
+  ],
+  "Mussel reef": [
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "SABB",
+      "label": "Shellfish abundance and biomass in water bodies"
+    },
+    {
+      "code": "MPMN",
+      "label": "Moored instrument depth"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SATM",
+      "label": "Shellfish morphology, age and physiology"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "ZWTX",
+      "label": "Zoobenthos taxonomy-related wet weight biomass per unit area of the bed"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "PATX",
+      "label": "Phytoplankton taxonomic abundance in water bodies"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "ZADX",
+      "label": "Zoobenthos dry weight biomass"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "PNTX",
+      "label": "Phytoplankton generic abundance in water bodies"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    }
+  ],
+  "Plankton pelagic": [
+    {
+      "code": "FVLT",
+      "label": "Raw fluorometer output"
+    },
+    {
+      "code": "CMFL",
+      "label": "Variable fluorescence parameters"
+    },
+    {
+      "code": "PATX",
+      "label": "Phytoplankton taxonomic abundance in water bodies"
+    },
+    {
+      "code": "VATX",
+      "label": "Phytoplankton taxonomic volume in water bodies"
+    },
+    {
+      "code": "FCMW",
+      "label": "Flow cytometry parameters in water bodies"
+    },
+    {
+      "code": "GOXP",
+      "label": "Oxygen production and respiration in the water column"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "LVLT",
+      "label": "Raw light meter output"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    },
+    {
+      "code": "PHYC",
+      "label": "Phycobolin pigment concentrations in the water column"
+    },
+    {
+      "code": "BATX",
+      "label": "Bacteria taxonomic abundance in water bodies"
+    },
+    {
+      "code": "PYTT",
+      "label": "Plankton abundance per unit volume of the water column"
+    },
+    {
+      "code": "ZCTN",
+      "label": "Zooplankton taxonomy-related biomass expressed as nitrogen per unit volume of the water column"
+    },
+    {
+      "code": "MSBO",
+      "label": "Zooplankton ash-free dry weight biomass per unit volume of the water column"
+    },
+    {
+      "code": "MZCT",
+      "label": "Microzooplankton grazing"
+    },
+    {
+      "code": "GPIG",
+      "label": "Zooplankton gut pigments"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "NUTV",
+      "label": "Raw in-situ nutrient analyser output"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    }
+  ],
+  "Shoreline": [
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "KRTS",
+      "label": "Other wave statistics"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "ACNT",
+      "label": "Macroalgae and seagrass taxonomy-related counts"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "RALT",
+      "label": "Rock alteration"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "FABD",
+      "label": "Fauna abundance per unit area of the bed"
+    },
+    {
+      "code": "PU02",
+      "label": "Macroalgae generic abundance in water bodies"
+    },
+    {
+      "code": "MFAB",
+      "label": "Zoobenthos generic abundance"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    }
+  ],
+  "Soft bottom aphotic": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    }
+  ],
+  "Soft bottom deep": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "XRFC",
+      "label": "Raw X-Ray fluorometer (XRF) output from sediment samples"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "SICN",
+      "label": "Concentration of silicon species in sediment"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "STCO",
+      "label": "Sediment thermal conductivity"
+    },
+    {
+      "code": "RMAJ",
+      "label": "Geological sample major element chemistry"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    }
+  ],
+  "Soft bottom photic": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    }
+  ],
+  "Transport bottom aphotic": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SPCN",
+      "label": "Single particle characterisation"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "SSTB",
+      "label": "Stable isotopes in sediment"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    }
+  ],
+  "Transport bottom deep": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "SSTB",
+      "label": "Stable isotopes in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "ACYC",
+      "label": "Reference numbers"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    }
+  ],
+  "Transport bottom photic": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SPCN",
+      "label": "Single particle characterisation"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "ACYC",
+      "label": "Reference numbers"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "STCO",
+      "label": "Sediment thermal conductivity"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    }
+  ],
+  "Grey seal": [
+    {
+      "code": "FOCA",
+      "label": "Seal abundance"
+    },
+    {
+      "code": "SEBH",
+      "label": "Seal behaviour"
+    },
+    {
+      "code": "SEMP",
+      "label": "Seal morphology and physiology"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "SEMO",
+      "label": "Seal mortality"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "BLIT",
+      "label": "Beach litter abundance"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "PTOX",
+      "label": "Concentration of phycotoxins in biota"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    }
+  ],
+  "Harbour seal": [
+    {
+      "code": "FOCA",
+      "label": "Seal abundance"
+    },
+    {
+      "code": "SEBH",
+      "label": "Seal behaviour"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "SEMP",
+      "label": "Seal morphology and physiology"
+    },
+    {
+      "code": "SEMO",
+      "label": "Seal mortality"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "SABB",
+      "label": "Shellfish abundance and biomass in water bodies"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "LITT",
+      "label": "Litter abundance and type"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "PTOX",
+      "label": "Concentration of phycotoxins in biota"
+    },
+    {
+      "code": "GP005",
+      "label": "Fish disease and parasites"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "BLIT",
+      "label": "Beach litter abundance"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    }
+  ],
+  "Hard bottom photic": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    }
+  ],
+  "Porpoise baltic sea": [
+    {
+      "code": "CEBH",
+      "label": "Cetacean behaviour"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "CEMP",
+      "label": "Cetacean morphology and physiology"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "CEMO",
+      "label": "Cetacean mortality"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "GP018",
+      "label": "Cetacean reproduction"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    }
+  ],
+  "Porpoise belt sea": [
+    {
+      "code": "CEBH",
+      "label": "Cetacean behaviour"
+    },
+    {
+      "code": "CEMP",
+      "label": "Cetacean morphology and physiology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "GP018",
+      "label": "Cetacean reproduction"
+    },
+    {
+      "code": "CEMO",
+      "label": "Cetacean mortality"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    }
+  ],
+  "Porpoise north sea": [
+    {
+      "code": "CEBH",
+      "label": "Cetacean behaviour"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "CEMP",
+      "label": "Cetacean morphology and physiology"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "CEMO",
+      "label": "Cetacean mortality"
+    },
+    {
+      "code": "GP018",
+      "label": "Cetacean reproduction"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "LIBI",
+      "label": "Biota lipid concentrations"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "PTOX",
+      "label": "Concentration of phycotoxins in biota"
+    }
+  ],
+  "Ringed seal": [
+    {
+      "code": "FOCA",
+      "label": "Seal abundance"
+    },
+    {
+      "code": "SEBH",
+      "label": "Seal behaviour"
+    },
+    {
+      "code": "SEMP",
+      "label": "Seal morphology and physiology"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "SEMO",
+      "label": "Seal mortality"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "SABB",
+      "label": "Shellfish abundance and biomass in water bodies"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "WDNA",
+      "label": "Concentrations of biopolymers in water bodies"
+    },
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "LITT",
+      "label": "Litter abundance and type"
+    }
+  ],
+  "Angiosperms": [
+    {
+      "code": "PHLT",
+      "label": "Raw pH sensor output"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "SCOX",
+      "label": "Dissolved concentration parameters for other gases in the water column"
+    },
+    {
+      "code": "TNRP",
+      "label": "Dissolved inorganic carbon production and respiration in the water column"
+    },
+    {
+      "code": "GOXP",
+      "label": "Oxygen production and respiration in the water column"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "HMSB",
+      "label": "Concentration of organic matter in water bodies"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "PATX",
+      "label": "Phytoplankton taxonomic abundance in water bodies"
+    },
+    {
+      "code": "CMFL",
+      "label": "Variable fluorescence parameters"
+    },
+    {
+      "code": "CFTM",
+      "label": "Contaminant fluxes between the terrestrial and marine environment"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "NTPW",
+      "label": "Nutrient concentrations in sediment pore waters"
+    },
+    {
+      "code": "UPTH",
+      "label": "Bacterial production in the water column"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "LRWL",
+      "label": "Lake and river water level parameters"
+    },
+    {
+      "code": "WBRX",
+      "label": "Water body redox potential"
+    },
+    {
+      "code": "OXYC",
+      "label": "Raw oxygen sensor output"
+    },
+    {
+      "code": "NUTV",
+      "label": "Raw in-situ nutrient analyser output"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    },
+    {
+      "code": "TDNT",
+      "label": "Dissolved total and organic nitrogen concentrations in the water column"
+    },
+    {
+      "code": "SICO",
+      "label": "Other fluxes between the bed and the water column"
+    },
+    {
+      "code": "WSTB",
+      "label": "Stable isotopes in water bodies"
+    }
+  ],
+  "Climate change temperature": [
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "STMP",
+      "label": "Temperature of geological units"
+    },
+    {
+      "code": "PCLM",
+      "label": "Palaeoclimatic indicators and parameters"
+    },
+    {
+      "code": "AASD",
+      "label": "Concentration of alkenones and alkenoates in sediment"
+    },
+    {
+      "code": "SSTB",
+      "label": "Stable isotopes in sediment"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "OXYC",
+      "label": "Raw oxygen sensor output"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "WSTB",
+      "label": "Stable isotopes in water bodies"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "MSFX",
+      "label": "Sedimentation flux quantification in the water column"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "HFLW",
+      "label": "Geothermal heat flow"
+    },
+    {
+      "code": "CAKN",
+      "label": "Concentration of alkenones and alkenoates in the water column"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    }
+  ],
+  "Habitat loss coastal exploitation": [
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "ACNT",
+      "label": "Macroalgae and seagrass taxonomy-related counts"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "INVD",
+      "label": "Invasive species monitoring parameters"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "LITT",
+      "label": "Litter abundance and type"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "MLES",
+      "label": "Marine environment leisure usage"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "BLIT",
+      "label": "Beach litter abundance"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "GP012",
+      "label": "Macroalgae and seagrass infection and damage"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "MARC",
+      "label": "Marine archaeology"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "D001",
+      "label": "Microphytobenthos biomass"
+    },
+    {
+      "code": "FABD",
+      "label": "Fauna abundance per unit area of the bed"
+    }
+  ],
+  "Habitat loss dumping": [
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "MSFX",
+      "label": "Sedimentation flux quantification in the water column"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "ZADX",
+      "label": "Zoobenthos dry weight biomass"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "MTWP",
+      "label": "Particulate metal concentrations in the water column"
+    }
+  ],
+  "Habitat loss Infrastructure": [
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "MARC",
+      "label": "Marine archaeology"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "MLES",
+      "label": "Marine environment leisure usage"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    }
+  ],
+  "Synthetic toxins treatment plant": [
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "WCOC",
+      "label": "Concentration of other organic contaminants in the water column"
+    },
+    {
+      "code": "PHSE",
+      "label": "Pharmaceutical concentrations in sediments"
+    },
+    {
+      "code": "PHWB",
+      "label": "Pharmaceutical concentrations in water bodies"
+    },
+    {
+      "code": "CFTM",
+      "label": "Contaminant fluxes between the terrestrial and marine environment"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "UMLS",
+      "label": "Micro-litter in sediments"
+    },
+    {
+      "code": "UMLW",
+      "label": "Micro-litter in water bodies"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "SPGS",
+      "label": "Suspended particulate material grain size parameters"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "MTWP",
+      "label": "Particulate metal concentrations in the water column"
+    },
+    {
+      "code": "TDNT",
+      "label": "Dissolved total and organic nitrogen concentrations in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "PHBI",
+      "label": "Pharmaceutical concentrations in biota"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "BCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota"
+    }
+  ],
+  "Explosions peak": [
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "ACSR",
+      "label": "Active seismic refraction"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "SRFR",
+      "label": "Seismic refraction"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "ACYC",
+      "label": "Reference numbers"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "CEBH",
+      "label": "Cetacean behaviour"
+    },
+    {
+      "code": "SEBH",
+      "label": "Seal behaviour"
+    },
+    {
+      "code": "CEMO",
+      "label": "Cetacean mortality"
+    },
+    {
+      "code": "SEMO",
+      "label": "Seal mortality"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "FABD",
+      "label": "Fauna abundance per unit area of the bed"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    }
+  ],
+  "Explosions SEL": [
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "CEBH",
+      "label": "Cetacean behaviour"
+    },
+    {
+      "code": "SEBH",
+      "label": "Seal behaviour"
+    },
+    {
+      "code": "CEMO",
+      "label": "Cetacean mortality"
+    },
+    {
+      "code": "SEMO",
+      "label": "Seal mortality"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "ACSR",
+      "label": "Active seismic refraction"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    }
+  ],
+  "Heavy metals military area": [
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "MDSD",
+      "label": "Trace metalloid concentrations in sediment"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "MTPW",
+      "label": "Metal concentrations in sediment pore waters"
+    },
+    {
+      "code": "SSTB",
+      "label": "Stable isotopes in sediment"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "RPOT",
+      "label": "Redox potential in sediment"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "XRFC",
+      "label": "Raw X-Ray fluorometer (XRF) output from sediment samples"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    }
+  ],
+  "Disturbance windpower": [
+    {
+      "code": "GP088",
+      "label": "Bird behaviour"
+    },
+    {
+      "code": "BRDA",
+      "label": "Bird counts"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "GP004",
+      "label": "Bird reproduction"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "SABB",
+      "label": "Shellfish abundance and biomass in water bodies"
+    }
+  ],
+  "Electromagnetic field": [
+    {
+      "code": "RSIS",
+      "label": "Field resistivity,  electromagnetics  and polarisation"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "ENGP",
+      "label": "Engineering parameters"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "CEBH",
+      "label": "Cetacean behaviour"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "SEBH",
+      "label": "Seal behaviour"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "ACYC",
+      "label": "Reference numbers"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "FABD",
+      "label": "Fauna abundance per unit area of the bed"
+    }
+  ],
+  "Noise 125Hz wind power": [
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "MPMN",
+      "label": "Moored instrument depth"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "STCO",
+      "label": "Sediment thermal conductivity"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "SRFR",
+      "label": "Seismic refraction"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    }
+  ],
+  "Nitrogen background": [
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDNT",
+      "label": "Dissolved total and organic nitrogen concentrations in the water column"
+    },
+    {
+      "code": "NTSP",
+      "label": "Nitrogen concentrations in suspended particulate material"
+    },
+    {
+      "code": "UREA",
+      "label": "Urea concentration parameters in the water column"
+    },
+    {
+      "code": "AMOX",
+      "label": "Nitrification and denitrification rates in water bodies"
+    },
+    {
+      "code": "AMUP",
+      "label": "Regenerated production in water bodies"
+    },
+    {
+      "code": "CFTM",
+      "label": "Contaminant fluxes between the terrestrial and marine environment"
+    },
+    {
+      "code": "WSTB",
+      "label": "Stable isotopes in water bodies"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "PXSP",
+      "label": "Phosphorus concentrations in suspended particulate material"
+    },
+    {
+      "code": "GOXP",
+      "label": "Oxygen production and respiration in the water column"
+    },
+    {
+      "code": "PATX",
+      "label": "Phytoplankton taxonomic abundance in water bodies"
+    },
+    {
+      "code": "CMFL",
+      "label": "Variable fluorescence parameters"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    },
+    {
+      "code": "NTPW",
+      "label": "Nutrient concentrations in sediment pore waters"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "SICO",
+      "label": "Other fluxes between the bed and the water column"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "EXCR",
+      "label": "Excretion rate parameters in the water column"
+    },
+    {
+      "code": "LRWL",
+      "label": "Lake and river water level parameters"
+    },
+    {
+      "code": "RWCH",
+      "label": "Precipitation chemistry"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "ACFL",
+      "label": "Quality control flags"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    }
+  ],
+  "Phosphorus Background": [
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "PHUP",
+      "label": "Uptake of other nutrients in the water column"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDNT",
+      "label": "Dissolved total and organic nitrogen concentrations in the water column"
+    },
+    {
+      "code": "CFTM",
+      "label": "Contaminant fluxes between the terrestrial and marine environment"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "NTPW",
+      "label": "Nutrient concentrations in sediment pore waters"
+    },
+    {
+      "code": "GOXP",
+      "label": "Oxygen production and respiration in the water column"
+    },
+    {
+      "code": "PATX",
+      "label": "Phytoplankton taxonomic abundance in water bodies"
+    },
+    {
+      "code": "AMOX",
+      "label": "Nitrification and denitrification rates in water bodies"
+    },
+    {
+      "code": "AMUP",
+      "label": "Regenerated production in water bodies"
+    },
+    {
+      "code": "SICO",
+      "label": "Other fluxes between the bed and the water column"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "HMSB",
+      "label": "Concentration of organic matter in water bodies"
+    },
+    {
+      "code": "PXSP",
+      "label": "Phosphorus concentrations in suspended particulate material"
+    },
+    {
+      "code": "NTSP",
+      "label": "Nitrogen concentrations in suspended particulate material"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "ACFL",
+      "label": "Quality control flags"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "UREA",
+      "label": "Urea concentration parameters in the water column"
+    },
+    {
+      "code": "CMFL",
+      "label": "Variable fluorescence parameters"
+    },
+    {
+      "code": "PNTX",
+      "label": "Phytoplankton generic abundance in water bodies"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "LRWL",
+      "label": "Lake and river water level parameters"
+    },
+    {
+      "code": "WSTB",
+      "label": "Stable isotopes in water bodies"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    }
+  ],
+  "Catch bottom trawl": [
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "ZWTX",
+      "label": "Zoobenthos taxonomy-related wet weight biomass per unit area of the bed"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "SABB",
+      "label": "Shellfish abundance and biomass in water bodies"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    }
+  ],
+  "Catch gillnet": [
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    }
+  ],
+  "Catch pelagic trawl": [
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "FIBM",
+      "label": "Fish biomass in water bodies"
+    },
+    {
+      "code": "FNTX",
+      "label": "Fish non taxonomy-related abundance per unit volume of the water column"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    }
+  ],
+  "Turbidity bottom trawl": [
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "SPGS",
+      "label": "Suspended particulate material grain size parameters"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "MDSV",
+      "label": "Suspended particulate material setting velocity parameters"
+    },
+    {
+      "code": "MSFX",
+      "label": "Sedimentation flux quantification in the water column"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "LVLT",
+      "label": "Raw light meter output"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "WCPH",
+      "label": "Water column photography"
+    }
+  ],
+  "Oilspill wreck": [
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "MARC",
+      "label": "Marine archaeology"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "SALK",
+      "label": "Concentration of aliphatic hydrocarbons in sediment samples"
+    },
+    {
+      "code": "PCHW",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in the water column"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "BCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "WCOC",
+      "label": "Concentration of other organic contaminants in the water column"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "RPOT",
+      "label": "Redox potential in sediment"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "TCNT",
+      "label": "Raw temperature and/or salinity instrument output"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "WSTB",
+      "label": "Stable isotopes in water bodies"
+    }
+  ],
+  "Heavy metals background": [
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "RPOT",
+      "label": "Redox potential in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "MDSD",
+      "label": "Trace metalloid concentrations in sediment"
+    },
+    {
+      "code": "MTPW",
+      "label": "Metal concentrations in sediment pore waters"
+    },
+    {
+      "code": "SCDO",
+      "label": "Metal fluxes between the bed and the water column"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "CFTM",
+      "label": "Contaminant fluxes between the terrestrial and marine environment"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    }
+  ],
+  "Heavy metals fiber bank": [
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "MDSD",
+      "label": "Trace metalloid concentrations in sediment"
+    },
+    {
+      "code": "OMPW",
+      "label": "Organometallic and organometalloid species concentration parameters in sediments"
+    },
+    {
+      "code": "RPOT",
+      "label": "Redox potential in sediment"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "SDNA",
+      "label": "Concentrations of biopolymers in sediment"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    }
+  ],
+  "Heavy metals mercury dump": [
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "OMPW",
+      "label": "Organometallic and organometalloid species concentration parameters in sediments"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "MTPW",
+      "label": "Metal concentrations in sediment pore waters"
+    },
+    {
+      "code": "SCDO",
+      "label": "Metal fluxes between the bed and the water column"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "RPOT",
+      "label": "Redox potential in sediment"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "MTWP",
+      "label": "Particulate metal concentrations in the water column"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "OMWC",
+      "label": "Organometallic and organometalloid species concentration parameters in water bodies"
+    },
+    {
+      "code": "IRBO",
+      "label": "Stable isotopes in biota"
+    },
+    {
+      "code": "SSTB",
+      "label": "Stable isotopes in sediment"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    }
+  ],
+  "Heavy metals mine dump": [
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "MDSD",
+      "label": "Trace metalloid concentrations in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "MTPW",
+      "label": "Metal concentrations in sediment pore waters"
+    },
+    {
+      "code": "MDPW",
+      "label": "Trace metalloid and inorganic selenium concentrations in sediment pore water"
+    },
+    {
+      "code": "RPOT",
+      "label": "Redox potential in sediment"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "MARC",
+      "label": "Marine archaeology"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "DGPW",
+      "label": "Dissolved oxygen parameters for sediments"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "XRFC",
+      "label": "Raw X-Ray fluorometer (XRF) output from sediment samples"
+    },
+    {
+      "code": "SRAD",
+      "label": "Geological sample radioactivity"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    }
+  ],
+  "Toxic munition dump": [
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "MDSD",
+      "label": "Trace metalloid concentrations in sediment"
+    },
+    {
+      "code": "OMPW",
+      "label": "Organometallic and organometalloid species concentration parameters in sediments"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "CLCN",
+      "label": "Concentration of inorganic halogens in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "RPOT",
+      "label": "Redox potential in sediment"
+    },
+    {
+      "code": "BCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota"
+    },
+    {
+      "code": "ZBTX",
+      "label": "Zoobenthos taxonomic abundance"
+    },
+    {
+      "code": "SCDO",
+      "label": "Metal fluxes between the bed and the water column"
+    },
+    {
+      "code": "SICO",
+      "label": "Other fluxes between the bed and the water column"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "WCOC",
+      "label": "Concentration of other organic contaminants in the water column"
+    },
+    {
+      "code": "MTWP",
+      "label": "Particulate metal concentrations in the water column"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    }
+  ],
+  "Synthetic toxins background": [
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "ZOOB",
+      "label": "Zoobenthos taxonomy-related counts"
+    },
+    {
+      "code": "BDRV",
+      "label": "Biodiversity indices"
+    },
+    {
+      "code": "OMPW",
+      "label": "Organometallic and organometalloid species concentration parameters in sediments"
+    },
+    {
+      "code": "BCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "MFAB",
+      "label": "Zoobenthos generic abundance"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "PHSE",
+      "label": "Pharmaceutical concentrations in sediments"
+    },
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    }
+  ],
+  "Synthetic toxins harbor": [
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "OMPW",
+      "label": "Organometallic and organometalloid species concentration parameters in sediments"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "PCHW",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in the water column"
+    },
+    {
+      "code": "WCOC",
+      "label": "Concentration of other organic contaminants in the water column"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "BCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota"
+    },
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "PHSE",
+      "label": "Pharmaceutical concentrations in sediments"
+    },
+    {
+      "code": "UMLS",
+      "label": "Micro-litter in sediments"
+    },
+    {
+      "code": "SPGS",
+      "label": "Suspended particulate material grain size parameters"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    }
+  ],
+  "Synthetic toxins industry": [
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "WCOC",
+      "label": "Concentration of other organic contaminants in the water column"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "CFTM",
+      "label": "Contaminant fluxes between the terrestrial and marine environment"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "SPCB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in sediment samples"
+    },
+    {
+      "code": "PPWC",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in the water column"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "PCHW",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in the water column"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "PESP",
+      "label": "Pesticide concentrations in suspended particulate material"
+    },
+    {
+      "code": "PHSE",
+      "label": "Pharmaceutical concentrations in sediments"
+    },
+    {
+      "code": "PHWB",
+      "label": "Pharmaceutical concentrations in water bodies"
+    },
+    {
+      "code": "BCPB",
+      "label": "Concentration of polychlorobiphenyls (PCBs) in biota"
+    },
+    {
+      "code": "BCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SPGS",
+      "label": "Suspended particulate material grain size parameters"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "MTWP",
+      "label": "Particulate metal concentrations in the water column"
+    },
+    {
+      "code": "OMWC",
+      "label": "Organometallic and organometalloid species concentration parameters in water bodies"
+    },
+    {
+      "code": "OMPW",
+      "label": "Organometallic and organometalloid species concentration parameters in sediments"
+    }
+  ],
+  "Habitat loss sand extraction": [
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "SPGS",
+      "label": "Suspended particulate material grain size parameters"
+    },
+    {
+      "code": "MSFX",
+      "label": "Sedimentation flux quantification in the water column"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    },
+    {
+      "code": "PXSD",
+      "label": "Phosphorus concentrations in sediment"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    }
+  ],
+  "Turbidity sand extraction": [
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SPGS",
+      "label": "Suspended particulate material grain size parameters"
+    },
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "MDSV",
+      "label": "Suspended particulate material setting velocity parameters"
+    },
+    {
+      "code": "MSFX",
+      "label": "Sedimentation flux quantification in the water column"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "ABAG",
+      "label": "Suspended particulate material aggregates"
+    },
+    {
+      "code": "WCPH",
+      "label": "Water column photography"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "SRFR",
+      "label": "Seismic refraction"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "NTSP",
+      "label": "Nitrogen concentrations in suspended particulate material"
+    }
+  ],
+  "Bird hunt": [
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "BRDA",
+      "label": "Bird counts"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "GP088",
+      "label": "Bird behaviour"
+    },
+    {
+      "code": "GP080",
+      "label": "Fishing by-catch"
+    },
+    {
+      "code": "MLES",
+      "label": "Marine environment leisure usage"
+    },
+    {
+      "code": "STGC",
+      "label": "Stomach and gut contents"
+    },
+    {
+      "code": "ACFL",
+      "label": "Quality control flags"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "SEMO",
+      "label": "Seal mortality"
+    },
+    {
+      "code": "CEMO",
+      "label": "Cetacean mortality"
+    }
+  ],
+  "Pollution boating": [
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "PCHW",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in the water column"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "MTSD",
+      "label": "Metal concentrations in sediment"
+    },
+    {
+      "code": "PESD",
+      "label": "Pesticide concentrations in sediment"
+    },
+    {
+      "code": "OMWC",
+      "label": "Organometallic and organometalloid species concentration parameters in water bodies"
+    },
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "UMLW",
+      "label": "Micro-litter in water bodies"
+    },
+    {
+      "code": "UMLS",
+      "label": "Micro-litter in sediments"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "MLES",
+      "label": "Marine environment leisure usage"
+    },
+    {
+      "code": "BCMT",
+      "label": "Metal concentrations in biota"
+    },
+    {
+      "code": "BCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota"
+    },
+    {
+      "code": "UREA",
+      "label": "Urea concentration parameters in the water column"
+    },
+    {
+      "code": "MTWP",
+      "label": "Particulate metal concentrations in the water column"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "WCOC",
+      "label": "Concentration of other organic contaminants in the water column"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "NTRA",
+      "label": "Nitrate concentration parameters in the water column"
+    },
+    {
+      "code": "TDPX",
+      "label": "Dissolved total or organic phosphorus concentration in the water column"
+    },
+    {
+      "code": "DALK",
+      "label": "Concentration of alkanes in the water column"
+    },
+    {
+      "code": "SALK",
+      "label": "Concentration of aliphatic hydrocarbons in sediment samples"
+    },
+    {
+      "code": "PHWB",
+      "label": "Pharmaceutical concentrations in water bodies"
+    },
+    {
+      "code": "PHSE",
+      "label": "Pharmaceutical concentrations in sediments"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    }
+  ],
+  "Noise boating": [
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "MLES",
+      "label": "Marine environment leisure usage"
+    },
+    {
+      "code": "FEFF",
+      "label": "Fishing effort"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "CEBH",
+      "label": "Cetacean behaviour"
+    },
+    {
+      "code": "SEBH",
+      "label": "Seal behaviour"
+    },
+    {
+      "code": "GP087",
+      "label": "Fishery characterisation"
+    },
+    {
+      "code": "FBAB",
+      "label": "Fish taxonomy-related abundance per unit area of the bed"
+    },
+    {
+      "code": "FOCA",
+      "label": "Seal abundance"
+    },
+    {
+      "code": "FCST",
+      "label": "Fish and shellfish catch statistics"
+    },
+    {
+      "code": "FCNT",
+      "label": "Fish taxonomy-related counts"
+    },
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "FREP",
+      "label": "Fish reproduction"
+    },
+    {
+      "code": "GP018",
+      "label": "Cetacean reproduction"
+    },
+    {
+      "code": "FATM",
+      "label": "Fish morphology, age and physiology"
+    },
+    {
+      "code": "CEMP",
+      "label": "Cetacean morphology and physiology"
+    },
+    {
+      "code": "SEMP",
+      "label": "Seal morphology and physiology"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    }
+  ],
+  "Turbidity shipping": [
+    {
+      "code": "BEST",
+      "label": "Sediment resuspension"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SPGS",
+      "label": "Suspended particulate material grain size parameters"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "KRTS",
+      "label": "Other wave statistics"
+    },
+    {
+      "code": "MSFX",
+      "label": "Sedimentation flux quantification in the water column"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "SPCN",
+      "label": "Single particle characterisation"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "NTSD",
+      "label": "Nitrogen concentrations in sediment"
+    }
+  ],
+  "Noise 125Hz shipping": [
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SRFR",
+      "label": "Seismic refraction"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "STCO",
+      "label": "Sediment thermal conductivity"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    }
+  ],
+  "Noise 2000Hz shipping": [
+    {
+      "code": "NOYS",
+      "label": "Acoustic noise in the water column"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "STCO",
+      "label": "Sediment thermal conductivity"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    },
+    {
+      "code": "SRFR",
+      "label": "Seismic refraction"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    }
+  ],
+  "Oilspill shipping": [
+    {
+      "code": "GP001",
+      "label": "Pollution events"
+    },
+    {
+      "code": "PCHW",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in the water column"
+    },
+    {
+      "code": "SCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples"
+    },
+    {
+      "code": "BCAH",
+      "label": "Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota"
+    },
+    {
+      "code": "TRAN",
+      "label": "Transport activity"
+    },
+    {
+      "code": "GP010",
+      "label": "Bioassay and contaminant biological impact"
+    },
+    {
+      "code": "BRDA",
+      "label": "Bird counts"
+    },
+    {
+      "code": "LERR",
+      "label": "Raw current meter output parameters"
+    },
+    {
+      "code": "DALK",
+      "label": "Concentration of alkanes in the water column"
+    },
+    {
+      "code": "SALK",
+      "label": "Concentration of aliphatic hydrocarbons in sediment samples"
+    },
+    {
+      "code": "BLIT",
+      "label": "Beach litter abundance"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "EPSI",
+      "label": "Turbulence in the water column"
+    },
+    {
+      "code": "HZNV",
+      "label": "Hazards to navigation"
+    },
+    {
+      "code": "WCOC",
+      "label": "Concentration of other organic contaminants in the water column"
+    },
+    {
+      "code": "SCOC",
+      "label": "Concentration of other organic contaminants in sediment samples"
+    },
+    {
+      "code": "BCOC",
+      "label": "Concentration of other organic contaminants in biota"
+    },
+    {
+      "code": "SACT",
+      "label": "Surfactant concentrations in water bodies"
+    },
+    {
+      "code": "CEMO",
+      "label": "Cetacean mortality"
+    },
+    {
+      "code": "SEMO",
+      "label": "Seal mortality"
+    },
+    {
+      "code": "SLIT",
+      "label": "Sea-floor litter abundance"
+    },
+    {
+      "code": "IDIS",
+      "label": "Industrial discharges"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    }
+  ],
+  "Depth": [],
+  "Complex Bottom Uncertainty": [
+    {
+      "code": "HMSB",
+      "label": "Concentration of organic matter in water bodies"
+    },
+    {
+      "code": "CORG",
+      "label": "Particulate total and organic carbon concentrations in the water column"
+    },
+    {
+      "code": "PHWC",
+      "label": "Phaeopigment concentrations in the water column"
+    },
+    {
+      "code": "LVLT",
+      "label": "Raw light meter output"
+    },
+    {
+      "code": "TVLT",
+      "label": "Raw suspended particulate material concentration sensor output"
+    },
+    {
+      "code": "WQBI",
+      "label": "Water quality bioindicators"
+    },
+    {
+      "code": "BEPP",
+      "label": "Benthic primary production"
+    },
+    {
+      "code": "D001",
+      "label": "Microphytobenthos biomass"
+    },
+    {
+      "code": "PATX",
+      "label": "Phytoplankton taxonomic abundance in water bodies"
+    },
+    {
+      "code": "FVLT",
+      "label": "Raw fluorometer output"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "GOXP",
+      "label": "Oxygen production and respiration in the water column"
+    },
+    {
+      "code": "ACNT",
+      "label": "Macroalgae and seagrass taxonomy-related counts"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "PNTX",
+      "label": "Phytoplankton generic abundance in water bodies"
+    },
+    {
+      "code": "D000",
+      "label": "Microphytobenthos abundance"
+    },
+    {
+      "code": "CBSP",
+      "label": "Carbon concentrations in suspended particulate material"
+    },
+    {
+      "code": "OPCN",
+      "label": "Concentration of silicon species in suspended particulate material"
+    },
+    {
+      "code": "CPSD",
+      "label": "Chlorophyll pigment concentrations in sediment"
+    },
+    {
+      "code": "CMFL",
+      "label": "Variable fluorescence parameters"
+    },
+    {
+      "code": "PHYC",
+      "label": "Phycobolin pigment concentrations in the water column"
+    },
+    {
+      "code": "OPWC",
+      "label": "Unclassified pigment concentrations in the water column"
+    },
+    {
+      "code": "NTSP",
+      "label": "Nitrogen concentrations in suspended particulate material"
+    },
+    {
+      "code": "PXSP",
+      "label": "Phosphorus concentrations in suspended particulate material"
+    },
+    {
+      "code": "PU02",
+      "label": "Macroalgae generic abundance in water bodies"
+    }
+  ],
+  "Symphony Standard Grid": [
+    {
+      "code": "ADUN",
+      "label": "Administrative units"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    }
+  ],
+  "Symphony Geological Surface Substrate": [
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "SPCN",
+      "label": "Single particle characterisation"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SDAC",
+      "label": "Sediment acoustics"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "XRFC",
+      "label": "Raw X-Ray fluorometer (XRF) output from sediment samples"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "DBDX",
+      "label": "Geological sample density"
+    },
+    {
+      "code": "RACC",
+      "label": "Sediment accumulation rate"
+    },
+    {
+      "code": "RMAJ",
+      "label": "Geological sample major element chemistry"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "STCO",
+      "label": "Sediment thermal conductivity"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "SRFR",
+      "label": "Seismic refraction"
+    },
+    {
+      "code": "COGE",
+      "label": "Coastal geomorphology"
+    }
+  ],
+  "Symphony Geological Surface Substrate Uncertainty": [
+    {
+      "code": "SAMP",
+      "label": "Sampling parameters"
+    },
+    {
+      "code": "LITH",
+      "label": "Lithology"
+    },
+    {
+      "code": "ACFL",
+      "label": "Quality control flags"
+    },
+    {
+      "code": "ASAM",
+      "label": "Acoustic backscatter in the water column"
+    },
+    {
+      "code": "SSCN",
+      "label": "Side-scan sonar"
+    },
+    {
+      "code": "SBPH",
+      "label": "Seabed photography"
+    },
+    {
+      "code": "SAGE",
+      "label": "Sediment age"
+    },
+    {
+      "code": "RAGE",
+      "label": "Rock age"
+    },
+    {
+      "code": "ACYC",
+      "label": "Reference numbers"
+    },
+    {
+      "code": "SBGE",
+      "label": "Seabed geomorphology"
+    },
+    {
+      "code": "SR2D",
+      "label": "Two-dimensional seismic reflection"
+    },
+    {
+      "code": "CLAY",
+      "label": "Mineralogical composition"
+    },
+    {
+      "code": "SSTR",
+      "label": "Sedimentary structure"
+    },
+    {
+      "code": "DPEV",
+      "label": "Depositional environment"
+    },
+    {
+      "code": "CBSD",
+      "label": "Carbon concentrations in sediment"
+    },
+    {
+      "code": "RMIN",
+      "label": "Inorganic chemical composition of sediment or rocks"
+    },
+    {
+      "code": "ROGS",
+      "label": "Rock grain size"
+    },
+    {
+      "code": "XRFC",
+      "label": "Raw X-Ray fluorometer (XRF) output from sediment samples"
+    },
+    {
+      "code": "SRFL",
+      "label": "Seismic reflection"
+    },
+    {
+      "code": "REFF",
+      "label": "Sediment resistivity"
+    },
+    {
+      "code": "RPER",
+      "label": "Rock porosity and permeability"
+    },
+    {
+      "code": "SR3D",
+      "label": "Three-dimensional seismic reflection"
+    }
+  ]
+}
