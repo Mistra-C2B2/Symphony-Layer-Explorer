@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simplified Dataset Merger for Symphony Layers Explorer
+Dataset Merger
 
 Creates 3 essential files for the web application:
 1. symphony_layers.json - Complete layer data (metadata + improvement + P02 + availability)

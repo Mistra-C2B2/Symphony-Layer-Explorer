@@ -17,16 +17,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `pip install -r requirements.txt` - Install Python dependencies (plotly, streamlit, pandas, streamlit-plotly-events, openpyxl)
 
 ### Website Development
-The static website files are in `docs/` and ready for GitHub Pages deployment. No build process required - the site uses vanilla JavaScript and loads JSON data directly.
+The React application is in `symphony-react-app/` directory. It uses Vite as the build tool and is configured for GitHub Pages deployment.
+
+**Development Server**: Run a single development server that is accessible outside the container:
+- `cd symphony-react-app && npm run dev --host` - Start Vite dev server accessible on all interfaces
+- Access the site at the provided local network URL (usually `http://localhost:5173`)
+- **Important**: Only run ONE development server process to avoid port conflicts
+
+**Build and Testing**:
+- `npm run build` - Build the production version
+- `npm run preview` - Preview the production build
+- `npm run test` - Run unit tests with Vitest
+- `npm run test:e2e` - Run end-to-end tests with Playwright
+- `npm run lint` - Run ESLint for code quality
 
 ## Architecture Overview
 
-This is a dual-purpose repository containing both data processing scripts and a static website for exploring Symphony oceanic layers.
+This is a dual-purpose repository containing both data processing scripts and a React application for exploring Symphony oceanic layers.
 
 ### Data Pipeline
 1. **Source Data**: Symphony layer metadata, P02 parameter vocabulary, and dataset catalogues in `data/`
 2. **Processing Scripts**: Python scripts analyze and enhance the raw data using AI (OpenRouter API)
-3. **Web-Ready Data**: Processed JSON files in `docs/data/` optimized for the web application
+3. **Web-Ready Data**: Processed JSON files in `symphony-react-app/public/data/` optimized for the React application
 
 ### Core Components
 
@@ -36,15 +48,17 @@ This is a dual-purpose repository containing both data processing scripts and a 
 - `SymphonyP02MatcherV2` class - AI matching of Symphony layers to P02 parameters
 - `DataAvailabilityCalculator` class - Computes data availability indexes
 
-**Static Web Application**:
-- `SymphonyApp` class in `docs/js/app.js` - Main application controller
-- Chart.js integration for interactive donut charts
-- Client-side JSON data loading via `data-loader.js`
+**React Web Application**:
+- `App.tsx` - Main application component with routing
+- React components in `symphony-react-app/src/components/` for UI elements
+- Custom hooks in `symphony-react-app/src/hooks/` for data fetching and search functionality
+- Data services in `symphony-react-app/src/services/` for API communication
+- TypeScript for type safety and Tailwind CSS for styling
 - Responsive design with mobile support
 
 ### Data Flow
 ```
-Raw Excel/PDF → Python processing scripts → Enhanced JSON files → Static web app → GitHub Pages
+Raw Excel/PDF → Python processing scripts → Enhanced JSON files → React app → GitHub Pages
 ```
 
 ### Key Data Files
@@ -62,15 +76,19 @@ Scripts using AI analysis require OpenRouter API access:
 
 ## Deployment
 
-The `docs/` directory is configured for GitHub Pages deployment:
+The React application is configured for GitHub Pages deployment:
 1. Enable GitHub Pages in repository settings
-2. Select "Deploy from a branch" with `main` branch and `/docs` folder
-3. Run `python optimize_site.py` to optimize files before deployment
-4. Site structure includes gzipped versions for better performance
+2. Select "Deploy from a branch" with `main` branch and `/symphony-react-app/dist` folder
+3. Build the application: `cd symphony-react-app && npm run build`
+4. The `dist/` folder contains the production build ready for deployment
+5. Vite is configured with the correct base path for GitHub Pages
 
 ## File Structure Notes
 
-- `docs/data/` contains web-optimized JSON files (different from `data/` which has raw/intermediate files)
+- `symphony-react-app/public/data/` contains web-optimized JSON files (different from `data/` which has raw/intermediate files)
+- `symphony-react-app/src/` contains React components, hooks, services, and types
 - `old/` directory contains legacy Excel files and earlier processing attempts
 - All Python scripts include comprehensive error handling and progress reporting
-- The web application is entirely client-side with no server dependencies
+- The React application is entirely client-side with no server dependencies beyond the Vite dev server
+- When use playwright through the command "npx playwright screenshot [url] [png filename]"
+- Save screenshots in the "screenshot" directory to avoid cluttering the codebase

@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 """
-Symphony to P02 Parameter Matching Script v2
-
-This version focuses only on layer name and recommendations for improvement
-to suggest P02 parameters that would be needed to address data gaps.
+Symphony Layers to P02 Parameters 
 """
 
 import json
