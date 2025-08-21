@@ -88,13 +88,6 @@ const StatusTag: React.FC<{
   );
 };
 
-const LayerSummary: React.FC<{ summary: string }> = ({ summary }) => (
-  <div className="pt-4 border-t border-neutral-100">
-    <p className="text-xs text-neutral-500 leading-relaxed">
-      {truncateText(summary, SUMMARY_MAX_LENGTH)}
-    </p>
-  </div>
-);
 
 const LayerCard: React.FC<LayerCardProps> = ({ layer, onClick }) => {
   const availabilityPercentage = formatAvailabilityIndex(layer.data_availability_index);
@@ -143,7 +136,7 @@ const LayerCard: React.FC<LayerCardProps> = ({ layer, onClick }) => {
         )}
       </div>
 
-      <LayerSummary summary={layer.summary} />
+      {/* <LayerSummary summary={layer.summary} /> */}
     </Card>
   );
 };
