@@ -4,9 +4,34 @@ Interactive web application for exploring Symphony oceanic layers with AI-powere
 
 ## Quick Start
 
-### Web Application
-- Open `docs/index.html` in browser, or serve the `docs/` directory
-- For GitHub Pages: Enable Pages, deploy from `/docs` folder
+### React Web Application
+
+**Development Server:**
+```bash
+cd symphony-react-app
+npm install
+npm run dev --host
+```
+- Access at `http://localhost:5173` (local) or the provided network URL (external access)
+- **Container Access**: Use `--host` flag to make dev server accessible outside the container
+- **Important**: Only run ONE development server to avoid port conflicts
+
+**Production Build:**
+```bash
+cd symphony-react-app
+npm run build
+npm run preview
+```
+- Build output in `symphony-react-app/dist/`
+- For GitHub Pages: Enable Pages, deploy from `main` branch `/symphony-react-app/dist` folder
+
+**Testing:**
+```bash
+cd symphony-react-app
+npm run test          # Unit tests with Vitest
+npm run test:e2e      # End-to-end tests with Playwright
+npm run lint          # Code quality checks
+```
 
 ### Data Processing (requires OpenRouter API key)
 ```bash
@@ -32,8 +57,9 @@ python merge_datasets.py                 # Merge data for web app
 - **`symphony_improvement_analysis.json`** - ← `analyze_layer_improvements.py`
 - **`symphony_p02_matches.json`** - ← `match_symphony_to_p02.py`  
 - **`symphony_data_availability_index.json`** - ← `calculate_data_availability_index.py`
-- **`docs/data/symphony_layer_metadata.json`** - ← `merge_datasets.py` (enhanced)
-- **`docs/data/summary_statistics.json`** - ← `merge_datasets.py`
+- **`symphony-react-app/public/data/symphony_layers.json`** - ← `merge_datasets.py` (enhanced)
+- **`symphony-react-app/public/data/p02_analysis.json`** - ← `merge_datasets.py`
+- **`symphony-react-app/public/data/catalogue.json`** - ← `merge_datasets.py`
 
 ## Processing Scripts
 
@@ -46,13 +72,15 @@ python merge_datasets.py                 # Merge data for web app
 
 ## Architecture
 
-**Data Flow:** Raw Excel/PDF → Python Scripts → Enhanced JSON → Static Web App → GitHub Pages
+**Data Flow:** Raw Excel/PDF → Python Scripts → Enhanced JSON → React App → GitHub Pages
 
 **Core Components:**
-- `docs/js/app.js` - Main SymphonyApp class
-- `docs/js/data-loader.js` - JSON data loading
-- Chart.js integration for interactive visualizations
-- Responsive design with mobile support
+- React application built with TypeScript and Vite
+- `symphony-react-app/src/App.tsx` - Main application with HashRouter
+- React components for UI (LayerCard, SearchFilters, Header, Footer)
+- Custom hooks for data fetching and search functionality
+- Tailwind CSS for styling with responsive design
+- Vitest for unit testing, Playwright for e2e testing
 
 ## API Requirements
 
@@ -62,17 +90,23 @@ python merge_datasets.py                 # Merge data for web app
 - Rate limit: 1 second between requests
 - Cost: ~30-60 API calls for full analysis
 
-**Note:** Web app requires no API key, only the data processing scripts do.
+**Note:** React web app requires no API key, only the data processing scripts do.
 
 ## File Structure
 
 ```
 Symphony-Layers-Interactive-Explorer/
 ├── data/                     # Source data + generated files
-├── docs/                     # Web application (GitHub Pages ready)
-│   ├── index.html
-│   ├── js/app.js
-│   └── data/                 # Web-optimized data
+├── symphony-react-app/       # React web application
+│   ├── src/                  # React source code
+│   │   ├── components/       # UI components
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── pages/            # Main page components
+│   │   ├── services/         # Data services
+│   │   └── types/            # TypeScript types
+│   ├── public/data/          # Web-optimized data
+│   ├── dist/                 # Production build (GitHub Pages ready)
+│   └── package.json
 ├── analyze_layer_improvements.py
 ├── match_symphony_to_p02.py
 ├── calculate_data_availability_index.py

@@ -102,6 +102,18 @@ class DataService {
   getDifficultyValues(): string[] {
     return ['low', 'medium', 'high'];
   }
+
+  getRelatedDatasetsCount(layer: SymphonyLayer): number {
+    if (!this.cache?.catalogue || !layer.p02_parameters?.length) return 0;
+    
+    const layerP02Labels = layer.p02_parameters.map(param => param.label.toLowerCase());
+    
+    return this.cache.catalogue.filter(dataset =>
+      dataset.p02_parameters.some(paramLabel => 
+        layerP02Labels.includes(paramLabel.toLowerCase())
+      )
+    ).length;
+  }
 }
 
 export const dataService = new DataService();

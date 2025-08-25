@@ -39,7 +39,7 @@ class LayerImprovementAnalyzer:
 
         print("Initialized Symphony Layer Improvement Analyzer")
 
-    def load_symphony_metadata(self, file_path: str = "symphony_layer_metadata.json") -> None:
+    def load_symphony_metadata(self, file_path: str = "data/symphony_layer_metadata.json") -> None:
         """Load Symphony metadata."""
         print(f"Loading Symphony metadata from {file_path}...")
 
@@ -112,22 +112,34 @@ TASK: Based on the limitations and recommendations, provide a JSON response with
   "improvement_potential": "small|medium|large",
   "difficulty": "low|medium|high",
   "satellite": true|false,
+  "digital_earth_sweden": true|false,
   "reasoning": {{
     "improvement_justification": "Brief explanation of why you chose this improvement level",
     "difficulty_justification": "Brief explanation of why you chose this difficulty level",
-    "satellite_justification": "Brief explanation of whether satellite remote sensing can help generate or improve this layer"
+    "satellite_justification": "Brief explanation of whether satellite remote sensing can help generate or improve this layer",
+    "digital_earth_sweden_justification": "Brief explanation of whether DigitalEarthSweden data can help generate or improve this layer"
   }}
 }}
 
 IMPROVEMENT POTENTIAL CRITERIA (i.e. how much the layer could be improved according to the limitations and recommendations):
-- "small": Limited potential for enhancement, such as refining existing methods, adding specific data sources, or closing minor data gaps.
-- "medium": Moderate potential for improvement, through integrating multiple new data sources, expanding methodological approaches, or addressing broader gaps.
-- "large": High potential for substantial improvement, requiring new data collection, advanced modeling, or fundamental changes to methodologies.
+- "small": Minor improvements that can be made with existing data or simple updates. Examples: updating temporal coverage with newer data from the same sources, format conversions, metadata improvements, documentation enhancements, minor methodological refinements, or addressing single specific data gaps that are explicitly identified as easily fixable.
+- "medium": Moderate improvements requiring some new data integration or methodological changes. Examples: incorporating additional data sources, expanding geographic coverage, improving spatial/temporal resolution, addressing multiple data gaps, or updating analysis methods without fundamental changes to the approach.
+- "large": Major improvements requiring substantial new data collection, fundamental methodological overhauls, or complete re-conceptualization. Examples: switching from observational to predictive modeling, addressing systematic biases in data collection, implementing entirely new data collection protocols, or requiring advanced modeling techniques not currently used.
 
 DIFFICULTY CRITERIA (i.e. how difficult it would be to implement the improvements):
-- "low": Involves moderate technical expertise, limited new data collection, or basic coordination between organizations.
-- "medium": Involves advanced technical expertise, substantial new data collection, or collaboration across multiple organizations.
-- "high": Involves significant resources, advanced technical expertise, extensive data collection, or major infrastructure changes.
+- "low": Requires moderate technical expertise, some coordination, or moderate resource investment. Examples: integrating data from multiple sources, updating methodologies with established techniques.
+- "medium": Requires moderate technical expertise, coordination, and resource investment. Example: create a new methodology of moderate complexity using established techniques, modelling with existing data, or expanding the scope of the layer.
+- "high": Requires significant resources, advanced technical expertise, extensive coordination, or major infrastructure. Examples: a new methodology of large complexity with no established techniques.
+
+SCORING GUIDANCE: Aim for a balanced distribution across categories. Not every layer needs major improvements - many may have minor issues that can be easily addressed. Consider layers with "No limitations identified" or "No recommendations suggested" as potential candidates for "small" improvement potential and "low" difficulty unless there are clear indicators suggesting otherwise.
+
+CALIBRATION EXAMPLES:
+- SMALL/LOW: Layer with outdated temporal coverage (e.g., 2010-2015 data) but same methodology and data sources are still available and valid. Simple data update needed.
+- SMALL/MEDIUM: Layer needs format standardization or minor methodological updates, requiring some coordination but no new data collection.
+- MEDIUM/LOW: Layer needs integration of additional existing data sources using established techniques.
+- MEDIUM/MEDIUM: Layer needs moderate expansion in scope or methodology, requiring some new data and coordination.
+- LARGE/MEDIUM: Layer has fundamental methodological issues but can be addressed with known advanced techniques.
+- LARGE/HIGH: Layer requires entirely new data collection programs, advanced modeling, or systematic bias correction requiring extensive resources.
 
 SATELLITE REMOTE SENSING CRITERIA:
 - true: The layer data can be generated, enhanced, or validated using satellite observations (e.g., sea surface temperature, chlorophyll-a, land cover, bathymetry, coastal changes, algal blooms, water quality indicators, habitat mapping, etc.)
@@ -145,12 +157,47 @@ Consider satellite capabilities for:
 - Oil spills and pollution
 - Wave height and sea state
 
+DIGITAL EARTH SWEDEN CRITERIA:
+- true: The layer data can be generated, enhanced, or validated using DigitalEarthSweden's available datasets
+- false: The layer requires data sources or capabilities not available through DigitalEarthSweden
+
+DigitalEarthSweden provides:
+- Sentinel-2 Level-2A data products (optical satellite imagery, 10-60m resolution)
+  * Multi-spectral bands suitable for land and shallow water analysis
+  * Atmospheric correction applied for surface reflectance
+  * Regular coverage over Sweden and surrounding areas
+  * Suitable for vegetation mapping, land use change, coastal monitoring
+- National land cover data from Naturvårdsverket
+  * Detailed Swedish land classification and mapping
+  * Vegetation types, urban areas, water bodies, agricultural land
+  * Regular updates for change detection
+  * High spatial resolution national coverage
+
+DigitalEarthSweden applications suitable for:
+- Coastal land use and infrastructure mapping
+- Vegetation and habitat classification (terrestrial and coastal wetlands)
+- Shallow water habitat detection (limited by water clarity and depth)
+- Land cover change detection over time
+- Coastal development monitoring
+- Agricultural and forestry mapping
+- Urban expansion analysis
+- Wetland and shoreline mapping
+
+DigitalEarthSweden limitations:
+- Limited to Swedish territory and immediate surrounding areas
+- Primarily terrestrial and coastal focus (limited deep-water capabilities)
+- Sentinel-2 optical sensors affected by cloud cover
+- Water depth penetration limited to clear, shallow waters
+- No specialized oceanographic sensors (no sea surface temperature, ocean chemistry)
+- Limited temporal frequency compared to dedicated marine monitoring
+
 Focus on:
 1. What the limitations explicitly state as problems
 2. What the recommendations explicitly suggest as improvements
 3. The complexity and scope of changes needed
 4. Whether satellite data could address the layer's data gaps or improve accuracy
-5. The technical and resource requirements implied
+5. Whether DigitalEarthSweden data (Sentinel-2 + Swedish land cover) could address the layer's data gaps or improve accuracy
+6. The technical and resource requirements implied
 
 Be objective and base your assessment strictly on the provided information.
 
@@ -247,7 +294,7 @@ Return ONLY the JSON response, no additional text."""
             return None
 
         # Validate the analysis structure
-        if not all(key in analysis for key in ['improvement_potential', 'difficulty', 'satellite']):
+        if not all(key in analysis for key in ['improvement_potential', 'difficulty', 'satellite', 'digital_earth_sweden']):
             print(
                 f"  Warning: Incomplete analysis for {symphony_entry['name']}")
             return None
@@ -272,8 +319,14 @@ Return ONLY the JSON response, no additional text."""
                 f"  Warning: Invalid satellite value: {analysis['satellite']}")
             analysis['satellite'] = False  # Default fallback
 
+        # Validate digital_earth_sweden value
+        if not isinstance(analysis['digital_earth_sweden'], bool):
+            print(
+                f"  Warning: Invalid digital_earth_sweden value: {analysis['digital_earth_sweden']}")
+            analysis['digital_earth_sweden'] = False  # Default fallback
+
         print(
-            f"  Result: {analysis['improvement_potential']} potential, {analysis['difficulty']} difficulty, satellite: {analysis['satellite']}")
+            f"  Result: {analysis['improvement_potential']} potential, {analysis['difficulty']} difficulty, satellite: {analysis['satellite']}, digital_earth_sweden: {analysis['digital_earth_sweden']}")
         return analysis
 
     def analyze_all_entries(self) -> Dict[str, Dict[str, Any]]:
@@ -297,7 +350,7 @@ Return ONLY the JSON response, no additional text."""
         return results
 
     def save_results(self, results: Dict[str, Dict[str, Any]],
-                     output_file: str = "symphony_improvement_analysis.json") -> None:
+                     output_file: str = "data/symphony_improvement_analysis.json") -> None:
         """Save analysis results to JSON file."""
 
         print(f"\nSaving results to {output_file}...")
@@ -322,6 +375,10 @@ Return ONLY the JSON response, no additional text."""
                     "satellite": {
                         "true": "The layer data can be generated, enhanced, or validated using satellite remote sensing observations",
                         "false": "The layer requires in-situ measurements, biological sampling, acoustic data, or other non-satellite data sources"
+                    },
+                    "digital_earth_sweden": {
+                        "true": "The layer data can be generated, enhanced, or validated using DigitalEarthSweden data (Sentinel-2 + Swedish land cover)",
+                        "false": "The layer requires data sources or capabilities not available through DigitalEarthSweden"
                     }
                 }
             },
@@ -337,11 +394,13 @@ Return ONLY the JSON response, no additional text."""
         improvement_counts = {}
         difficulty_counts = {}
         satellite_counts = {'true': 0, 'false': 0}
+        digital_earth_sweden_counts = {'true': 0, 'false': 0}
 
         for analysis in results.values():
             improvement = analysis['improvement_potential']
             difficulty = analysis['difficulty']
             satellite = str(analysis['satellite']).lower()
+            digital_earth_sweden = str(analysis['digital_earth_sweden']).lower()
 
             improvement_counts[improvement] = improvement_counts.get(
                 improvement, 0) + 1
@@ -349,6 +408,8 @@ Return ONLY the JSON response, no additional text."""
                 difficulty, 0) + 1
             satellite_counts[satellite] = satellite_counts.get(
                 satellite, 0) + 1
+            digital_earth_sweden_counts[digital_earth_sweden] = digital_earth_sweden_counts.get(
+                digital_earth_sweden, 0) + 1
 
         print(f"\nSummary:")
         print(f"  Total layers analyzed: {len(results)}")
@@ -361,6 +422,9 @@ Return ONLY the JSON response, no additional text."""
         print(f"  Satellite remote sensing potential:")
         for satellite, count in satellite_counts.items():
             print(f"    {satellite}: {count}")
+        print(f"  DigitalEarthSweden data potential:")
+        for digital_earth_sweden, count in digital_earth_sweden_counts.items():
+            print(f"    {digital_earth_sweden}: {count}")
 
 
 def main():

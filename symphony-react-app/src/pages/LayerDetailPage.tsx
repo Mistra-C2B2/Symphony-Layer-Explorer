@@ -95,9 +95,11 @@ const LayerDetailPage: React.FC = () => {
                   satellite sensing capable
                 </span>
               )}
-            </div>
-            <div className="text-lg text-gray-600">
-              <strong>Data Availability Index:</strong> {Math.round(layer.data_availability_index)}
+              {layer.digital_earth_sweden && (
+                <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full border border-blue-200">
+                  DigitalEarthSweden compatible
+                </span>
+              )}
             </div>
           </div>
 
@@ -145,16 +147,58 @@ const LayerDetailPage: React.FC = () => {
                       {layer.improvement_reasoning.satellite_justification}
                     </p>
                   </div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="font-medium text-gray-900 mb-2">DigitalEarthSweden Data Applicability</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {layer.improvement_reasoning.digital_earth_sweden_justification}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* P02 Parameters Table */}
+          {/* Oceanographic Parameters Section */}
           <div>
             <h2 className="text-xl font-semibold text-gray-900 mb-4">
-              P02 Parameters ({layer.p02_parameters.length})
+              Related Oceanographic Parameters ({layer.p02_parameters.length})
             </h2>
+            
+            {/* Explanation Box */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0">
+                  <svg className="w-6 h-6 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-medium text-blue-900 mb-2">What are these parameters?</h3>
+                  <p className="text-blue-800 mb-3">
+                    These are standardized <strong>oceanographic measurement types</strong> from the SeaDataNet vocabulary that help 
+                    scientists categorize and discover environmental data. They represent specific types of measurements that could 
+                    be used to improve or recreate this Symphony layer.
+                  </p>
+                  <h3 className="font-medium text-blue-900 mb-2">How were they matched?</h3>
+                  <p className="text-blue-800 mb-3">
+                    Using AI analysis, we examined each Symphony layer's data improvement recommendations and identified 
+                    relevant oceanographic parameters that could help address data limitations or serve as proxies for 
+                    missing measurements. The matching focused on parameters that would directly help improve the data quality 
+                    as described in the layer's recommendations.
+                  </p>
+                  <div className="mt-3">
+                    <a 
+                      href="https://vocab.nerc.ac.uk/collection/P02/current/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 text-sm underline"
+                    >
+                      Learn more about P02 parameters →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="overflow-x-auto">
               <table className="w-full border border-gray-200 rounded-lg" data-testid="p02-parameters-table">
                 <thead className="bg-gray-50">
@@ -163,7 +207,7 @@ const LayerDetailPage: React.FC = () => {
                       Code
                     </th>
                     <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
-                      Parameter
+                      Measurement Type
                     </th>
                     <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                       Availability Index

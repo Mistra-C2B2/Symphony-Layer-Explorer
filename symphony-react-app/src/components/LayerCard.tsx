@@ -1,15 +1,12 @@
 import React from 'react';
 import type { SymphonyLayer } from '../types';
 import Card from './Card';
+import { dataService } from '../services/dataService';
 
 interface LayerCardProps {
   layer: SymphonyLayer;
   onClick: (layer: SymphonyLayer) => void;
 }
-
-// Constants for configuration
-const SUMMARY_MAX_LENGTH = 120;
-const PROGRESS_BAR_WIDTH = 'w-16';
 
 // Color mapping for status indicators
 const STATUS_COLORS = {
@@ -31,13 +28,7 @@ const getStatusColor = (type: 'improvement' | 'difficulty', value: string): stri
          'bg-neutral-100 text-neutral-700 border-neutral-200';
 };
 
-const truncateText = (text: string, maxLength: number): string => {
-  return text.length > maxLength ? `${text.substring(0, maxLength)}...` : text;
-};
 
-const formatAvailabilityIndex = (index: number): number => {
-  return Math.min(100, Math.round(index));
-};
 
 // Sub-components for better organization
 const LayerHeader: React.FC<{ name: string; theme: string }> = ({ name, theme }) => (
@@ -51,14 +42,6 @@ const LayerHeader: React.FC<{ name: string; theme: string }> = ({ name, theme })
   </div>
 );
 
-const ProgressBar: React.FC<{ value: number; className?: string }> = ({ value, className = '' }) => (
-  <div className={`${PROGRESS_BAR_WIDTH} h-2.5 bg-neutral-200 rounded-full overflow-hidden shadow-inner ${className}`}>
-    <div 
-      className="h-full bg-gradient-to-r from-primary-400 to-secondary-400 transition-all duration-700 ease-out rounded-full"
-      style={{ width: `${value}%` }}
-    />
-  </div>
-);
 
 const MetricRow: React.FC<{ label: string; children: React.ReactNode }> = ({ label, children }) => (
   <div className="flex items-center justify-between py-1">
@@ -70,13 +53,19 @@ const MetricRow: React.FC<{ label: string; children: React.ReactNode }> = ({ lab
 );
 
 const StatusTag: React.FC<{ 
-  type: 'improvement' | 'difficulty' | 'satellite';
+  type: 'improvement' | 'difficulty' | 'satellite' | 'category' | 'digital_earth_sweden';
   value?: string;
   label: string;
 }> = ({ type, value, label }) => {
   const getTagStyles = () => {
     if (type === 'satellite') {
       return 'bg-secondary-100 text-secondary-700 border-secondary-200 shadow-soft';
+    }
+    if (type === 'category') {
+      return 'bg-primary-100 text-primary-700 border-primary-200 shadow-soft';
+    }
+    if (type === 'digital_earth_sweden') {
+      return 'bg-blue-100 text-blue-700 border-blue-200 shadow-soft';
     }
     return `${getStatusColor(type, value || '')} shadow-soft`;
   };
@@ -90,7 +79,7 @@ const StatusTag: React.FC<{
 
 
 const LayerCard: React.FC<LayerCardProps> = ({ layer, onClick }) => {
-  const availabilityPercentage = formatAvailabilityIndex(layer.data_availability_index);
+  const relatedDatasetsCount = dataService.getRelatedDatasetsCount(layer);
 
   return (
     <Card 
@@ -102,22 +91,20 @@ const LayerCard: React.FC<LayerCardProps> = ({ layer, onClick }) => {
 
       {/* Enhanced Metrics Section */}
       <div className="space-y-4 mb-5">
-        <MetricRow label="Data Availability:">
-          <ProgressBar value={availabilityPercentage} />
-          <span className="font-bold text-neutral-900 text-sm min-w-[2rem] text-right">
-            {availabilityPercentage}
-          </span>
-        </MetricRow>
 
-        <MetricRow label="P02 Parameters:">
-          <span className="font-bold text-neutral-900 bg-neutral-100 px-3 py-1.5 rounded-lg text-sm shadow-soft min-w-[3rem] text-center">
-            {layer.p02_parameters.length}
+        <MetricRow label="Related Datasets:">
+          <span className="font-bold text-neutral-900 bg-secondary-100 px-3 py-1.5 rounded-lg text-sm shadow-soft min-w-[3rem] text-center text-secondary-700">
+            {relatedDatasetsCount}
           </span>
         </MetricRow>
       </div>
 
       {/* Enhanced Tags Section */}
       <div className="flex flex-wrap gap-2 mb-5">
+        <StatusTag 
+          type="category"
+          label={layer.symphony_category}
+        />
         <StatusTag 
           type="improvement" 
           value={layer.improvement_potential}
@@ -132,6 +119,12 @@ const LayerCard: React.FC<LayerCardProps> = ({ layer, onClick }) => {
           <StatusTag 
             type="satellite"
             label="satellite"
+          />
+        )}
+        {layer.digital_earth_sweden && (
+          <StatusTag 
+            type="digital_earth_sweden"
+            label="DES data"
           />
         )}
       </div>

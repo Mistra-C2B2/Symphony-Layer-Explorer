@@ -16,7 +16,7 @@ const DIFFICULTY_OPTIONS = [
 
 const SORT_OPTIONS = [
   { value: 'name' as const, label: 'Name' },
-  { value: 'availability' as const, label: 'Availability' },
+  { value: 'availability' as const, label: 'Related Datasets' },
   { value: 'theme' as const, label: 'Theme' },
   { value: 'parameters' as const, label: 'Parameter Count' },
   { value: 'improvement' as const, label: 'Improvement Potential' },
@@ -52,6 +52,7 @@ interface SearchFiltersProps {
   onImprovementPotentialChange: (potential: string[]) => void;
   onDifficultyChange: (difficulty: string[]) => void;
   onSatelliteOnlyChange: (satelliteOnly: boolean) => void;
+  onDigitalEarthSwedenOnlyChange: (digitalEarthSwedenOnly: boolean) => void;
   onSortOptionChange: (option: SortOption) => void;
   onClearFilters: () => void;
 }
@@ -121,6 +122,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({
   onImprovementPotentialChange,
   onDifficultyChange,
   onSatelliteOnlyChange,
+  onDigitalEarthSwedenOnlyChange,
   onSortOptionChange,
   onClearFilters
 }) => {
@@ -133,7 +135,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({
   return (
     <div className="bg-white shadow-card border border-neutral-200 rounded-xl p-8 mb-8 animate-fade-in">
       {/* Search and Sort Controls */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         
         {/* Enhanced Search Input */}
         <div className="lg:col-span-2">
@@ -180,30 +182,11 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({
           </select>
         </div>
 
-        {/* Enhanced Satellite Toggle */}
-        <div className="flex items-center justify-center">
-          <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-4 hover:bg-neutral-100 transition-colors duration-150">
-            <label htmlFor="satellite-only" className="flex items-center cursor-pointer">
-              <input
-                id="satellite-only"
-                type="checkbox"
-                checked={filters.satelliteOnly}
-                onChange={(e) => onSatelliteOnlyChange(e.target.checked)}
-                className="h-5 w-5 text-primary-500 focus:ring-primary-500 border-neutral-300 rounded transition-colors duration-150 focus:ring-2 focus:ring-offset-1"
-                aria-describedby="satellite-help"
-              />
-              <div className="ml-3">
-                <span className="text-sm font-semibold text-neutral-800">Satellite Only</span>
-                <p id="satellite-help" className="text-xs text-neutral-500 mt-1">Show only satellite-sensed data</p>
-              </div>
-            </label>
-          </div>
-        </div>
       </div>
 
       {/* Enhanced Filter Sections */}
       <div className="border-t border-neutral-200 pt-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           
           {/* Themes Filter */}
           <CheckboxGroup
@@ -229,6 +212,34 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({
             selectedValues={filters.difficulty}
             onChange={onDifficultyChange}
           />
+
+          {/* Satellite Filter */}
+          <FilterSection title="Augmentalbe with">
+            <div className="space-y-2">
+              <label className="flex items-center group cursor-pointer hover:bg-neutral-50 rounded-md p-2 -mx-2 transition-colors duration-150">
+                <input
+                  type="checkbox"
+                  checked={filters.satelliteOnly}
+                  onChange={(e) => onSatelliteOnlyChange(e.target.checked)}
+                  className="h-4 w-4 text-primary-500 focus:ring-primary-500 border-neutral-300 rounded transition-colors duration-150 focus:ring-2 focus:ring-offset-1"
+                />
+                <span className="ml-3 text-sm font-semibold text-neutral-600 transition-colors duration-150 group-hover:text-neutral-800">
+                  Remote Sensing (Satellite)
+                </span>
+              </label>
+              <label className="flex items-center group cursor-pointer hover:bg-neutral-50 rounded-md p-2 -mx-2 transition-colors duration-150">
+                <input
+                  type="checkbox"
+                  checked={filters.digitalEarthSwedenOnly}
+                  onChange={(e) => onDigitalEarthSwedenOnlyChange(e.target.checked)}
+                  className="h-4 w-4 text-blue-500 focus:ring-blue-500 border-neutral-300 rounded transition-colors duration-150 focus:ring-2 focus:ring-offset-1"
+                />
+                <span className="ml-3 text-sm font-semibold text-neutral-600 transition-colors duration-150 group-hover:text-neutral-800">
+                  Digital Earth Sweden
+                </span>
+              </label>
+            </div>
+          </FilterSection>
         </div>
       </div>
 

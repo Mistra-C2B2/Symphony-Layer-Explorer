@@ -7,6 +7,7 @@ export interface ImprovementReasoning {
   improvement_justification: string;
   difficulty_justification: string;
   satellite_justification: string;
+  digital_earth_sweden_justification: string;
 }
 
 export interface SymphonyLayer {
@@ -46,6 +47,7 @@ export interface SymphonyLayer {
   improvement_potential: "small" | "medium" | "large";
   difficulty: "low" | "medium" | "high";
   satellite: boolean;
+  digital_earth_sweden: boolean;
   improvement_reasoning: ImprovementReasoning;
   p02_parameters: P02Parameter[];
   data_availability_index: number;
@@ -102,6 +104,7 @@ export interface SearchFilters {
   improvementPotential: string[];
   difficulty: string[];
   satelliteOnly: boolean;
+  digitalEarthSwedenOnly: boolean;
 }
 
 export type SortOption = 

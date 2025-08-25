@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import type { SymphonyLayer, SearchFilters, SortOption } from '../types';
+import { dataService } from '../services/dataService';
 
 interface UseSearchReturn {
   searchFilters: SearchFilters;
@@ -10,6 +11,7 @@ interface UseSearchReturn {
   updateImprovementPotential: (potential: string[]) => void;
   updateDifficulty: (difficulty: string[]) => void;
   updateSatelliteOnly: (satelliteOnly: boolean) => void;
+  updateDigitalEarthSwedenOnly: (digitalEarthSwedenOnly: boolean) => void;
   updateSortOption: (option: SortOption) => void;
   clearFilters: () => void;
 }
@@ -19,7 +21,8 @@ const initialFilters: SearchFilters = {
   themes: [],
   improvementPotential: [],
   difficulty: [],
-  satelliteOnly: false
+  satelliteOnly: false,
+  digitalEarthSwedenOnly: false
 };
 
 export const useSearch = (layers: SymphonyLayer[] | null): UseSearchReturn => {
@@ -65,6 +68,11 @@ export const useSearch = (layers: SymphonyLayer[] | null): UseSearchReturn => {
         return false;
       }
 
+      // Digital Earth Sweden filter
+      if (searchFilters.digitalEarthSwedenOnly && !layer.digital_earth_sweden) {
+        return false;
+      }
+
       return true;
     });
 
@@ -74,7 +82,9 @@ export const useSearch = (layers: SymphonyLayer[] | null): UseSearchReturn => {
         case 'name':
           return a.name.localeCompare(b.name);
         case 'availability':
-          return b.data_availability_index - a.data_availability_index;
+          const aDatasets = dataService.getRelatedDatasetsCount(a);
+          const bDatasets = dataService.getRelatedDatasetsCount(b);
+          return bDatasets - aDatasets;
         case 'theme':
           return a.symphony_theme.localeCompare(b.symphony_theme);
         case 'parameters':
@@ -113,6 +123,10 @@ export const useSearch = (layers: SymphonyLayer[] | null): UseSearchReturn => {
     setSearchFilters(prev => ({ ...prev, satelliteOnly }));
   };
 
+  const updateDigitalEarthSwedenOnly = (digitalEarthSwedenOnly: boolean) => {
+    setSearchFilters(prev => ({ ...prev, digitalEarthSwedenOnly }));
+  };
+
   const updateSortOption = (option: SortOption) => {
     setSortOption(option);
   };
@@ -131,6 +145,7 @@ export const useSearch = (layers: SymphonyLayer[] | null): UseSearchReturn => {
     updateImprovementPotential,
     updateDifficulty,
     updateSatelliteOnly,
+    updateDigitalEarthSwedenOnly,
     updateSortOption,
     clearFilters
   };

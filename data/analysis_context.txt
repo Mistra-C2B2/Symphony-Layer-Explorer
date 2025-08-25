@@ -1,0 +1,166 @@
+SYMPHONY LAYER IMPROVEMENT ANALYSIS CONTEXT
+================================================
+
+This document provides context from the dataset catalogue to improve AI analysis of Symphony layers for improvement potential, difficulty assessment, and satellite data applicability.
+
+AVAILABLE DATA INFRASTRUCTURE OVERVIEW
+=====================================
+
+Total Available Datasets: 504
+
+DATA SOURCES (by volume):
+- EMODnet Series: 219 datasets (43%) - European Marine Observation Network
+- SHARKweb: 55 datasets (11%) - Swedish oceanographic database
+- SMHI: 44 datasets (9%) - Swedish Meteorological and Hydrological Institute
+- GBIF: 40 datasets (8%) - Global Biodiversity Information Facility
+- Copernicus: 37 datasets (7%) - EU Earth observation program
+- EMODnet Services: 37 datasets (7%) - Marine data services
+- EMODnet Datasets: 34 datasets (7%) - Marine research datasets
+- Hav och Vatten: 12 datasets (2%) - Swedish marine authority
+- Colin Center Database: 12 datasets (2%) - Marine biological data
+- HELCOM: 9 datasets (2%) - Baltic Marine Environment Protection Commission
+
+ACQUISITION METHODS (by volume):
+- In situ systems: 364 datasets (72%) - Direct measurements, ship-based, monitoring stations
+- Model output: 50 datasets (10%) - Numerical models, reanalysis data
+- Satellite observations: 27 datasets (5%) - Remote sensing data
+- Unknown/Other: 63 datasets (13%)
+
+AVAILABLE P02 PARAMETER TYPES: 207 unique oceanographic parameters
+
+GEOGRAPHIC COVERAGE: 12 regions including Baltic Sea, Skagerrak, Kattegat, North Sea basins
+
+IMPROVEMENT POTENTIAL ASSESSMENT GUIDELINES
+==========================================
+
+SMALL IMPROVEMENT POTENTIAL - Consider when:
+- Rich existing data infrastructure available (EMODnet, SMHI, SHARKweb have extensive coverage)
+- Parameter is well-covered in catalogue (e.g., temperature, salinity, chlorophyll-a are abundant)
+- Temporal gap exists but data sources are ongoing/active
+- Format/metadata standardization needed
+- Simple integration with existing monitoring programs possible
+
+MEDIUM IMPROVEMENT POTENTIAL - Consider when:
+- Some relevant data exists but coverage is patchy
+- Multiple data sources need integration
+- Methodology updates needed but established techniques exist
+- Expanding geographic or temporal scope with available resources
+- Bridging gaps between different measurement systems
+
+LARGE IMPROVEMENT POTENTIAL - Consider when:
+- Limited relevant data in catalogue for the parameter type
+- Systematic data collection gaps exist
+- New monitoring infrastructure needed
+- Advanced modeling or data fusion techniques required
+- Fundamental changes to data collection protocols needed
+
+DIFFICULTY ASSESSMENT GUIDELINES
+===============================
+
+LOW DIFFICULTY - Consider when:
+- Abundant in situ data available (72% of catalogue)
+- Well-established monitoring programs exist (EMODnet, SMHI networks)
+- Standard oceanographic parameters well-covered
+- Data integration using existing platforms/formats
+- Temporal updates from ongoing monitoring
+
+MEDIUM DIFFICULTY - Consider when:
+- Moderate coordination between organizations needed
+- Model-based approaches required (10% of datasets use models)
+- Cross-platform data integration needed
+- Some new methodological development required
+- Regional expansion within existing monitoring capabilities
+
+HIGH DIFFICULTY - Consider when:
+- Limited infrastructure for specific parameter types
+- New monitoring networks needed
+- Advanced technical expertise not readily available
+- Significant resource investment required
+- Novel measurement techniques or sensors needed
+
+SENTINEL SATELLITE DATA APPLICABILITY (Copernicus Program)
+=======================================================
+
+Based on expert analysis from Jesper's Symphony metadata review, focus specifically on Sentinel-2 and Sentinel-3 capabilities:
+
+HIGH SENTINEL POTENTIAL (true) - Consider when layer involves:
+
+SENTINEL-2 APPLICATIONS (Optical, 10-60m resolution):
+- Coastal infrastructure changes (harbours, marinas, buildings) - significant changes since 2010/2013
+- Shallow water habitat mapping (photic zones) - underwater vegetation detection possible but harder with depth
+- Ocean bottom type detection (mud, silt, clay, sand, gravel) in shallow waters via color signatures
+- Photic zone edge mapping - detecting shade of blue where photic zone ends
+- Artificial reef detection around wind turbines (coastal ones detectable)
+- Shoreline vegetation mapping
+- Coastal exploitation and habitat loss monitoring
+- Angiosperms mapping (already proven with Sentinel-2A data)
+
+SENTINEL-3 APPLICATIONS (Ocean/land monitoring):
+- Sea Surface Temperature (SLSTR sensor) - proven ARD products available
+- Ocean color and water quality monitoring (OLCI sensor) 
+- Large oil spill detection (must be large enough for sensor resolution)
+- Algae bloom detection and monitoring
+- Climate change temperature analysis (Sea Surface Temperature)
+
+SPECIFIC LAYER APPLICATIONS FROM EXPERT ANALYSIS:
+- Anoxia background: YES if changes water color (surface phenomenon)
+- Artificial reefs: YES for coastal wind turbines + reef modeling
+- Bottom habitats (rough/hard/soft/transport): YES in photic zones, limited by depth
+- Mussel reefs: YES for temperature data (Sentinel-3 SST)
+- Climate change temperature: YES (Sentinel-3 SLSTR)
+- Habitat loss coastal: YES for detecting changes since 2010/2013
+- Dumping impacts: YES if significant enough to change bottom color
+- Oil spills: YES for large spills (Sentinel-3 OLCI)
+- Photic zone mapping: YES for edge detection via ocean color
+
+LOW SENTINEL POTENTIAL (false) - Consider when layer involves:
+
+DEPTH-LIMITED APPLICATIONS:
+- Deep water processes (beyond photic zone detection limits)
+- Subsurface phenomena not affecting surface color/temperature
+- Small-scale features below sensor resolution limits
+
+BIOLOGICAL/CHEMICAL LIMITATIONS:
+- Species-specific distributions (birds, fish, marine mammals) - requires direct observation
+- Detailed nutrient chemistry (nitrogen, phosphorus) - may require specialized sensors outside Copernicus
+- Acidification measurement - limited satellite capability
+- Fish farm impacts - unless large enough to cause color changes/algae blooms
+
+TECHNICAL LIMITATIONS:
+- Cloud cover dependency (Sentinel-2 optical sensors)
+- Features too small for 10-60m resolution
+- Non-surface phenomena
+- Rapidly changing temporal processes requiring higher frequency than satellite revisit
+
+CONTEXTUAL CONSIDERATIONS
+========================
+
+1. EXISTING INFRASTRUCTURE STRENGTH:
+   - Strong in situ monitoring network (364/504 datasets)
+   - Good satellite coverage (27 dedicated satellite datasets)
+   - Robust modeling capabilities (50 model-based datasets)
+   - Well-established data sharing systems (EMODnet framework)
+
+2. REGIONAL EXPERTISE:
+   - Baltic Sea particularly well-monitored
+   - Swedish institutions (SMHI, SHARKweb) provide extensive coverage
+   - EU Copernicus program provides ongoing satellite data
+   - HELCOM provides regional coordination framework
+
+3. DATA AVAILABILITY REALITY CHECK:
+   - 72% of available data comes from in situ systems
+   - Only 5% from satellites (but growing rapidly)
+   - Strong institutional data sharing culture
+   - Mature quality control and standardization processes
+
+4. RESOURCE CONSIDERATIONS:
+   - Existing monitoring programs can often be leveraged
+   - Data integration often more feasible than new collection
+   - Regional cooperation frameworks already established
+   - Technical expertise available through existing institutions
+
+USE THIS CONTEXT TO:
+- Calibrate improvement potential against actual data availability
+- Assess difficulty based on existing infrastructure capabilities  
+- Make realistic satellite applicability assessments
+- Consider leveraging existing data streams rather than assuming new collection needed

@@ -5,8 +5,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ### Data Processing
-- `python merge_datasets.py` - Merge and enhance Symphony layer metadata with availability indexes and improvement analysis. Outputs processed JSON files to `docs/data/` for web app consumption.
-- `python optimize_site.py` - Optimize static website files by minifying JSON, creating gzipped versions, and generating site statistics for GitHub Pages deployment.
+- `python merge_datasets.py` - Merge and enhance Symphony layer metadata with availability indexes and improvement analysis. Outputs processed JSON files to `symphony-react-app/public/data/` for web app consumption.
+- `python test_improved_analysis.py` - Test script for improved analysis functionality.
 
 ### Analysis Scripts
 - `python analyze_layer_improvements.py` - AI-powered analysis to determine improvement potential, difficulty, and satellite sensing capabilities for Symphony layers. Requires `OPEN_ROUTER_API_KEY` environment variable.
@@ -15,21 +15,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Python Environment
 - `pip install -r requirements.txt` - Install Python dependencies (plotly, streamlit, pandas, streamlit-plotly-events, openpyxl)
+- Requires `python-dotenv` for environment variable management (may need to be installed separately)
 
 ### Website Development
 The React application is in `symphony-react-app/` directory. It uses Vite as the build tool and is configured for GitHub Pages deployment.
 
-**Development Server**: Run a single development server that is accessible outside the container:
+**Development Server**: 
+- `cd symphony-react-app && npm run dev` - Start Vite dev server (defaults to localhost:5173)
 - `cd symphony-react-app && npm run dev --host` - Start Vite dev server accessible on all interfaces
-- Access the site at the provided local network URL (usually `http://localhost:5173`)
 - **Important**: Only run ONE development server process to avoid port conflicts
 
 **Build and Testing**:
-- `npm run build` - Build the production version
-- `npm run preview` - Preview the production build
-- `npm run test` - Run unit tests with Vitest
-- `npm run test:e2e` - Run end-to-end tests with Playwright
-- `npm run lint` - Run ESLint for code quality
+- `cd symphony-react-app && npm run build` - Build the production version (requires TypeScript compilation)
+- `cd symphony-react-app && npm run preview` - Preview the production build
+- `cd symphony-react-app && npm run test` - Run unit tests with Vitest
+- `cd symphony-react-app && npm run test:ui` - Run unit tests with Vitest UI
+- `cd symphony-react-app && npm run test:e2e` - Run end-to-end tests with Playwright
+- `cd symphony-react-app && npm run test:e2e:ui` - Run e2e tests with Playwright UI
+- `cd symphony-react-app && npm run lint` - Run ESLint for code quality
 
 ## Architecture Overview
 
@@ -43,18 +46,20 @@ This is a dual-purpose repository containing both data processing scripts and a 
 ### Core Components
 
 **Data Processing Layer**:
-- `DatasetMerger` class in `merge_datasets.py` - Combines metadata with availability indexes and improvement analysis
-- `LayerImprovementAnalyzer` class - AI analysis of layer improvement potential
-- `SymphonyP02MatcherV2` class - AI matching of Symphony layers to P02 parameters
-- `DataAvailabilityCalculator` class - Computes data availability indexes
+- `SimplifiedDatasetMerger` class in `merge_datasets.py` - Combines metadata with availability indexes and improvement analysis
+- `LayerImprovementAnalyzer` class in `analyze_layer_improvements.py` - AI analysis of layer improvement potential
+- `SymphonyP02MatcherV2` class in `match_symphony_to_p02.py` - AI matching of Symphony layers to P02 parameters
+- `DataAvailabilityCalculator` class in `calculate_data_availability_index.py` - Computes data availability indexes
 
 **React Web Application**:
-- `App.tsx` - Main application component with routing
-- React components in `symphony-react-app/src/components/` for UI elements
-- Custom hooks in `symphony-react-app/src/hooks/` for data fetching and search functionality
-- Data services in `symphony-react-app/src/services/` for API communication
+- `App.tsx` - Main application component with HashRouter routing
+- React components in `symphony-react-app/src/components/` for UI elements (Header, Footer, LayerCard, SearchFilters, etc.)
+- Custom hooks in `symphony-react-app/src/hooks/` for data fetching (`useData.ts`) and search functionality (`useSearch.ts`)
+- Data services in `symphony-react-app/src/services/` for API communication (`dataService.ts`)
+- Pages in `symphony-react-app/src/pages/` (LayerListPage, LayerDetailPage, DatasetTablePage)
 - TypeScript for type safety and Tailwind CSS for styling
 - Responsive design with mobile support
+- Vitest for unit testing and Playwright for e2e testing
 
 ### Data Flow
 ```
@@ -62,10 +67,18 @@ Raw Excel/PDF → Python processing scripts → Enhanced JSON files → React ap
 ```
 
 ### Key Data Files
-- `symphony_layer_metadata.json` - Core layer information enhanced with availability and improvement data
+**Source Data** (in `data/`):
+- `symphony_layer_metadata.json` - Core layer information from Symphony
 - `p02.jsonld` - SeaDataNet parameter vocabulary (468 oceanographic parameters)
 - `catalogue.json` - Dataset catalogue with P02 parameter mappings
 - `symphony_p02_matches.json` - AI-generated matches between Symphony layers and P02 parameters
+- `symphony_improvement_analysis.json` - AI-generated improvement analysis for each layer
+- `symphony_data_availability_index.json` - Calculated availability indexes for layers
+
+**Web-Ready Data** (in `symphony-react-app/public/data/`):
+- `symphony_layers.json` - Complete enhanced layer data for React app
+- `p02_analysis.json` - P02 parameter availability analysis
+- `catalogue.json` - Dataset catalogue (copy of source)
 
 ## API Dependencies
 
@@ -81,14 +94,21 @@ The React application is configured for GitHub Pages deployment:
 2. Select "Deploy from a branch" with `main` branch and `/symphony-react-app/dist` folder
 3. Build the application: `cd symphony-react-app && npm run build`
 4. The `dist/` folder contains the production build ready for deployment
-5. Vite is configured with the correct base path for GitHub Pages
+5. Vite is configured with the correct base path (`/Symphony-Layers-Interactive-Explorer/`) for GitHub Pages
+6. Uses HashRouter for client-side routing compatibility with GitHub Pages
 
 ## File Structure Notes
 
 - `symphony-react-app/public/data/` contains web-optimized JSON files (different from `data/` which has raw/intermediate files)
-- `symphony-react-app/src/` contains React components, hooks, services, and types
+- `symphony-react-app/src/` contains React application source code organized into:
+  - `components/` - Reusable UI components (Header, Footer, LayerCard, SearchFilters, etc.)
+  - `hooks/` - Custom React hooks with tests in `__tests__/` subdirectory
+  - `pages/` - Main page components (LayerListPage, LayerDetailPage, DatasetTablePage)
+  - `services/` - Data fetching and API services with tests in `__tests__/` subdirectory
+  - `types/` - TypeScript type definitions
 - `old/` directory contains legacy Excel files and earlier processing attempts
 - All Python scripts include comprehensive error handling and progress reporting
 - The React application is entirely client-side with no server dependencies beyond the Vite dev server
-- When use playwright through the command "npx playwright screenshot [url] [png filename]"
-- Save screenshots in the "screenshot" directory to avoid cluttering the codebase
+- `screenshots/` directory contains project screenshots and testing artifacts
+- When using playwright use: `npx playwright screenshot [url] [png filename]`
+- Save screenshots in the appropriate `screenshots/` directory to avoid cluttering the codebase

@@ -19,7 +19,7 @@ class SimplifiedDatasetMerger:
     def __init__(self):
         """Initialize the simplified dataset merger."""
         self.data_dir = "data"
-        self.output_dir = "src/data"
+        self.output_dir = "symphony-react-app/public/data"
 
         # Ensure output directory exists
         os.makedirs(self.output_dir, exist_ok=True)
@@ -141,6 +141,12 @@ class SimplifiedDatasetMerger:
                 skipped_count += 1
                 continue
 
+            # Filter by category - only include Ecosystem or Pressures
+            symphony_category = layer_entry.get("SymphonyCategory", "")
+            if symphony_category not in ["Ecosystem", "Pressure"]:
+                skipped_count += 1
+                continue
+
             # Convert original metadata keys using the mapping
             enhanced_layer = self.convert_keys_using_mapping(layer_entry)
 
@@ -152,6 +158,7 @@ class SimplifiedDatasetMerger:
                 enhanced_layer["difficulty"] = analysis.get(
                     "difficulty", "medium")
                 enhanced_layer["satellite"] = analysis.get("satellite", False)
+                enhanced_layer["digital_earth_sweden"] = analysis.get("digital_earth_sweden", False)
 
                 # Add reasoning from improvement analysis
                 reasoning = analysis.get("reasoning", {})
@@ -159,16 +166,19 @@ class SimplifiedDatasetMerger:
                     enhanced_layer["improvement_reasoning"] = {
                         "improvement_justification": reasoning.get("improvement_justification", ""),
                         "difficulty_justification": reasoning.get("difficulty_justification", ""),
-                        "satellite_justification": reasoning.get("satellite_justification", "")
+                        "satellite_justification": reasoning.get("satellite_justification", ""),
+                        "digital_earth_sweden_justification": reasoning.get("digital_earth_sweden_justification", "")
                     }
             else:
                 enhanced_layer["improvement_potential"] = "medium"
                 enhanced_layer["difficulty"] = "medium"
                 enhanced_layer["satellite"] = False
+                enhanced_layer["digital_earth_sweden"] = False
                 enhanced_layer["improvement_reasoning"] = {
                     "improvement_justification": "",
                     "difficulty_justification": "",
-                    "satellite_justification": ""
+                    "satellite_justification": "",
+                    "digital_earth_sweden_justification": ""
                 }
 
             # Add P02 parameter matches
@@ -200,8 +210,9 @@ class SimplifiedDatasetMerger:
             json.dump(combined_layers, f, indent=2, ensure_ascii=False)
 
         print(f"✓ Created {output_file}")
-        print(f"  Processed: {processed_count} layers")
-        print(f"  Skipped: {skipped_count} invalid entries")
+        print(
+            f"  Processed: {processed_count} layers (Ecosystem & Pressures only)")
+        print(f"  Skipped: {skipped_count} invalid/filtered entries")
         print(f"  Keys converted using mapping")
         print(f"  Improvement reasoning included")
 

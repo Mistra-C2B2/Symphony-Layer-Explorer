@@ -23,6 +23,7 @@ const LayerListPage: React.FC = () => {
     updateImprovementPotential,
     updateDifficulty,
     updateSatelliteOnly,
+    updateDigitalEarthSwedenOnly,
     updateSortOption,
     clearFilters
   } = useSearch(data?.symphonyLayers || null);
@@ -84,6 +85,7 @@ const LayerListPage: React.FC = () => {
         onImprovementPotentialChange={updateImprovementPotential}
         onDifficultyChange={updateDifficulty}
         onSatelliteOnlyChange={updateSatelliteOnly}
+        onDigitalEarthSwedenOnlyChange={updateDigitalEarthSwedenOnly}
         onSortOptionChange={updateSortOption}
         onClearFilters={clearFilters}
       />
