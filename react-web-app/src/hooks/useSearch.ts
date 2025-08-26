@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react';
 import type { SymphonyLayer, SearchFilters, SortOption } from '../types';
-import { dataService } from '../services/dataService';
 
 interface UseSearchReturn {
   searchFilters: SearchFilters;
