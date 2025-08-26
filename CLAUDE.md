@@ -4,18 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-### Data Processing
-- `python merge_datasets.py` - Merge and enhance Symphony layer metadata with availability indexes and improvement analysis. Outputs processed JSON files to `symphony-react-app/public/data/` for web app consumption.
-- `python test_improved_analysis.py` - Test script for improved analysis functionality.
+### Data Processing Pipeline
+All data processing scripts are located in `data-pipeline/scripts/`. Run from the scripts directory:
 
-### Analysis Scripts
-- `python analyze_layer_improvements.py` - AI-powered analysis to determine improvement potential, difficulty, and satellite sensing capabilities for Symphony layers. Requires `OPEN_ROUTER_API_KEY` environment variable.
-- `python match_symphony_to_p02.py` - AI-powered matching of Symphony layers to P02 oceanographic parameters. Requires `OPEN_ROUTER_API_KEY` environment variable.
-- `python calculate_data_availability_index.py` - Calculate data availability indexes by matching Symphony-P02 parameters with P02 parameter availability data.
+```bash
+cd data-pipeline/scripts
+```
 
-### Python Environment
-- `pip install -r requirements.txt` - Install Python dependencies (plotly, streamlit, pandas, streamlit-plotly-events, openpyxl)
-- Requires `python-dotenv` for environment variable management (may need to be installed separately)
+**Full Pipeline Workflow:**
+1. `python analyze_layer_improvements.py` - AI analysis of improvement potential, difficulty, and satellite sensing capabilities
+2. `python match_symphony_to_p02.py` - AI matching of Symphony layers to P02 oceanographic parameters  
+3. `python calculate_data_availability_index.py` - Calculate data availability indexes from P02 parameter availability
+4. `python merge_datasets.py` - Combine all data and output to React app's public/data directory
+
+**Requirements:**
+- `cd data-pipeline && pip install -r requirements.txt` - Install Python dependencies
+- Set `OPEN_ROUTER_API_KEY` environment variable for AI-powered scripts (steps 1-2)
 
 ### Website Development
 The React application is in `symphony-react-app/` directory. It uses Vite as the build tool and is configured for GitHub Pages deployment.
@@ -36,7 +40,7 @@ The React application is in `symphony-react-app/` directory. It uses Vite as the
 
 ## Architecture Overview
 
-This is a dual-purpose repository containing both data processing scripts and a React application for exploring Symphony oceanic layers.
+This is a dual-purpose repository containing both data processing scripts and a React application called "Symphony Layer Explorer" for exploring Symphony oceanic layers.
 
 ### Data Pipeline
 1. **Source Data**: Symphony layer metadata, P02 parameter vocabulary, and dataset catalogues in `data/`
@@ -45,11 +49,11 @@ This is a dual-purpose repository containing both data processing scripts and a 
 
 ### Core Components
 
-**Data Processing Layer**:
-- `SimplifiedDatasetMerger` class in `merge_datasets.py` - Combines metadata with availability indexes and improvement analysis
-- `LayerImprovementAnalyzer` class in `analyze_layer_improvements.py` - AI analysis of layer improvement potential
-- `SymphonyP02MatcherV2` class in `match_symphony_to_p02.py` - AI matching of Symphony layers to P02 parameters
-- `DataAvailabilityCalculator` class in `calculate_data_availability_index.py` - Computes data availability indexes
+**Data Processing Pipeline** (in `data-pipeline/`):
+- `SimplifiedDatasetMerger` class in `scripts/merge_datasets.py` - Combines metadata with availability indexes and improvement analysis
+- `LayerImprovementAnalyzer` class in `scripts/analyze_layer_improvements.py` - AI analysis of layer improvement potential
+- `SymphonyP02MatcherV2` class in `scripts/match_symphony_to_p02.py` - AI matching of Symphony layers to P02 parameters
+- `DataAvailabilityCalculator` class in `scripts/calculate_data_availability_index.py` - Computes data availability indexes
 
 **React Web Application**:
 - `App.tsx` - Main application component with HashRouter routing
@@ -63,22 +67,29 @@ This is a dual-purpose repository containing both data processing scripts and a 
 
 ### Data Flow
 ```
-Raw Excel/PDF → Python processing scripts → Enhanced JSON files → React app → GitHub Pages
+Raw Data → Python Processing Pipeline → Enhanced JSON Files → React App → GitHub Pages
+   ↓              ↓                         ↓                 ↓
+source-data → data-pipeline/scripts → output → symphony-react-app/public/data
 ```
 
 ### Key Data Files
-**Source Data** (in `data/`):
+**Source Data** (in `data-pipeline/source-data/`):
 - `symphony_layer_metadata.json` - Core layer information from Symphony
-- `p02.jsonld` - SeaDataNet parameter vocabulary (468 oceanographic parameters)
+- `p02.jsonld` - SeaDataNet parameter vocabulary (468 oceanographic parameters)  
 - `catalogue.json` - Dataset catalogue with P02 parameter mappings
 - `symphony_p02_matches.json` - AI-generated matches between Symphony layers and P02 parameters
+- `analysis_context.txt` - Context file for AI analysis
+
+**Processed Data** (in `data-pipeline/output/`):
 - `symphony_improvement_analysis.json` - AI-generated improvement analysis for each layer
 - `symphony_data_availability_index.json` - Calculated availability indexes for layers
+- `p02_analysis.json` - P02 parameter availability analysis  
+- `symphony_layers.json` - Intermediate combined data
 
 **Web-Ready Data** (in `symphony-react-app/public/data/`):
 - `symphony_layers.json` - Complete enhanced layer data for React app
-- `p02_analysis.json` - P02 parameter availability analysis
-- `catalogue.json` - Dataset catalogue (copy of source)
+- `p02_analysis.json` - P02 parameter availability analysis (copy)
+- `catalogue.json` - Dataset catalogue (copy)
 
 ## API Dependencies
 
@@ -94,21 +105,31 @@ The React application is configured for GitHub Pages deployment:
 2. Select "Deploy from a branch" with `main` branch and `/symphony-react-app/dist` folder
 3. Build the application: `cd symphony-react-app && npm run build`
 4. The `dist/` folder contains the production build ready for deployment
-5. Vite is configured with the correct base path (`/Symphony-Layers-Interactive-Explorer/`) for GitHub Pages
+5. Vite is configured with the correct base path (`/Symphony-Layer-Explorer/`) for GitHub Pages
 6. Uses HashRouter for client-side routing compatibility with GitHub Pages
 
 ## File Structure Notes
 
-- `symphony-react-app/public/data/` contains web-optimized JSON files (different from `data/` which has raw/intermediate files)
-- `symphony-react-app/src/` contains React application source code organized into:
+**Data Pipeline** (`data-pipeline/`):
+- `source-data/` - Raw input data files (Symphony metadata, P02 vocabulary, catalogue)
+- `output/` - Processed intermediate files generated by scripts
+- `scripts/` - Python processing scripts with comprehensive error handling and progress reporting
+- `requirements.txt` - Python dependencies for the data pipeline
+- `README.md` - Detailed data pipeline documentation
+- `.gitignore` - Python-specific ignore patterns
+
+**React Application** (`symphony-react-app/`):
+- `public/data/` - Web-optimized JSON files for the React app (copied from data pipeline output)
+- `src/` - React application source code organized into:
   - `components/` - Reusable UI components (Header, Footer, LayerCard, SearchFilters, etc.)
   - `hooks/` - Custom React hooks with tests in `__tests__/` subdirectory
   - `pages/` - Main page components (LayerListPage, LayerDetailPage, DatasetTablePage)
   - `services/` - Data fetching and API services with tests in `__tests__/` subdirectory
   - `types/` - TypeScript type definitions
-- `old/` directory contains legacy Excel files and earlier processing attempts
-- All Python scripts include comprehensive error handling and progress reporting
+- `screenshots/` - App-specific screenshots and testing artifacts
 - The React application is entirely client-side with no server dependencies beyond the Vite dev server
-- `screenshots/` directory contains project screenshots and testing artifacts
-- When using playwright use: `npx playwright screenshot [url] [png filename]`
-- Save screenshots in the appropriate `screenshots/` directory to avoid cluttering the codebase
+
+**Root Level**:
+- `.github/workflows/` - Single GitHub Actions configuration for deployment
+- `old/` directory contains legacy Excel files and earlier processing attempts
+- When using playwright: `cd symphony-react-app && npx playwright screenshot [url] [png filename]`

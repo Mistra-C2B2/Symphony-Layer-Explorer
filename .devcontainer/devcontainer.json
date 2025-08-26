@@ -19,7 +19,7 @@
     "--shm-size=1g",
     "--ipc=host"
   ],
-  "postCreateCommand": "pip install -r requirements.txt || true && npm install -g @anthropic-ai/claude-code && npx --yes playwright install-deps && npx --yes playwright install chrome",
+  "postCreateCommand": "pip install -r data-pipeline/requirements.txt || true && npm install -g @anthropic-ai/claude-code && npx --yes playwright install-deps && npx --yes playwright install chrome",
   "forwardPorts": [5173,8000,3000],
   "containerEnv": {
     "CLAUDE_CONFIG_DIR": "/workspaces/${localWorkspaceFolderBasename}/.claude"
