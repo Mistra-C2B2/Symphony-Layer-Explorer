@@ -22,21 +22,21 @@ cd data-pipeline/scripts
 - Set `OPEN_ROUTER_API_KEY` environment variable for AI-powered scripts (steps 1-2)
 
 ### Website Development
-The React application is in `symphony-react-app/` directory. It uses Vite as the build tool and is configured for GitHub Pages deployment.
+The React application is in `react-web-app/` directory. It uses Vite as the build tool and is configured for GitHub Pages deployment.
 
 **Development Server**: 
-- `cd symphony-react-app && npm run dev` - Start Vite dev server (defaults to localhost:5173)
-- `cd symphony-react-app && npm run dev --host` - Start Vite dev server accessible on all interfaces
+- `cd react-web-app && npm run dev` - Start Vite dev server (defaults to localhost:5173)
+- `cd react-web-app && npm run dev --host` - Start Vite dev server accessible on all interfaces
 - **Important**: Only run ONE development server process to avoid port conflicts
 
 **Build and Testing**:
-- `cd symphony-react-app && npm run build` - Build the production version (requires TypeScript compilation)
-- `cd symphony-react-app && npm run preview` - Preview the production build
-- `cd symphony-react-app && npm run test` - Run unit tests with Vitest
-- `cd symphony-react-app && npm run test:ui` - Run unit tests with Vitest UI
-- `cd symphony-react-app && npm run test:e2e` - Run end-to-end tests with Playwright
-- `cd symphony-react-app && npm run test:e2e:ui` - Run e2e tests with Playwright UI
-- `cd symphony-react-app && npm run lint` - Run ESLint for code quality
+- `cd react-web-app && npm run build` - Build the production version (requires TypeScript compilation)
+- `cd react-web-app && npm run preview` - Preview the production build
+- `cd react-web-app && npm run test` - Run unit tests with Vitest
+- `cd react-web-app && npm run test:ui` - Run unit tests with Vitest UI
+- `cd react-web-app && npm run test:e2e` - Run end-to-end tests with Playwright
+- `cd react-web-app && npm run test:e2e:ui` - Run e2e tests with Playwright UI
+- `cd react-web-app && npm run lint` - Run ESLint for code quality
 
 ## Architecture Overview
 
@@ -45,7 +45,7 @@ This is a dual-purpose repository containing both data processing scripts and a 
 ### Data Pipeline
 1. **Source Data**: Symphony layer metadata, P02 parameter vocabulary, and dataset catalogues in `data/`
 2. **Processing Scripts**: Python scripts analyze and enhance the raw data using AI (OpenRouter API)
-3. **Web-Ready Data**: Processed JSON files in `symphony-react-app/public/data/` optimized for the React application
+3. **Web-Ready Data**: Processed JSON files in `react-web-app/public/data/` optimized for the React application
 
 ### Core Components
 
@@ -57,10 +57,10 @@ This is a dual-purpose repository containing both data processing scripts and a 
 
 **React Web Application**:
 - `App.tsx` - Main application component with HashRouter routing
-- React components in `symphony-react-app/src/components/` for UI elements (Header, Footer, LayerCard, SearchFilters, etc.)
-- Custom hooks in `symphony-react-app/src/hooks/` for data fetching (`useData.ts`) and search functionality (`useSearch.ts`)
-- Data services in `symphony-react-app/src/services/` for API communication (`dataService.ts`)
-- Pages in `symphony-react-app/src/pages/` (LayerListPage, LayerDetailPage, DatasetTablePage)
+- React components in `react-web-app/src/components/` for UI elements (Header, Footer, LayerCard, SearchFilters, etc.)
+- Custom hooks in `react-web-app/src/hooks/` for data fetching (`useData.ts`) and search functionality (`useSearch.ts`)
+- Data services in `react-web-app/src/services/` for API communication (`dataService.ts`)
+- Pages in `react-web-app/src/pages/` (LayerListPage, LayerDetailPage, DatasetTablePage)
 - TypeScript for type safety and Tailwind CSS for styling
 - Responsive design with mobile support
 - Vitest for unit testing and Playwright for e2e testing
@@ -69,7 +69,7 @@ This is a dual-purpose repository containing both data processing scripts and a 
 ```
 Raw Data → Python Processing Pipeline → Enhanced JSON Files → React App → GitHub Pages
    ↓              ↓                         ↓                 ↓
-source-data → data-pipeline/scripts → output → symphony-react-app/public/data
+source-data → data-pipeline/scripts → output → react-web-app/public/data
 ```
 
 ### Key Data Files
@@ -86,7 +86,7 @@ source-data → data-pipeline/scripts → output → symphony-react-app/public/d
 - `p02_analysis.json` - P02 parameter availability analysis  
 - `symphony_layers.json` - Intermediate combined data
 
-**Web-Ready Data** (in `symphony-react-app/public/data/`):
+**Web-Ready Data** (in `react-web-app/public/data/`):
 - `symphony_layers.json` - Complete enhanced layer data for React app
 - `p02_analysis.json` - P02 parameter availability analysis (copy)
 - `catalogue.json` - Dataset catalogue (copy)
@@ -102,8 +102,8 @@ Scripts using AI analysis require OpenRouter API access:
 
 The React application is configured for GitHub Pages deployment:
 1. Enable GitHub Pages in repository settings
-2. Select "Deploy from a branch" with `main` branch and `/symphony-react-app/dist` folder
-3. Build the application: `cd symphony-react-app && npm run build`
+2. Select "Deploy from a branch" with `main` branch and `/react-web-app/dist` folder
+3. Build the application: `cd react-web-app && npm run build`
 4. The `dist/` folder contains the production build ready for deployment
 5. Vite is configured with the correct base path (`/Symphony-Layer-Explorer/`) for GitHub Pages
 6. Uses HashRouter for client-side routing compatibility with GitHub Pages
@@ -118,7 +118,7 @@ The React application is configured for GitHub Pages deployment:
 - `README.md` - Detailed data pipeline documentation
 - `.gitignore` - Python-specific ignore patterns
 
-**React Application** (`symphony-react-app/`):
+**React Application** (`react-web-app/`):
 - `public/data/` - Web-optimized JSON files for the React app (copied from data pipeline output)
 - `src/` - React application source code organized into:
   - `components/` - Reusable UI components (Header, Footer, LayerCard, SearchFilters, etc.)
@@ -132,4 +132,4 @@ The React application is configured for GitHub Pages deployment:
 **Root Level**:
 - `.github/workflows/` - Single GitHub Actions configuration for deployment
 - `old/` directory contains legacy Excel files and earlier processing attempts
-- When using playwright: `cd symphony-react-app && npx playwright screenshot [url] [png filename]`
+- When using playwright: `cd react-web-app && npx playwright screenshot [url] [png filename]`

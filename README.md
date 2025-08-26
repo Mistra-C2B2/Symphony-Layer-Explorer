@@ -1,18 +1,13 @@
 # Symphony Layer Explorer
 
-Interactive web application for exploring Symphony oceanic layers with AI-powered analysis and P02 parameter mapping for marine spatial planning.
+This tool is meant to help students, researchers, planners, enthusiasts, and stakeholders improve the data layers used by Symphony.
 
-## About Symphony
+[Symphony](https://www.havochvatten.se/en/eu-and-international/marine-spatial-planning/swedish-marine-spatial-planning/the-marine-spatial-planning-process/development-of-plan-proposals/symphony---a-tool-for-ecosystem-based-marine-spatial-planning.html)
+is a quantitative marine spatial planning tool developed by the Swedish Agency for Marine and Water Management (HaV) to assess cumulative environmental impacts in marine ecosystems. It provides a scientifically transparent method for ecosystem-based marine spatial planning.
 
-[Symphony](https://www.havochvatten.se/en/eu-and-international/marine-spatial-planning/swedish-marine-spatial-planning/the-marine-spatial-planning-process/development-of-plan-proposals/symphony---a-tool-for-ecosystem-based-marine-spatial-planning.html) is a quantitative marine spatial planning tool developed by the Swedish Agency for Marine and Water Management (HaV) to assess cumulative environmental impacts in marine ecosystems. It provides a scientifically transparent method for ecosystem-based marine spatial planning.
-
-### Purpose of this Tool
-
-his tool is meant to help students, researchers, planners, enthusiasts, and stakeholders improve the data layers used by Symphony.
-
-**References:**
-- [Symphony methodology and applications](https://link.springer.com/article/10.1007/s11625-022-01286-w) (Springer)
-- [Symphony planning tool overview](https://www.havochvatten.se/planering-forvaltning-och-samverkan/havsplanering/svensk-havsplanering/havsplaneringsprocessen/att-ta-fram-planforslag/symphony---ett-planeringsverktyg-for-havsplanering.html) (Swedish Agency for Marine and Water Management)
+**Learn more about Symphony**
+- [Symphony methodology and applications](https://link.springer.com/article/10.1007/s11625-022-01286-w)
+- [Symphony overview (in Swedish)](https://www.havochvatten.se/planering-forvaltning-och-samverkan/havsplanering/svensk-havsplanering/havsplaneringsprocessen/att-ta-fram-planforslag/symphony---ett-planeringsverktyg-for-havsplanering.html) 
 
 ## Quick Start
 
@@ -58,7 +53,7 @@ python merge_datasets.py
 ```bash
 cd react-web-app
 npm install
-npm run dev --host
+npm run dev -- --host
 ```
 - Access at `http://localhost:5173/Symphony-Layer-Explorer/` (local)
 - **Container Access**: Use `--host` flag to make dev server accessible outside the container
