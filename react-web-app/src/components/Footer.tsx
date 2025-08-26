@@ -1,6 +1,4 @@
 import React from 'react';
-import c2b2Logo from '/logos/C2B2-Logo-Landscape-w-nosize.svg';
-import mistraLogo from '/logos/Mistra_logo_RGB-1536x570.png';
 
 const Footer: React.FC = () => {
   return (
