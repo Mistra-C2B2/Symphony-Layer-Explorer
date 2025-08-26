@@ -19,16 +19,16 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
-        cache-dependency-path: symphony-react-app/package-lock.json
+        cache-dependency-path: react-web-app/package-lock.json
         
     - name: Install dependencies
       run: |
-        cd symphony-react-app
+        cd react-web-app
         npm ci
         
     - name: Build
       run: |
-        cd symphony-react-app
+        cd react-web-app
         npm run build
         
     - name: Deploy to GitHub Pages
@@ -36,4 +36,4 @@ jobs:
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./symphony-react-app/dist
+        publish_dir: ./react-web-app/dist
