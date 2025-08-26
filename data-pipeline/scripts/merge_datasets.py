@@ -20,7 +20,7 @@ class SimplifiedDatasetMerger:
         """Initialize the simplified dataset merger."""
         self.data_dir = "../source-data"
         self.intermediate_dir = "../output"
-        self.output_dir = "../../symphony-react-app/public/data"
+        self.output_dir = "../../react-web-app/public/data"
 
         # Ensure output directory exists
         os.makedirs(self.output_dir, exist_ok=True)
