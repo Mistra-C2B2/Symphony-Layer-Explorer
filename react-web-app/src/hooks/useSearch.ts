@@ -82,9 +82,7 @@ export const useSearch = (layers: SymphonyLayer[] | null): UseSearchReturn => {
         case 'name':
           return a.name.localeCompare(b.name);
         case 'availability':
-          const aDatasets = dataService.getRelatedDatasetsCount(a);
-          const bDatasets = dataService.getRelatedDatasetsCount(b);
-          return bDatasets - aDatasets;
+          return (b.data_availability_index || 0) - (a.data_availability_index || 0);
         case 'theme':
           return a.symphony_theme.localeCompare(b.symphony_theme);
         case 'parameters':
