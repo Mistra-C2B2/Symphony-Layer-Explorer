@@ -2,6 +2,35 @@
 
 Interactive web application for exploring Symphony oceanic layers with AI-powered analysis and P02 parameter mapping for marine spatial planning.
 
+## About Symphony
+
+**Symphony** is a quantitative marine spatial planning tool developed by the Swedish Agency for Marine and Water Management (HaV) to assess cumulative environmental impacts in marine ecosystems. It provides a scientifically transparent method for ecosystem-based marine spatial planning.
+
+### What are Symphony Layers?
+
+Symphony uses **ecosystem component layers** that represent different marine ecosystem distributions across Swedish waters. These layers include:
+- Marine habitats and species distributions
+- Benthic communities and seafloor characteristics  
+- Water column properties and oceanographic features
+- Protected areas and conservation values
+
+Each layer is mapped on a 250×250 meter grid and represents a specific aspect of the marine environment that can be affected by human activities.
+
+### Purpose of this Tool
+
+This interactive explorer helps researchers, planners, and stakeholders:
+- **Explore** the 73+ Symphony ecosystem layers with enhanced metadata
+- **Analyze** improvement possibilities for data quality and coverage
+- **Understand** connections between layers and oceanographic parameters (P02 vocabulary)
+- **Support** evidence-based marine spatial planning decisions
+- **Contribute** to sustainable use of marine resources and environmental protection
+
+The tool combines Symphony's ecosystem data with AI-powered analysis to identify opportunities for enhancing marine spatial planning capabilities through improved data collection and satellite remote sensing.
+
+**References:**
+- [Symphony methodology and applications](https://link.springer.com/article/10.1007/s11625-022-01286-w) (Springer)
+- [Symphony planning tool overview](https://www.havochvatten.se/planering-forvaltning-och-samverkan/havsplanering/svensk-havsplanering/havsplaneringsprocessen/att-ta-fram-planforslag/symphony---ett-planeringsverktyg-for-havsplanering.html) (Swedish Agency for Marine and Water Management)
+
 ## Quick Start
 
 ### React Web Application

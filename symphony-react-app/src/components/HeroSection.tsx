@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
             
             {/* Subtitle */}
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-medium mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed">
-              Explore oceanic Symphony layers with detailed oceanographic parameters and datasets
+              Discover Sweden's marine spatial planning ecosystem layers with AI-powered analysis and oceanographic insights
             </p>
             
             {/* Stats */}

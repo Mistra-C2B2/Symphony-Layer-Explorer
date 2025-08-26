@@ -1,4 +1,6 @@
 import React from 'react';
+import c2b2Logo from '/logos/C2B2-Logo-Landscape-w-nosize.svg';
+import mistraLogo from '/logos/Mistra_logo_RGB-1536x570.png';
 
 const Footer: React.FC = () => {
   return (
@@ -8,12 +10,12 @@ const Footer: React.FC = () => {
           {/* Logos */}
           <div className="flex items-center gap-8">
             <img 
-              src="/logos/C2B2-Logo-Landscape-w-nosize.svg" 
+              src={c2b2Logo} 
               alt="C2B2 Logo" 
               className="h-12 w-auto"
             />
             <img 
-              src="/logos/Mistra_logo_RGB-1536x570.png" 
+              src={mistraLogo} 
               alt="Mistra Logo" 
               className="h-12 w-auto"
             />

@@ -14,7 +14,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
     <nav className="bg-gray-50 border-b border-gray-200 py-3" data-testid="breadcrumb">
       <div className="container mx-auto px-4">
-        <ol className="flex items-center space-x-2 text-sm">
+        <ol className="flex items-center space-x-2 text-lg">
           {items.map((item, index) => (
             <React.Fragment key={index}>
               {index > 0 && (

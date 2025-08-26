@@ -36,11 +36,13 @@ interface CheckboxGroupProps {
   selectedValues: string[];
   onChange: (values: string[]) => void;
   maxHeight?: string;
+  tooltip?: string;
 }
 
 interface FilterSectionProps {
   title: string;
   children: React.ReactNode;
+  tooltip?: string;
 }
 
 interface SearchFiltersProps {
@@ -68,11 +70,34 @@ const useArrayFilter = (values: string[], onChange: (values: string[]) => void) 
 };
 
 // Reusable FilterSection component
-const FilterSection: React.FC<FilterSectionProps> = ({ title, children }) => (
+const FilterSection: React.FC<FilterSectionProps> = ({ title, children, tooltip }) => (
   <div className="space-y-3">
-    <h4 className="text-sm font-semibold text-neutral-700 tracking-wide uppercase">
-      {title}
-    </h4>
+    <div className="flex items-center gap-2">
+      <h4 className="text-sm font-semibold text-neutral-700 tracking-wide uppercase">
+        {title}
+      </h4>
+      {tooltip && (
+        <div className="group relative">
+          <svg 
+            className="w-4 h-4 text-neutral-400 hover:text-neutral-600 cursor-help transition-colors duration-150"
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+            />
+          </svg>
+          <div className="invisible group-hover:visible absolute left-1/2 -translate-x-1/2 -top-2 -translate-y-full bg-neutral-800 text-white text-sm rounded-lg px-4 py-3 z-10 shadow-lg">
+            <div className="w-80 text-left leading-relaxed">{tooltip}</div>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-neutral-800"></div>
+          </div>
+        </div>
+      )}
+    </div>
     {children}
   </div>
 );
@@ -83,12 +108,13 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   options, 
   selectedValues, 
   onChange, 
-  maxHeight = "max-h-32" 
+  maxHeight = "max-h-32",
+  tooltip 
 }) => {
   const handleChange = useArrayFilter(selectedValues, onChange);
   
   return (
-    <FilterSection title={title}>
+    <FilterSection title={title} tooltip={tooltip}>
       <div className={`space-y-2 ${maxHeight} overflow-y-auto pr-2 scrollbar-thin scrollbar-track-neutral-100 scrollbar-thumb-neutral-300`}>
         {options.map(option => (
           <label 
@@ -186,7 +212,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({
 
       {/* Enhanced Filter Sections */}
       <div className="border-t border-neutral-200 pt-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           
           {/* Themes Filter */}
           <CheckboxGroup
@@ -203,6 +229,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({
             options={IMPROVEMENT_OPTIONS}
             selectedValues={filters.improvementPotential}
             onChange={onImprovementPotentialChange}
+            tooltip="These improvement potential ratings come from AI analysis of each layer's data quality, completeness, and enhancement opportunities."
           />
 
           {/* Difficulty Filter */}
@@ -211,10 +238,14 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({
             options={DIFFICULTY_OPTIONS}
             selectedValues={filters.difficulty}
             onChange={onDifficultyChange}
+            tooltip="These difficulty assessments come from AI analysis of technical complexity, resource requirements, and feasibility of improving each layer."
           />
 
           {/* Satellite Filter */}
-          <FilterSection title="Augmentalbe with">
+          <FilterSection 
+            title="Augmentable with"
+            tooltip="Filter layers by data sources that can enhance or improve existing layer quality through additional measurements or higher resolution data."
+          >
             <div className="space-y-2">
               <label className="flex items-center group cursor-pointer hover:bg-neutral-50 rounded-md p-2 -mx-2 transition-colors duration-150">
                 <input
@@ -235,7 +266,7 @@ const SearchFiltersComponent: React.FC<SearchFiltersProps> = ({
                   className="h-4 w-4 text-blue-500 focus:ring-blue-500 border-neutral-300 rounded transition-colors duration-150 focus:ring-2 focus:ring-offset-1"
                 />
                 <span className="ml-3 text-sm font-semibold text-neutral-600 transition-colors duration-150 group-hover:text-neutral-800">
-                  Digital Earth Sweden
+                  <a href="https://www.digitalearth.se/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 no-underline decoration-2 underline-offset-2 transition-colors duration-200">Digital Earth Sweden</a>
                 </span>
               </label>
             </div>
