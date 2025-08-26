@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useData } from '../hooks/useData';
 import { dataService } from '../services/dataService';
@@ -10,6 +10,7 @@ const LayerDetailPage: React.FC = () => {
   const { layerName } = useParams<{ layerName: string }>();
   const navigate = useNavigate();
   const { loading, error } = useData();
+  const [isParameterInfoOpen, setIsParameterInfoOpen] = useState(false);
 
   const layer = layerName ? dataService.getLayerByName(decodeURIComponent(layerName)) : null;
   const p02Analysis = dataService.getP02Analysis();
@@ -202,23 +203,32 @@ const LayerDetailPage: React.FC = () => {
               Related Oceanographic Parameters ({layer.p02_parameters.length})
             </h2>
             
-            {/* Explanation Box */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0">
-                  <svg className="w-6 h-6 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-medium text-blue-900 mb-2">What are these parameters?</h3>
-                  <p className="text-blue-800 mb-3">
+            <div className="mb-6">
+              <button
+                onClick={() => setIsParameterInfoOpen(!isParameterInfoOpen)}
+                className="flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm font-medium"
+              >
+                <svg 
+                  className={`w-4 h-4 transform transition-transform ${isParameterInfoOpen ? 'rotate-90' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                Learn more about these parameters
+              </button>
+              
+              {isParameterInfoOpen && (
+                <div className="mt-4 pl-6 border-l-2 border-blue-200">
+                  <h3 className="font-medium text-gray-900 mb-2">What are these parameters?</h3>
+                  <p className="text-gray-700 mb-3">
                     These are standardized <strong>oceanographic measurement types</strong> from the SeaDataNet vocabulary that help 
                     scientists categorize and discover environmental data. They represent specific types of measurements that could 
                     be used to improve or recreate this Symphony layer.
                   </p>
-                  <h3 className="font-medium text-blue-900 mb-2">How were they matched?</h3>
-                  <p className="text-blue-800 mb-3">
+                  <h3 className="font-medium text-gray-900 mb-2">How were they matched?</h3>
+                  <p className="text-gray-700 mb-3">
                     Using AI analysis, we examined each Symphony layer's data improvement recommendations and identified 
                     relevant oceanographic parameters that could help address data limitations or serve as proxies for 
                     missing measurements. The matching focused on parameters that would directly help improve the data quality 
@@ -235,7 +245,7 @@ const LayerDetailPage: React.FC = () => {
                     </a>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
             <div className="overflow-x-auto">
               <table className="w-full border border-gray-200 rounded-lg" data-testid="p02-parameters-table">
@@ -248,13 +258,74 @@ const LayerDetailPage: React.FC = () => {
                       Measurement Type
                     </th>
                     <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
-                      Availability Index
+                      <div className="flex items-center gap-2">
+                        Availability Index
+                        <div className="group relative">
+                          <svg className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <div className="invisible group-hover:visible absolute z-50 w-80 p-3 text-sm text-white bg-gray-900 rounded-lg shadow-lg top-6 -right-40">
+                            <div className="font-medium mb-1">Parameter Availability Index</div>
+                            <div>Mean of 4 sub-indexes: Horizontal resolution, Spatial coverage, Time coverage, and Up-To-Date index. Higher values indicate better data availability and quality for this parameter.</div>
+                          </div>
+                        </div>
+                      </div>
                     </th>
                     <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
-                      Spatial Coverage
+                      <div className="flex items-center gap-2">
+                        Horizontal Resolution Index
+                        <div className="group relative">
+                          <svg className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <div className="invisible group-hover:visible absolute z-50 w-80 p-3 text-sm text-white bg-gray-900 rounded-lg shadow-lg top-6 -right-40">
+                            <div className="font-medium mb-1">Horizontal Resolution Index</div>
+                            <div>Best horizontal resolution available for this parameter. 100% corresponds to 1x1 meter resolution, while 0% indicates unspecified resolution (common in time-series datasets).</div>
+                          </div>
+                        </div>
+                      </div>
                     </th>
                     <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
-                      Time Coverage
+                      <div className="flex items-center gap-2">
+                        Spatial Coverage Index
+                        <div className="group relative">
+                          <svg className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <div className="invisible group-hover:visible absolute z-50 w-80 p-3 text-sm text-white bg-gray-900 rounded-lg shadow-lg top-6 -right-40">
+                            <div className="font-medium mb-1">Spatial Coverage Index</div>
+                            <div>Measures coverage of Swedish marine areas across 11 basins (Skagerrak, Kattegat, The Sound, Arkona Basin, etc.). 100% means the parameter is covered in all basins.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
+                      <div className="flex items-center gap-2">
+                        Time Coverage Index
+                        <div className="group relative">
+                          <svg className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <div className="invisible group-hover:visible absolute z-50 w-80 p-3 text-sm text-white bg-gray-900 rounded-lg shadow-lg top-6 -right-40">
+                            <div className="font-medium mb-1">Time Coverage Index</div>
+                            <div>Measures temporal span of available datasets. 100% means datasets span at least 10 years. For shorter periods, calculated as (years covered ÷ 10) × 100%.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
+                      <div className="flex items-center gap-2">
+                        Up-To-Date Index
+                        <div className="group relative">
+                          <svg className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <div className="invisible group-hover:visible absolute z-50 w-80 p-3 text-sm text-white bg-gray-900 rounded-lg shadow-lg top-6 -right-40">
+                            <div className="font-medium mb-1">Up-To-Date Index</div>
+                            <div>Measures data recency. 100% for ongoing datasets, 0% for 2015 data. For data between 2015-2025, calculated as ((most recent year - 2015) ÷ 10) × 100%.</div>
+                          </div>
+                        </div>
+                      </div>
                     </th>
                     <th className="px-4 py-3 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                       Datasets
@@ -264,11 +335,14 @@ const LayerDetailPage: React.FC = () => {
                 <tbody>
                   {layer.p02_parameters.map((param, index) => {
                     const analysis = p02Analysis?.[param.code];
+                    const relatedDatasets = dataService.getDatasetsByP02Parameter(param.label);
+                    const hasDatasets = relatedDatasets.length > 0;
+                    
                     return (
                       <tr 
                         key={param.code}
-                        className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50 cursor-pointer`}
-                        onClick={() => handleParameterClick(param.label)}
+                        className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} ${hasDatasets ? 'hover:bg-blue-50 cursor-pointer' : ''}`}
+                        onClick={hasDatasets ? () => handleParameterClick(param.label) : undefined}
                       >
                         <td className="px-4 py-3 text-sm font-mono text-gray-900 border-b border-gray-200">
                           {param.code}
@@ -283,15 +357,25 @@ const LayerDetailPage: React.FC = () => {
                           {analysis ? Math.round(analysis.parameter_availability_index) : 'N/A'}
                         </td>
                         <td className="px-4 py-3 text-sm text-gray-900 border-b border-gray-200">
+                          {analysis ? `${Math.round(analysis.horizontal_resolution_pct)}%` : 'N/A'}
+                        </td>
+                        <td className="px-4 py-3 text-sm text-gray-900 border-b border-gray-200">
                           {analysis ? `${Math.round(analysis.spatial_coverage_pct)}%` : 'N/A'}
                         </td>
                         <td className="px-4 py-3 text-sm text-gray-900 border-b border-gray-200">
                           {analysis ? `${analysis.time_coverage_pct}%` : 'N/A'}
                         </td>
-                        <td className="px-4 py-3 text-sm text-blue-600 border-b border-gray-200">
-                          <button className="hover:text-blue-800 hover:underline">
-                            View datasets →
-                          </button>
+                        <td className="px-4 py-3 text-sm text-gray-900 border-b border-gray-200">
+                          {analysis ? `${Math.round(analysis.up_to_date_pct)}%` : 'N/A'}
+                        </td>
+                        <td className="px-4 py-3 text-sm border-b border-gray-200">
+                          {hasDatasets ? (
+                            <button className="text-blue-600 hover:text-blue-800 hover:underline">
+                              View datasets →
+                            </button>
+                          ) : (
+                            <span className="text-gray-500">No datasets</span>
+                          )}
                         </td>
                       </tr>
                     );
