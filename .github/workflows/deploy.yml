@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd react-web-app
-          npm ci --omit=optional
+          npm ci --production
 
       - name: Build
         run: |
